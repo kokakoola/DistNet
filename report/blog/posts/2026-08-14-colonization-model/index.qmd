@@ -1,0 +1,30 @@
+---
+title: "Kolonisatsioon — piloot 2025/26"
+date: 2026-08-14
+---
+
+Piloodi tulemused, kas leidub seoseid? 
+
+```{r}
+#| label: setup
+#| include: false
+library(readr)
+library(broom)
+library(here)
+library(dplyr)
+here::i_am("report/blog/posts/2026-08-14-colonization-model/index.qmd")
+colonization <- read_csv(here("data", "processed", "colonization.csv"))
+```
+
+Linear model kogu kolonisatsioonile
+
+```{r}
+#| label: model
+colonization$log_total <- log1p(colonization$total)
+
+m1 <- lm(log_total ~ habitat * treatment + species, data = colonization)
+summary(m1)
+tidy(m1) %>% knitr::kable(digits = 3)
+```
+
+Ainult habitat loeb. See silene asi on õige juhuslik siin, ei maksa tähele panna.
