@@ -1,0 +1,16 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "DistNet — töö käik",
+    "section": "",
+    "text": "Kolonisatsioon — piloot 2025/26\n\n\n\n\n\n\n\n\n\n\n\nAug 14, 2026\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/2026-08-14-colonization-model/index.html",
+    "href": "posts/2026-08-14-colonization-model/index.html",
+    "title": "Kolonisatsioon — piloot 2025/26",
+    "section": "",
+    "text": "Piloodi tulemused, kas leidub seoseid?\nLinear model kogu kolonisatsioonile\n\ncolonization$log_total &lt;- log1p(colonization$total)\n\nm1 &lt;- lm(log_total ~ habitat * treatment + species, data = colonization)\nsummary(m1)\n\n\nCall:\nlm(formula = log_total ~ habitat * treatment + species, data = colonization)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-2.4231 -0.5005  0.1104  0.5142  1.7913 \n\nCoefficients:\n                                   Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)                        2.523857   0.595740   4.237 0.000114 ***\nhabitatgrassland                   1.917895   0.509266   3.766 0.000489 ***\ntreatmentnetwork                  -0.864585   0.560706  -1.542 0.130246    \nspeciesChicorium intybus          -0.003982   0.643086  -0.006 0.995088    \nspeciesDactylis glomerata         -0.677608   0.519340  -1.305 0.198762    \nspeciesLeontodon hispidus         -0.539446   0.571965  -0.943 0.350757    \nspeciesSilene nutans              -1.325504   0.570784  -2.322 0.024909 *  \nhabitatgrassland:treatmentnetwork  0.914601   0.653509   1.400 0.168668    \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 1.034 on 44 degrees of freedom\n  (13 observations deleted due to missingness)\nMultiple R-squared:  0.6019,    Adjusted R-squared:  0.5386 \nF-statistic: 9.504 on 7 and 44 DF,  p-value: 3.954e-07\n\ntidy(m1) %&gt;% knitr::kable(digits = 3)\n\n\n\n\n\n\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n2.524\n0.596\n4.237\n0.000\n\n\nhabitatgrassland\n1.918\n0.509\n3.766\n0.000\n\n\ntreatmentnetwork\n-0.865\n0.561\n-1.542\n0.130\n\n\nspeciesChicorium intybus\n-0.004\n0.643\n-0.006\n0.995\n\n\nspeciesDactylis glomerata\n-0.678\n0.519\n-1.305\n0.199\n\n\nspeciesLeontodon hispidus\n-0.539\n0.572\n-0.943\n0.351\n\n\nspeciesSilene nutans\n-1.326\n0.571\n-2.322\n0.025\n\n\nhabitatgrassland:treatmentnetwork\n0.915\n0.654\n1.400\n0.169\n\n\n\n\n\nAinult habitat loeb. See silene asi on õige juhuslik siin, ei maksa tähele panna."
+  }
+]
