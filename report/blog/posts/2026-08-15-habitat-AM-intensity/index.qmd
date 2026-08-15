@@ -1,0 +1,68 @@
+---
+title: "AM keskmine kolonisatsioon elupaikades"
+date: 2026-08-15
+---
+
+Arvutasin keskmise katvuse, võtsin valimisse liigid, mille katvus elupaigas oli 0,8 ja kõrgem. Nende kohta laadisin FungalRoot andmebaasist alla proovide csv-d. Eristasin: elupaigad (forest, grassland, määrangu puuudumisel laiendasin kehtivust mõlema kasvukoha kohta), meetod (McConagall). Leidsin liigid, mille kohta proovid puuduvad (7 tk), kirjeldasin neist kirjanduse ja ülemtaksoni hinnatud mükoriissuse alusel 3 liiki kui NM. Mikroskoopimist vajavad
+
+- Artemisia campestris. 
+- Carex disticha. 
+- Helictotrichon pratensis. 
+- Pulsatilla pratensis. 
+
+### Puuduvate mõõtmistega liigid:
+```r
+> truly_missing_species
+# A tibble: 7 × 1
+  Species                 
+  <chr>                   
+1 Carex disticha          
+2 Chimaphila umbellata    
+3 Melampyrum nemorosum    
+4 Orthilia secunda        
+5 Artemisia campestris    
+6 Helictotrichon pratensis
+7 Pulsatilla pratensis 
+``` 
+
+### Kõik liigid
+```r
+> print(species_means_final, n = 24)
+# A tibble: 24 × 6
+   species              habitat_class mean_am     n data_source              override_reason                                                                  
+   <chr>                <chr>           <dbl> <int> <chr>                    <chr>                                                                            
+ 1 Achillea millefolium grassland        94.0     4 habitat-specific         NA                                                                               
+ 2 Anthyllis vulneraria forest           62.6     1 general (no biome match) NA                                                                               
+ 3 Dianthus deltoides   grassland         0       2 habitat-specific         NA                                                                               
+ 4 Festuca rubra        forest           85.6     2 habitat-specific         NA                                                                               
+ 5 Festuca rubra        grassland        95.7     4 habitat-specific         NA                                                                               
+ 6 Filipendula vulgaris grassland        94.3     6 general (no biome match) NA                                                                               
+ 7 Fragaria viridis     grassland        97.1     5 general (no biome match) NA                                                                               
+ 8 Galium boreale       grassland        72.4    12 general (no biome match) NA                                                                               
+ 9 Galium verum         grassland        58.0     3 habitat-specific         NA                                                                               
+10 Luzula pilosa        forest            0      15 general (no biome match) NA                                                                               
+11 Medicago lupulina    grassland        99.6     2 habitat-specific         NA                                                                               
+12 Melampyrum pratense  forest            0       5 general (no biome match) NA                                                                               
+13 Phleum phleoides     grassland        63.2     4 habitat-specific         NA                                                                               
+14 Pimpinella saxifraga grassland        98.8     3 habitat-specific         NA                                                                               
+15 Plantago lanceolata  grassland        99.3     2 habitat-specific         NA                                                                               
+16 Rumex acetosa        grassland         0       1 general (no biome match) NA                                                                               
+17 Thymus serpyllum     grassland        39.2     2 habitat-specific         NA                                                                               
+18 Trifolium arvense    grassland        56.5     1 general (no biome match) NA                                                                               
+19 Trifolium montanum   grassland        84.0     4 habitat-specific         NA                                                                               
+20 Trifolium repens     grassland       100.0     3 habitat-specific         NA                                                                               
+21 Veronica spicata     grassland        92.4     4 general (no biome match) NA                                                                               
+22 Orthilia secunda     forest            0      NA NA                       Predominantly EcM/NM, ecologically implausible AM host                           
+23 Melampyrum nemorosum forest            0      NA NA                       Hemiparasitic, predominantly NM/EcM                                              
+24 Chimaphila umbellata forest            0      NA NA                       Pyroloideae, arbutoid/NM; sole AM record from subpolar biome, geographically mis…
+```
+
+### Kasvukohtade mükoriissus
+```r
+> habitat_means
+# A tibble: 2 × 3
+  habitat_class mean_am n_species
+  <chr>           <dbl>     <int>
+1 forest           21.2         7
+2 grassland        73.2        17
+```

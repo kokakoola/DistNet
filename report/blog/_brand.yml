@@ -1,0 +1,6 @@
+logo: 
+  images:
+    distnet-logo: 
+      path: blog/images/DistNet.png
+      alt: "DistNet_icon"
+  small: distnet-logo

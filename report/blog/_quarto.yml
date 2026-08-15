@@ -1,6 +1,8 @@
 project:
   type: website
 
+brand: _brand.yml
+
 website:
   title: "DistNet — töö käik"
   navbar:

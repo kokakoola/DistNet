@@ -9,6 +9,7 @@ colonization$log_total <- log1p(colonization$total)
 m1 <- lm(log_total ~ habitat * treatment + species, data = colonization)
 summary(m1) # only habitat is significant
 
+# Ma ei tea enam milleks see sellisel kujul hea on. Mõtleme.
 m_forest <- lm(
   log_total ~ treatment + species,
   data = subset(colonization, habitat == "forest")
@@ -20,3 +21,6 @@ m_grassland <- lm(
   data = subset(colonization, habitat == "grassland")
 )
 summary(m_grassland)
+
+# Intensity for species with cover 0,8 and up
+print(species_means_final, n = 24)
