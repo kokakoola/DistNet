@@ -1,7 +1,7 @@
 library(readr)
 
 if (!file.exists("data/processed/colonization.csv")) {
-  source("R/clean_data.R") # create csv if it is missing - call fetch from sharepoint, clean and save.
+  source("R/helpers/clean_data.R") # create csv if it is missing - call fetch from sharepoint, clean and save.
 }
 
 colonization$log_total <- log1p(colonization$total)

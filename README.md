@@ -2,6 +2,14 @@
 ## R kood asub:
 https://github.com/kokakoola/DistNet/tree/main
 
+### Kaustastruktuur
+`R/helpers/` -- andmetöötluse abifunktsioonid, mida analüüsiskriptid `source()`-iga sisse laevad:
+- `fetch_data.R` -- laeb toorandmed SharePointist (`get_data()`)
+- `clean_data.R` -- puhastab ja formaadib toorandmed (`clean_masterdata()`), salvestab `data/processed/` alla
+- `join_master.R` -- ühendab domeenifailid (Traits/Quadrat/Colonization) MasterData rings/plants lehtedega
+
+Ülejäänud `R/` juurkaustas olevad skriptid (`PilotColonization.R`, `AM_intensity.R`, `Analysis11-05-26.R`) on analüüsiskriptid, mis kasutavad neid abifunktsioone läbi `source("R/helpers/...")`.
+
 ## Projektis on kasutusel pipeline ekstrad:
 ### renv - package manager
 Hoolitseb, et projekti käivitamisel kasutatakse pakettide versioone, mis olid kasutusel kirjutamise hetkel. Sest uuendused võivad muidu projekti katki teha

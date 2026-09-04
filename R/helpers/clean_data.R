@@ -1,4 +1,4 @@
-source("R/fetch_data.R")
+source("R/helpers/fetch_data.R")
 
 library(readxl)
 library(dplyr)
