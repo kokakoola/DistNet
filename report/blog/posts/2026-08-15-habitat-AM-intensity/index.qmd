@@ -5,10 +5,10 @@ date: 2026-08-15
 
 Arvutasin keskmise katvuse, võtsin valimisse liigid, mille katvus elupaigas oli 0,8 ja kõrgem. Nende kohta laadisin FungalRoot andmebaasist alla proovide csv-d. Eristasin: elupaigad (forest, grassland, määrangu puuudumisel laiendasin kehtivust mõlema kasvukoha kohta), meetod (McConagall). Leidsin liigid, mille kohta proovid puuduvad (7 tk), kirjeldasin neist kirjanduse ja ülemtaksoni hinnatud mükoriissuse alusel 3 liiki kui NM. Mikroskoopimist vajavad
 
-- Artemisia campestris. 
-- Carex disticha. 
-- Helictotrichon pratensis. 
-- Pulsatilla pratensis. 
+- _Artemisia campestris_
+- _Carex disticha_
+- _Helictotrichon pratensis_
+- _Pulsatilla pratensis_
 
 ### Puuduvate mõõtmistega liigid:
 ```r

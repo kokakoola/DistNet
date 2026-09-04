@@ -47,8 +47,8 @@ clean_masterdata <- function(raw_path) {
 # raw %>% clean_names() %>% colnames()
 
 # usage
-raw_file <- get_latest_data() # calls fetch_data.R
-colonization <- clean_masterdata(raw_file)
+colonization_raw <- get_data("SHAREPOINT_PATH_COLONIZATION", "colonization")
+colonization <- clean_masterdata(colonization_raw)
 
 # Save for analyze
 write.csv(colonization, "data/processed/colonization.csv", row.names = FALSE)

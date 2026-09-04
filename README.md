@@ -1,17 +1,29 @@
 
-## file path Sharepointis:
-drv$list_items(path = "Mare")                              # peaks näitama MasterThesis. 
-drv$list_items(path = "Mare/MasterThesis")                  # peaks näitama RawData, Docs, Scratch, Archive. 
-drv$list_items(path = "Mare/MasterThesis/RawData")           # peaks näitama Fieldwork, Microscopy, ExternalDatabases. 
-drv$list_items(path = "Mare/MasterThesis/RawData/Fieldwork")  # peaks näitama DistNet_MasterData.xlsx. 
+## R kood asub:
+https://github.com/kokakoola/DistNet/tree/main
 
-## renv - package manager
-konsoolis. 
-renv::snapshot()   # käivitad käsitsi, kui oled lisanud/uuendanud pakette. 
-renv::restore()    # käivitad, kui avad projekti teises arvutis/pärast pausi. 
+## Projektis on kasutusel pipeline ekstrad:
+### renv - package manager
+Hoolitseb, et projekti käivitamisel kasutatakse pakettide versioone, mis olid kasutusel kirjutamise hetkel. Sest uuendused võivad muidu projekti katki teha
+Concole >
+renv::snapshot()   # käivita käsitsi, kui oled lisanud/uuendanud pakette. 
+renv::restore()    # käivita, kui avad projekti teises arvutis/pärast pausi. 
 
-# blogi
-konsoolis:   
-quarto preview. 
-quarto add ext quarto-ext/quarto-blog. 
-quarto publish gh-pages. 
+### envir
+sisaldab kasutusel olevaid Sharepointi täispathe. Turvakaalutlus. Avalikus GH-s on näidis, tegelik .Renviron on leitav Sharepointis MasterThesis/Docs kaustas. Lae alla, tõsta projekti sisse ja käivita alles siis R.
+Kui muudad .Renviron-it, tuleb R taaskäivitada (Session → Restart R Positronis), et muudatused kehtima hakkaksid — see fail loetakse ainult sessiooni alguses, mitte jooksvalt.
+
+#### Kontroll, et environment-muutujad on laetud:
+r
+Sys.getenv("SHAREPOINT_SITE")
+
+## Blogi
+Töö käik on dokumenteeritud Quarto blogi kujul GH Page-na, asukoht:
+https://kokakoola.github.io/DistNet/
+
+Blogi lokaalseks jooksutamiseks pead asuma blogi kaustas (./report/blog)
+
+Console >   
+quarto preview. # lokaalne preview
+quarto add ext quarto-ext/quarto-blog.  # järgmine chapter
+quarto publish gh-pages. # publish to live

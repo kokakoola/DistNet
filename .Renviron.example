@@ -1,0 +1,4 @@
+SHAREPOINT_SITE=your-site-name
+SHAREPOINT_PATH_COLONIZATION=path/to/colonization.xlsx
+SHAREPOINT_PATH_QUADRAT=path/to/quadrat.xlsx
+SHAREPOINT_PATH_TRAITS=path/to/traits.xlsx

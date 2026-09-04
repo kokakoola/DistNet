@@ -21,6 +21,3 @@ m_grassland <- lm(
   data = subset(colonization, habitat == "grassland")
 )
 summary(m_grassland)
-
-# Intensity for species with cover 0,8 and up
-print(species_means_final, n = 24)

@@ -1,0 +1,80 @@
+---
+title: "Taimede kasvu ja kahjustuste seire"
+lang: et
+bibliography: references.bib
+# csl: lisa siia oma ülikooli/juhendi nõutav .csl fail, kui vaikimisi
+#      autor-aasta stiil (Chicago author-date) ei sobi
+format:
+  docx: default
+  html: default
+---
+
+<!--
+Märkus: kui lisad selle peatükiks oma Quarto-raamatusse/-töösse, eemalda
+ülalolev YAML-plokk (või jäta ainult see, mida sinu _quarto.yml juba ei
+määra) ja veendu, et `bibliography: references.bib` viitaks õigele
+suhtelisele teele ning et sinu projekti üldine .bib-fail sisaldaks neid
+kirjeid (või ühenda references.bib oma põhi-bib-failiga).
+-->
+
+Katsetaimede kasvu jälgiti mittedestruktiivselt igakuiste mõõtmiskordadena
+kogu katseperioodi jooksul, alates [KUUPÄEV] kuni [KUUPÄEV] (kokku [N]
+mõõtmiskorda). Igal mõõtmiskorral hinnati taime kõrgust (cm), herbivoorset
+kahjustust (% lehepinnast) ja seenkahjustust (% lehepinnast). Katse lõpus
+koguti kõik katsetaimed täies mahus, eraldati juured ja maapealne osa, mis
+kuivatati ja kaaluti (kuivkaal, g) lõpliku biomassiproduktsiooni
+hindamiseks.
+
+## Taimekõrguse mõõtmine
+
+Taime kõrgust mõõdeti selle loomulikus, sirutamata kasvuasendis maapinnast,
+järgides [TORDONI VIIDE -- vt märkus allpool] meetodit. Erinevalt levinud
+vegetatiivse kõrguse konventsioonist, mis jätab generatiivsed struktuurid
+(õisikud) arvestamata [algselt @cornelissen2003, hiljem täiendatud
+@perezharguindeguy2013], mõõdeti käesolevas katses
+taime kogukõrgus koos õieroostiga, kuna huviorbiidis oli taime tegelik
+positsioon koosluse valguskonkurentsis, mitte võrdlev struktuurne trait
+sensu globaalsed trait-andmebaasid [vrd @gaudetkeddy1988].
+
+Kõrguse süstemaatilise moonutuse vältimiseks (vihmast märjad taimed, eriti
+pikelehised kõrrelised, kalduvad ajutiselt lonti vajuma) püüti mõõtmisi mitte
+teha vahetult pärast sademeid, mõõtes taimi alles pärast lehestiku
+kuivamist.
+
+## Kasvuvormist tulenevad piirangud ja täiendavad mõõdikud
+
+Kõrgusmõõt kajastab liikide kasvuedu ebaühtlaselt: rosett-tüüpi liigid (nt
+*Leontodon* spp., *Achillea millefolium*) investeerivad kasvades pigem
+laiusesse kui kõrgusesse, mistõttu pelgalt kõrgusel põhinev mõõdik
+alahindab nende tegelikku kasvu. Selle piirangu osaliseks leevendamiseks
+mõõdeti alates [KUUPÄEV] igal taimel täiendavalt lehe maksimaalne pikkus
+(cm) ning katse viimasel mõõtmiskorral, vahetult enne saagikoristust, ka
+leheroseti diameeter (kaks ristuvat läbimõõtu, keskmistatuna). Viimase
+mõõtmiskorra mittedestruktiivsete näitajate (kõrgus, lehepikkus, roseti
+diameeter) võrdlemine tegeliku kuivkaaluga saagikoristusel võimaldab
+tagantjärele hinnata, milline mõõdik kajastab erineva kasvuvormiga liikide
+puhul kõige täpsemalt tegelikku biomassi.
+
+## Vegetatiivse ja generatiivse kasvu eristamine (*Silene alba*)
+
+Liigil *Silene alba* kasvab õieroots vegetatiivsest rosetist selgelt eraldi
+ja moodustab suure osa taime kogupikkusest. Katse viimasel mõõtmiskorral
+mõõdeti seetõttu eraldi vegetatiivse rosetti kõrgus ja õieroote pikkus, et
+analüüsis oleks võimalik lahutada vegetatiivset kasvu reproduktiivsest
+investeeringust [vrd @sunfrelich2011, kes näitasid, et õitsemise
+fenoloogia ja kõrguskasvu muster on omavahel seotud, kuid ei kajasta samu
+bioloogilisi protsesse].
+
+## Metoodiliste valikute põhjendus (kokkuvõte)
+
+| Küsimus | Valitud lahendus | Kõrvale jäetud alternatiiv |
+|---|---|---|
+| Kõrguse ulatus | Kogukõrgus koos õieroostiga -- konkurentsiökoloogia "canopy height" traditsioon [@gaudetkeddy1988], kuna oluline on taime tegelik positsioon koosluse valguskonkurentsis | Puhas vegetatiivne kõrgus [@perezharguindeguy2013] -- sobiks liikideülese struktuurse traidi võrdluseks, aga mitte käesoleva küsimuse jaoks |
+| Kasvumõõdik rosett-liikidel | Kõrgusele lisaks lehe max pikkus (läbivalt) ja roseti diameeter (viimasel korral) | Ainult kõrgus -- oleks jätnud *Leontodon*/*Achillea* kasvu suuresti nähtamatuks |
+| Vegetatiivne vs generatiivne kasv (*Silene alba*) | Rosetikõrgus ja õieroote pikkus eraldi viimasel mõõtmiskorral -- lubab lahutada kasvu- ja õitsemissignaali [@sunfrelich2011] | Üks koondnumber (kogukõrgus) -- oleks segunud kaks erineva päritoluga signaali |
+| Mõõtmistingimused | Vältida mõõtmist vahetult pärast vihma (märg/lonti vajunud taim) | Rangelt fikseeritud ajastus ilmastiku suhtes -- jäi pigem põhimõtteks, mitte formaalseks protokolliks |
+
+## Kasutatud kirjandus
+
+::: {#refs}
+:::

@@ -9,6 +9,11 @@ website:
     left:
       - href: index.qmd
         text: Kodu
+    right:
+      - icon: github
+        href: https://github.com/kokakoola/DistNet
+        text: Kood
+        target: _blank
 
 format:
   html:
@@ -16,3 +21,12 @@ format:
     theme: litera
     metadata:
       robots: noindex
+comments:
+  giscus:
+    repo: kokakoola/DistNet
+    repo-id: R_kgDOT4gBYw
+    category: Announcements
+    category-id: R_kgDOT4gBYw
+    reactions-enabled: true
+    input-position: top
+
