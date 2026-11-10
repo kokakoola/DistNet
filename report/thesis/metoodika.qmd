@@ -1,0 +1,168 @@
+---
+title: "Metoodika"
+---
+
+<!--
+See fail on alapeatükkide põhi (skeleton): iga alapeatüki all on märksõnad,
+mitte valmis tekst. Taimekasvu/kahjustuste seire metoodika on eraldi failis
+`meetodid_kasvunaitajad.qmd` -- siin seda ei korrata, vaid viidatakse sellele
+sobivas kohas (nt välitööde all).
+
+Enne kirjutamist vaata üle docs/Claude_README.md ja CLAUDE.md -- eriti avatud
+küsimused (Dactylise ulatus, DNA/mullatoitained, Silene mükoriisastaatus).
+Ära lisa kinnitamata viiteid; kui viide on vaja, aga pole veel juhendajalt/
+Zoterost kinnitatud, jäta märge [VIIDE: ...].
+-->
+
+## Katseala
+
+- Asukoht: Eesti, ~58°N; hemiboreaalne vöönd.
+- Kaks kasvukohta: mets (männi-/segamets) ja niit -- lühike iseloomustus
+  mõlemast (puistu/rohurinde tüüp, muldkate, varasem maakasutus, kui teada).
+- Miks need kaks kasvukohta valitud (kontrast AMF-võrgustiku tiheduses/
+  koosseisus -- vt FungalRoot'i esialgsed keskmised: mets ~21%, niit ~73%).
+- Katseala paiknemine/kaart, rõngaste paigutuse loogika (juhuslikustamine vs
+  olemasolev taimestik, min vahekaugus rõngaste vahel jne -- kontrolli
+  väliprotokollist).
+- [VIIDE: ala kirjeldav kirjandus/kaardimaterjal, kui on]
+
+## Katse disain
+
+- Rõngas kui katseüksus: d = 15 cm katserõngas 1 m² kvadraadi sees.
+- Manipulatsioon: **severed** vs **control** (mitte "disturbance" --
+  terminoloogia eeskuju [VIIDE: Dassen jt 2021, New Phytologist]).
+  - Severed: rõnga perimeeter lõigatakse noaga läbi kord nädalas, et katkestada
+    AMF-hüüfide ühendus rõnga ja ümbritseva koosluse vahel.
+  - Control: läbilõikamist ei tehta.
+- 12 rõngast kasvukoha kohta (pooled severed, pooled control) -> kokku
+  kasvukohtade arv x 12.
+- Katseliigid (5, istutatud rõngastesse): *Achillea millefolium*,
+  *Cichorium intybus*, *Dactylis glomerata*, *Leontodon hispidus*,
+  *Silene latifolia*.
+  - *Solidago virgaurea* ei idanenud -> katsest väljas, aga jääb
+    species-viitetabelisse (selgita joonealuses/märkuses).
+- Referentstaimed: loodusest kogutud samad liigid väljaspool katserõngaid,
+  `treatment = "reference"`, pseudo-ring_id (`FREF`/`GREF`/`OREF`).
+  - Miks eraldi: võrdlusbaas "looduslikule" kolonisatsioonitasemele; ei
+    kuulu `habitat * treatment` mudelisse -- põhjenda lühidalt.
+- Kvadrati (1 m²) naabertaimestiku roll disainis: kvadrati keskmine
+  naabruse-AM kui kontekst katserõnga taimele (seob kokku katse disaini ja
+  põhihüpoteesi -- vt "Statistiline analüüs").
+- Hierarhia: kasvukoht -> rõngas -> taim (katse ülesehituse joonis/skeem
+  siia, kui on).
+
+## Välitööd ja proovide kogumine
+
+- Ajakava: katse algus- ja lõppkuupäev, kestus, severingu sagedus (kord
+  nädalas).
+- Igakuised visiidid (Traits): mittedestruktiivne kasvu/kahjustuse seire --
+  detailne metoodika on failis `meetodid_kasvunaitajad.qmd`, siin ainult
+  viide + visiitide arv/ajavahemik.
+- Katse lõpp (saagikoristus): mis kogutakse, millises järjekorras
+  (focal vs ülejäänud taimed, juured vs maapealne osa).
+- Focal-taime määramine väljas: rõnga x liigi suurim/esimene taim; kui
+  focal suri enne koristust, järgmine ellujäänud isend saab focal'iks --
+  protokolli samm, mitte ainult andmetöötluse reegel.
+- Proovide märgistamine ja transport (kiirkülmutus/kuivatus, kui kohaldub),
+  mikroskoopia jaoks juurte fikseerimine/säilitamine.
+- Kvadrati katvuse hindamine (koosluse struktuur, seotud DistNet_Quadrat
+  andmestikuga) -- millal ja kuidas mõõdeti.
+
+## Kolonisatsiooni mikroskoopia
+
+- Meetod: McGonigle jt 1990 RLC% (root length colonization) --
+  [VIIDE: McGonigle, Miller, Evans, Fairchild & Swan 1990, New Phytologist].
+- Mõõdetavad kategooriad: arbuskulid (arb), vesiikulid (ves), hüüfid (hyp),
+  mitte-AMF struktuurid (noamf), kokku (total).
+- Valim: 1 isend liigi kohta rõngas (focal); ülejäänud taimi mikroskoopiliselt
+  ei hinnata (erinevus biomassi/kasvu keskmistamisest -- selgita).
+- Juurte ettevalmistus enne vaatlust (puhastus, värvimine -- protokolli
+  sammud, kemikaalid, kontsentratsioonid, inkubatsiooniajad).
+- Hindamismetoodika praktikas: ristumispunktide loendamise meetod
+  (magnification, vaatlusvälju rõnga kohta jne).
+- Andmestiku struktuur: leht `Colonization_26`, veerud A:J sisend
+  (loendusandmed), K+ arvutuslikud (RLC% valemid) -- kirjelda valem(id).
+- Liitmisvõti `plant_id`.
+
+## Juure- ja lehekännide analüüs (Fiji, IJ_Rhizo)
+
+- Fookus: *Dactylis glomerata* (focal puudub, kõik taimed `-2` real --
+  analüüsitakse ainult keskmist).
+- Skannimine: millise skanneriga/resolutsiooniga lehed ja juured skannitud
+  (protokolli detailid vaja lisada).
+- Lehepindala: Fiji (Mac) -- Threshold + Analyze Particles töövoog, mõõdetav
+  suurus (cm²), kalibratsioon (skaala/px->cm).
+- Juured: Fiji plugin IJ_Rhizo [VIIDE: Pierret jt 2013] -- mõõdetavad
+  näitajad (juurepikkus, -pindala, -ruumala, -läbimõõdu jaotus jne, vastavalt
+  sellele, mida IJ_Rhizo väljastab ja mida analüüsis kasutatakse).
+- Põhjendus, miks WinRHIZO ja RhizoVision kõne alla ei tulnud (lühidalt --
+  nt kättesaadavus, litsents, ühilduvus).
+- Värske- ja kuivmassi mõõtmine (kaal, kuivatustingimused -- temp/kestus).
+- Seos juurte DNA-analüüsiga (juured kogutud, ootavad analüüsi -- otsustamata,
+  kas DNA ja mullatoitained tehakse -- märgi lahtise küsimusena).
+
+## Biomass
+
+- Andmeallikas: `DistNet_Biomass.xlsx`, kuivkaalud (g).
+- Struktuur: `-1` = focal taim, `-2` = ülejäänud taimed liigi/rõnga kohta
+  koos (koondrida).
+- Liitmisvõti: **`ring_id + species + focal`**, mitte `plant_id` -- põhjenda
+  lühidalt (miks plant_id ei sobi koondridade puhul).
+- Koondridade (`-2`) kaalu jagamine `n_plants`-iga ning kasutamine mudelis
+  `weights = n_plants` -- kirjelda, kuidas see bioloogiliselt põhjendatud on
+  (keskmine taimekohane kuivkaal vs koguv kaal).
+- Kuivatusprotokoll (temperatuur, kestus) enne kaalumist.
+- Surnud/eemaldatud taimede käsitlus: ei kustutata (`status`:
+  alive/dead/missing/removed) -- mõju biomassi keskmistesse.
+
+## FungalRoot'i kalibreerimine
+
+- Eesmärk: taustkalibreering/võrdlusraamistik, **mitte iseseisev tulemus**
+  -- selgita, milleks seda mudelis/tõlgenduses kasutatakse.
+- Kasutusel ainult McGonigle 1990 RLC% kirjed (ühtlustamaks oma
+  mikroskoopia meetodiga).
+- Kategooriate vastendus: "forest" = temperate coniferous + broadleaf,
+  "grassland" = temperate grassland -- põhjenda vastendust lühidalt.
+- Fallback-loogika (3 taset):
+  1. habitat-spetsiifiline kirje liigi kohta,
+  2. sama liik mis tahes biomis (kui habitat-spetsiifilist pole),
+  3. käsitsi override.
+- Käsitsi parandused tehakse R-koodis (mitte Excelis), päritolu märgitakse
+  `data_source` veerus (`dplyr::rows_upsert()`).
+- Liigid, mille oma mikroskoopia alles pooleli (ajutine FungalRoot-põhine
+  väärtus): *Carex disticha*, *Helictotrichon pratensis*,
+  *Artemisia campestris*, *Pulsatilla pratensis*.
+- Andmeallikas: `data/raw/FungalRoot/` (lokaalsed CSV-d, liiginime järgi
+  liidetud).
+- Esialgsed/kalibreerimisel saadud keskmised (nt mets ~21%, niit ~73%) --
+  tabel/joonis kalibreerimistulemustest.
+- *Silene latifolia* erijuht: species-tabelis märgitud FM
+  (arbuskulaarne-mükoriisne), kuid kirjanduse järgi tavaliselt NM
+  (mitte-mükoriisne) -- lahtine küsimus, mida juhendajaga arutada; kirjelda,
+  kuidas see analüüsis praegu käsitletud on (ja kuidas see mõjutab
+  tõlgendust, kui staatus osutub valeks).
+
+## Statistiline analüüs
+
+- Analüüsiüksus ja hierarhia: kasvukoht -> rõngas -> taim.
+- Mixed model loogika: rõngas kui random effect (põhjenda, miks pseudo-
+  replikatsiooni vältimiseks vajalik, kui rõnga sees on mitu taime/mõõtmist).
+- Praegune baasmudel (piloot, **WIP, kindlasti täienema**):
+  `lm(log_total ~ habitat * treatment + species, data = colonization)`,
+  n = 44, R² = 0,60 -- selgita, mida see praegu näitab ja mida see veel ei
+  arvesta (random effect puudub, põhihüpotees puudub).
+- Log-teisenduse põhjendus (`log_total`) -- jaotuse kuju, heteroskedastsus
+  vms.
+- **Põhihüpotees (veel realiseerimata):** kvadrati keskmine naabruse-AM
+  pideva prediktorina + interaktsioon `treatment * quadrat_mean_AM` --
+  kirjelda ootust/suunda (nt kas severing peaks nõrgestama naabruse-AM
+  mõju).
+- Kaalude kasutamine koondridade puhul (`weights = n_plants`) --
+  vt "Biomass".
+- Referentstaimede (`treatment = "reference"`) koht analüüsis: kirjeldav
+  võrdlus, mitte osa peamudelist.
+- Mudeli diagnostika/eelduste kontroll (jäägid, kollineaarsus liik x
+  habitat x treatment kombinatsioonides, kui valim on väike -- n = 44 on
+  väike paljude interaktsioonide jaoks, arutada piiranguna).
+- Tarkvara/paketid (R versioon, `lme4`/`nlme` vms, kui valitud).
+

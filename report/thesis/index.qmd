@@ -1,0 +1,3 @@
+# Sissejuhatus {.unnumbered}
+
+<!-- Sissejuhatus: uurimisküsimus, hüpoteesid, töö eesmärk. -->

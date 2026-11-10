@@ -1,0 +1,39 @@
+project:
+  type: book
+  output-dir: _book
+
+book:
+  title: "[PEALKIRI]"
+  output-file: DistNet_thesis
+  author: "Mare Hunt"
+  date: today
+  date-format: "D. MMMM YYYY"
+  chapters:
+    - index.qmd
+    - metoodika.qmd
+    - meetodid_kasvunaitajad.qmd
+    - references.qmd
+
+lang: et
+bibliography: references.bib
+# csl: <ülikooli nõutav .csl fail>  # vaikimisi Chicago author-date
+
+crossref:
+  fig-title: Joonis
+  tbl-title: Tabel
+  fig-prefix: joonis
+  tbl-prefix: tabel
+
+execute:
+  echo: false
+  warning: false
+  message: false
+  freeze: auto
+
+format:
+  html:
+    toc: true
+  docx:
+    toc: true
+    number-sections: true
+    # reference-doc: reference.docx  # lisa, kui vormingufail on olemas

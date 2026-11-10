@@ -4,7 +4,7 @@ https://github.com/kokakoola/DistNet/tree/main
 
 ### Kaustastruktuur
 `R/helpers/` -- andmetöötluse abifunktsioonid, mida analüüsiskriptid `source()`-iga sisse laevad:
-- `fetch_data.R` -- laeb toorandmed SharePointist (`get_data()`)
+- `fetch_data.R` -- kopeerib toorandmed OneDrive-sünkitud SharePointi kaustast (`get_data()`, `sp_local()`)
 - `clean_data.R` -- puhastab ja formaadib toorandmed (`clean_masterdata()`), salvestab `data/processed/` alla
 - `join_master.R` -- ühendab domeenifailid (Traits/Quadrat/Colonization) MasterData rings/plants lehtedega
 
@@ -18,7 +18,7 @@ renv::snapshot()   # käivita käsitsi, kui oled lisanud/uuendanud pakette.
 renv::restore()    # käivita, kui avad projekti teises arvutis/pärast pausi. 
 
 ### envir
-sisaldab kasutusel olevaid Sharepointi täispathe. Turvakaalutlus. Avalikus GH-s on näidis, tegelik .Renviron on leitav Sharepointis MasterThesis/Docs kaustas. Lae alla, tõsta projekti sisse ja käivita alles siis R.
+sisaldab kasutusel olevaid Sharepointi täispathe. Turvakaalutlus. Avalikus GH-s on näidis, tegelik .Renviron on leitav Sharepointis MasterThesis/Docs kaustas. Lae alla, tõsta projekti sisse ja käivita alles siis R. Enne lisa failile . Faili nimetus peab olema täpselt .Renviron et R seda lugeda saaks.
 Kui muudad .Renviron-it, tuleb R taaskäivitada (Session → Restart R Positronis), et muudatused kehtima hakkaksid — see fail loetakse ainult sessiooni alguses, mitte jooksvalt.
 
 #### Kontroll, et environment-muutujad on laetud:

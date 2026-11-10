@@ -33,8 +33,7 @@ get_env <- function(var) {
   val
 }
 
-site <- Microsoft365R::get_sharepoint_site(get_env("SHAREPOINT_SITE"))
-drv <- site$get_drive()
+source(here("R/helpers/fetch_data.R")) # sp_local()
 
 files <- c(
   master = get_env("SHAREPOINT_PATH_MASTER"),
@@ -49,7 +48,7 @@ local_paths <- setNames(
 )
 
 for (nm in names(files)) {
-  drv$download_file(files[[nm]], dest = local_paths[[nm]], overwrite = TRUE)
+  file.copy(sp_local(files[[nm]]), local_paths[[nm]], overwrite = TRUE)
 }
 
 # 2. Read the two reference sheets from MasterData.

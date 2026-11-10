@@ -9,4 +9,7 @@ _site/
 .Rproj.user/
 renv/library/
 renv/staging/
-.DS_Storels -la ~/.ssh
+.DS_Store
+_book/
+_freeze/
+data/.DS_Store

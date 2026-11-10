@@ -1,12 +1,5 @@
 ---
 title: "Taimede kasvu ja kahjustuste seire"
-lang: et
-bibliography: references.bib
-# csl: lisa siia oma ülikooli/juhendi nõutav .csl fail, kui vaikimisi
-#      autor-aasta stiil (Chicago author-date) ei sobi
-format:
-  docx: default
-  html: default
 ---
 
 <!--
@@ -74,7 +67,3 @@ bioloogilisi protsesse].
 | Vegetatiivne vs generatiivne kasv (*Silene alba*) | Rosetikõrgus ja õieroote pikkus eraldi viimasel mõõtmiskorral -- lubab lahutada kasvu- ja õitsemissignaali [@sunfrelich2011] | Üks koondnumber (kogukõrgus) -- oleks segunud kaks erineva päritoluga signaali |
 | Mõõtmistingimused | Vältida mõõtmist vahetult pärast vihma (märg/lonti vajunud taim) | Rangelt fikseeritud ajastus ilmastiku suhtes -- jäi pigem põhimõtteks, mitte formaalseks protokolliks |
 
-## Kasutatud kirjandus
-
-::: {#refs}
-:::
