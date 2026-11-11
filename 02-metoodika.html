@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="et" xml:lang="et"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.55">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>2&nbsp; Metoodika – [PEALKIRI]</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./03-tulemused.html" rel="next">
+<link href="./01-sissejuhatus.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<meta name="robots" content="noindex">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./02-metoodika.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Metoodika</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">[PEALKIRI]</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Annotatsioon</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-sissejuhatus.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Sissejuhatus</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-metoodika.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Metoodika</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-tulemused.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Tulemused</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-arutelu.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Arutelu</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-kokkuvote.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Kokkuvõte</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Kasutatud kirjandus</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Sisukord</h2>
+   
+  <ul>
+  <li><a href="#kogutud-andmed" id="toc-kogutud-andmed" class="nav-link active" data-scroll-target="#kogutud-andmed"><span class="header-section-number">2.1</span> Kogutud andmed</a></li>
+  <li><a href="#katseala" id="toc-katseala" class="nav-link" data-scroll-target="#katseala"><span class="header-section-number">2.2</span> Katseala</a></li>
+  <li><a href="#katse-disain" id="toc-katse-disain" class="nav-link" data-scroll-target="#katse-disain"><span class="header-section-number">2.3</span> Katse disain</a></li>
+  <li><a href="#välitööd-ja-proovide-kogumine" id="toc-välitööd-ja-proovide-kogumine" class="nav-link" data-scroll-target="#välitööd-ja-proovide-kogumine"><span class="header-section-number">2.4</span> Välitööd ja proovide kogumine</a></li>
+  <li><a href="#taimede-kasvu-ja-kahjustuste-seire" id="toc-taimede-kasvu-ja-kahjustuste-seire" class="nav-link" data-scroll-target="#taimede-kasvu-ja-kahjustuste-seire"><span class="header-section-number">2.5</span> Taimede kasvu ja kahjustuste seire</a>
+  <ul class="collapse">
+  <li><a href="#taimekõrguse-mõõtmine" id="toc-taimekõrguse-mõõtmine" class="nav-link" data-scroll-target="#taimekõrguse-mõõtmine"><span class="header-section-number">2.5.1</span> Taimekõrguse mõõtmine</a></li>
+  <li><a href="#kasvuvormist-tulenevad-piirangud-ja-täiendavad-mõõdikud" id="toc-kasvuvormist-tulenevad-piirangud-ja-täiendavad-mõõdikud" class="nav-link" data-scroll-target="#kasvuvormist-tulenevad-piirangud-ja-täiendavad-mõõdikud"><span class="header-section-number">2.5.2</span> Kasvuvormist tulenevad piirangud ja täiendavad mõõdikud</a></li>
+  <li><a href="#vegetatiivse-ja-generatiivse-kasvu-eristamine-silene-latifolia" id="toc-vegetatiivse-ja-generatiivse-kasvu-eristamine-silene-latifolia" class="nav-link" data-scroll-target="#vegetatiivse-ja-generatiivse-kasvu-eristamine-silene-latifolia"><span class="header-section-number">2.5.3</span> Vegetatiivse ja generatiivse kasvu eristamine (<em>Silene latifolia</em>)</a></li>
+  <li><a href="#metoodiliste-valikute-põhjendus-kokkuvõte" id="toc-metoodiliste-valikute-põhjendus-kokkuvõte" class="nav-link" data-scroll-target="#metoodiliste-valikute-põhjendus-kokkuvõte"><span class="header-section-number">2.5.4</span> Metoodiliste valikute põhjendus (kokkuvõte)</a></li>
+  </ul></li>
+  <li><a href="#kolonisatsiooni-mikroskoopia" id="toc-kolonisatsiooni-mikroskoopia" class="nav-link" data-scroll-target="#kolonisatsiooni-mikroskoopia"><span class="header-section-number">2.6</span> Kolonisatsiooni mikroskoopia</a></li>
+  <li><a href="#juure--ja-lehekännide-analüüs-fiji-ij_rhizo" id="toc-juure--ja-lehekännide-analüüs-fiji-ij_rhizo" class="nav-link" data-scroll-target="#juure--ja-lehekännide-analüüs-fiji-ij_rhizo"><span class="header-section-number">2.7</span> Juure- ja lehekännide analüüs (Fiji, IJ_Rhizo)</a></li>
+  <li><a href="#biomass" id="toc-biomass" class="nav-link" data-scroll-target="#biomass"><span class="header-section-number">2.8</span> Biomass</a></li>
+  <li><a href="#fungalrooti-kalibreerimine" id="toc-fungalrooti-kalibreerimine" class="nav-link" data-scroll-target="#fungalrooti-kalibreerimine"><span class="header-section-number">2.9</span> FungalRoot’i kalibreerimine</a></li>
+  <li><a href="#naabruskonna-kooslusmükoriissus-cwm" id="toc-naabruskonna-kooslusmükoriissus-cwm" class="nav-link" data-scroll-target="#naabruskonna-kooslusmükoriissus-cwm"><span class="header-section-number">2.10</span> Naabruskonna kooslusmükoriissus (CWM)</a></li>
+  <li><a href="#statistiline-analüüs" id="toc-statistiline-analüüs" class="nav-link" data-scroll-target="#statistiline-analüüs"><span class="header-section-number">2.11</span> Statistiline analüüs</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Metoodika</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<!--
+See fail on alapeatükkide põhi (skeleton): iga alapeatüki all on märksõnad,
+mitte valmis tekst. Taimekasvu/kahjustuste seire tekst on failis
+`_kasvunaitajad.qmd` ja kaasatakse alapeatükki "Taimede kasvu ja kahjustuste
+seire".
+
+Enne kirjutamist vaata üle docs/Claude_README.md ja CLAUDE.md -- eriti avatud
+küsimused (Dactylise ulatus, DNA/mullatoitained, Silene mükoriisastaatus).
+Ära lisa kinnitamata viiteid; kui viide on vaja, aga pole veel juhendajalt/
+Zoterost kinnitatud, jäta märge [VIIDE: ...].
+-->
+<section id="kogutud-andmed" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="kogutud-andmed"><span class="header-section-number">2.1</span> Kogutud andmed</h2>
+<p>Dactylis glomerata on kõige esinduslikemate andmetega. Leontodon on küllalt esinduslike andmetega.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> species_coverage</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># A tibble: 5 × 6</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  species              n_rings F_control F_severed G_control G_severed</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="sc">&lt;</span>chr<span class="sc">&gt;</span>                  <span class="er">&lt;</span>int<span class="sc">&gt;</span>     <span class="er">&lt;</span>int<span class="sc">&gt;</span>     <span class="er">&lt;</span>int<span class="sc">&gt;</span>     <span class="er">&lt;</span>int<span class="sc">&gt;</span>     <span class="er">&lt;</span>int<span class="sc">&gt;</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> Dactylis glomerata        <span class="dv">24</span>         <span class="dv">6</span>         <span class="dv">6</span>         <span class="dv">6</span>         <span class="dv">6</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> Leontodon hispidus        <span class="dv">20</span>         <span class="dv">5</span>         <span class="dv">5</span>         <span class="dv">5</span>         <span class="dv">5</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span> Silene latifolia          <span class="dv">16</span>         <span class="dv">4</span>         <span class="dv">1</span>         <span class="dv">6</span>         <span class="dv">5</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span> Achillea millefolium      <span class="dv">15</span>         <span class="dv">4</span>         <span class="dv">3</span>         <span class="dv">4</span>         <span class="dv">4</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span> Cichorium intybus         <span class="dv">13</span>         <span class="dv">2</span>         <span class="dv">4</span>         <span class="dv">3</span>         <span class="dv">4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>1. Funktsionaalsed tunnused</strong> 1. Mõõdetud tunnused kasvuperioodi jooksul: taime kõrgus, laius, lehe pikkus. 6 mõõtmist maist septembrini. Patogeeni- ja herbivoorikahjustuse %, 2. Biomass: juurte ja lehtede kaalud (kuivmass). Dactylise korral lisaks - leheskänn, - kuiv- ja märgmass, - juureskänn</p>
+<p>Analüüs Maapealne, maaalune, total ja root-shoot ratio. Mudel anova habitat*treatment</p>
+<p><strong>2. Kasvukoha omadused</strong> Iga katseringi kohta: - liigiline mitmekesisus ruudu meetodil (katvus, ohtrus), - liikide AMF kolonisatsioon (Fungal Root),</p>
+<p><strong>3. Katsetaimede juurte kolonisatsioon</strong> - Iga katseringi iga liigi kohta keskmine kolonisatsioon, eraldi vesiikulid, arbuskulid, hüüfid. - Iga 5 liigi kohta referentstaime keskmine kolonisatsioon (Cic ei ole kohalik, referents PlutoF) Ainult need millel on katvus - Dac, Ach, Leo. Sil ja Cic aint grassland. Analüüs - zero inflated</p>
+<p><strong>4. Lahtine, tegemata</strong> - juurte DNA analüüs (Dactylis), mulla toitainete analüüs</p>
+</section>
+<section id="katseala" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="katseala"><span class="header-section-number">2.2</span> Katseala</h2>
+<ul>
+<li><p>Asukoht: Eesti, ~58°N; hemiboreaalne vöönd.</p></li>
+<li><p>Kaks kasvukohta: mets (männi-/segamets) ja niit – lühike iseloomustus mõlemast (puistu/rohurinde tüüp, muldkate, varasem maakasutus, kui teada).</p></li>
+<li><p>Miks need kaks kasvukohta valitud (kontrast AMF-võrgustiku tiheduses/ koosseisus – vt FungalRoot’i esialgsed keskmised: mets ~21%, niit ~73%).</p></li>
+<li><p>Katseala paiknemine/kaart, rõngaste paigutuse loogika (juhuslikustamine vs olemasolev taimestik, min vahekaugus rõngaste vahel jne – kontrolli väliprotokollist).</p></li>
+<li><p>[VIIDE: ala kirjeldav kirjandus/kaardimaterjal, kui on]</p></li>
+</ul>
+</section>
+<section id="katse-disain" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="katse-disain"><span class="header-section-number">2.3</span> Katse disain</h2>
+<ul>
+<li>Rõngas kui katseüksus: d = 15 cm katserõngas 1 m² kvadraadi sees.</li>
+<li>Manipulatsioon: <strong>severed</strong> vs <strong>control</strong> (mitte “disturbance” – terminoloogia eeskuju [VIIDE: Dassen jt 2021, New Phytologist]).
+<ul>
+<li>Severed: rõnga perimeeter lõigatakse noaga läbi kord nädalas, et katkestada AMF-hüüfide ühendus rõnga ja ümbritseva koosluse vahel.</li>
+<li>Control: läbilõikamist ei tehta.</li>
+</ul></li>
+<li>12 rõngast kasvukoha kohta (pooled severed, pooled control) -&gt; kokku kasvukohtade arv x 12.</li>
+<li>Katseliigid (5, istutatud rõngastesse): <em>Achillea millefolium</em>, <em>Cichorium intybus</em>, <em>Dactylis glomerata</em>, <em>Leontodon hispidus</em>, <em>Silene latifolia</em>.
+<ul>
+<li><em>Solidago virgaurea</em> ei idanenud -&gt; katsest väljas, aga jääb species-viitetabelisse (selgita joonealuses/märkuses).</li>
+</ul></li>
+<li>Referentstaimed: loodusest kogutud samad liigid väljaspool katserõngaid, <code>treatment = "reference"</code>, pseudo-ring_id (<code>FREF</code>/<code>GREF</code>/<code>OREF</code>).
+<ul>
+<li>Miks eraldi: võrdlusbaas “looduslikule” kolonisatsioonitasemele; ei kuulu <code>habitat * treatment</code> mudelisse – põhjenda lühidalt.</li>
+</ul></li>
+<li>Kvadrati (1 m²) naabertaimestiku roll disainis: kvadrati keskmine naabruse-AM kui kontekst katserõnga taimele (seob kokku katse disaini ja põhihüpoteesi – vt “Statistiline analüüs”).</li>
+<li>Hierarhia: kasvukoht -&gt; rõngas -&gt; taim (katse ülesehituse joonis/skeem siia, kui on).</li>
+</ul>
+</section>
+<section id="välitööd-ja-proovide-kogumine" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="välitööd-ja-proovide-kogumine"><span class="header-section-number">2.4</span> Välitööd ja proovide kogumine</h2>
+<ul>
+<li>Ajakava: katse algus- ja lõppkuupäev, kestus, severingu sagedus (kord nädalas).</li>
+<li>Igakuised visiidid (Traits): mittedestruktiivne kasvu/kahjustuse seire – detailne metoodika alapeatükis “Taimede kasvu ja kahjustuste seire”, siin ainult visiitide arv/ajavahemik.</li>
+<li>Katse lõpp (saagikoristus): mis kogutakse, millises järjekorras (focal vs ülejäänud taimed, juured vs maapealne osa).</li>
+<li>Focal-taime määramine väljas: rõnga x liigi suurim/esimene taim; kui focal suri enne koristust, järgmine ellujäänud isend saab focal’iks – protokolli samm, mitte ainult andmetöötluse reegel.</li>
+<li>Proovide märgistamine ja transport (kiirkülmutus/kuivatus, kui kohaldub), mikroskoopia jaoks juurte fikseerimine/säilitamine.</li>
+<li>Kvadrati katvuse hindamine (koosluse struktuur, seotud DistNet_Quadrat andmestikuga) – millal ja kuidas mõõdeti.</li>
+</ul>
+</section>
+<section id="taimede-kasvu-ja-kahjustuste-seire" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="taimede-kasvu-ja-kahjustuste-seire"><span class="header-section-number">2.5</span> Taimede kasvu ja kahjustuste seire</h2>
+<p>Taimede funktsionaalsed tunnused määravad, kuidas üksikisendid heterogeenses keskkonnas toime tulevad. Funktsionaalsete tunnuste omavahelise kooskõla ja kompromisside tõttu on mõned tunnuskombinatsioonid teistest palju levinumad, nii maapealsete kui ka peenjuurte funktsionaalsete tunnuste puhul <span class="citation" data-cites="carmona2021">(<a href="references.html#ref-carmona2021" role="doc-biblioref">Carmona et al. 2021</a>)</span>.</p>
+<p>Katsetaimede kasvu jälgiti mittedestruktiivselt igakuiste mõõtmiskordadena kogu katseperioodi jooksul, alates [KUUPÄEV] kuni [KUUPÄEV] (kokku [N] mõõtmiskorda). Igal mõõtmiskorral hinnati taime kõrgust (cm), herbivoorset kahjustust (% lehepinnast) ja seenkahjustust (% lehepinnast). Katse lõpus koguti kõik katsetaimed täies mahus, eraldati juured ja maapealne osa, mis kuivatati ja kaaluti (kuivkaal, g) lõpliku biomassiproduktsiooni hindamiseks.</p>
+<section id="taimekõrguse-mõõtmine" class="level3" data-number="2.5.1">
+<h3 data-number="2.5.1" class="anchored" data-anchor-id="taimekõrguse-mõõtmine"><span class="header-section-number">2.5.1</span> Taimekõrguse mõõtmine</h3>
+<p>Taime kõrgust mõõdeti selle loomulikus, sirutamata kasvuasendis maapinnast, järgides [TORDONI VIIDE – vt märkus allpool] meetodit. Erinevalt levinud vegetatiivse kõrguse konventsioonist, mis jätab generatiivsed struktuurid (õisikud) arvestamata <span class="citation" data-cites="cornelissen2003">Pérez-Harguindeguy et al. (<a href="references.html#ref-perezharguindeguy2013" role="doc-biblioref">2013</a>)</span>, mõõdeti käesolevas katses taime kogukõrgus koos õieroostiga, kuna huviorbiidis oli taime tegelik positsioon koosluse valguskonkurentsis, mitte võrdlev struktuurne trait sensu globaalsed trait-andmebaasid <span class="citation" data-cites="gaudetkeddy1988">(vrd <a href="references.html#ref-gaudetkeddy1988" role="doc-biblioref">Gaudet ja Keddy 1988</a>)</span>.</p>
+<p>Kõrguse süstemaatilise moonutuse vältimiseks (vihmast märjad taimed, eriti pikelehised kõrrelised, kalduvad ajutiselt lonti vajuma) püüti mõõtmisi mitte teha vahetult pärast sademeid, mõõtes taimi alles pärast lehestiku kuivamist.</p>
+</section>
+<section id="kasvuvormist-tulenevad-piirangud-ja-täiendavad-mõõdikud" class="level3" data-number="2.5.2">
+<h3 data-number="2.5.2" class="anchored" data-anchor-id="kasvuvormist-tulenevad-piirangud-ja-täiendavad-mõõdikud"><span class="header-section-number">2.5.2</span> Kasvuvormist tulenevad piirangud ja täiendavad mõõdikud</h3>
+<p>Kõrgusmõõt kajastab liikide kasvuedu ebaühtlaselt: rosett-tüüpi liigid (nt <em>Leontodon</em> spp., <em>Achillea millefolium</em>) investeerivad kasvades pigem laiusesse kui kõrgusesse, mistõttu pelgalt kõrgusel põhinev mõõdik alahindab nende tegelikku kasvu. Selle piirangu osaliseks leevendamiseks mõõdeti alates [KUUPÄEV] igal taimel täiendavalt lehe maksimaalne pikkus (cm) ning katse viimasel mõõtmiskorral, vahetult enne saagikoristust, ka leheroseti diameeter (kaks ristuvat läbimõõtu, keskmistatuna). Viimase mõõtmiskorra mittedestruktiivsete näitajate (kõrgus, lehepikkus, roseti diameeter) võrdlemine tegeliku kuivkaaluga saagikoristusel võimaldab tagantjärele hinnata, milline mõõdik kajastab erineva kasvuvormiga liikide puhul kõige täpsemalt tegelikku biomassi.</p>
+</section>
+<section id="vegetatiivse-ja-generatiivse-kasvu-eristamine-silene-latifolia" class="level3" data-number="2.5.3">
+<h3 data-number="2.5.3" class="anchored" data-anchor-id="vegetatiivse-ja-generatiivse-kasvu-eristamine-silene-latifolia"><span class="header-section-number">2.5.3</span> Vegetatiivse ja generatiivse kasvu eristamine (<em>Silene latifolia</em>)</h3>
+<p>Liigil <em>Silene latifolia</em> kasvab õieroots vegetatiivsest rosetist selgelt eraldi ja moodustab suure osa taime kogupikkusest. Katse viimasel mõõtmiskorral mõõdeti seetõttu eraldi vegetatiivse rosetti kõrgus ja õieroote pikkus, et analüüsis oleks võimalik lahutada vegetatiivset kasvu reproduktiivsest investeeringust <span class="citation" data-cites="sunfrelich2011">(vrd <a href="references.html#ref-sunfrelich2011" role="doc-biblioref">Sun ja Frelich 2011</a>, kes näitasid, et õitsemise fenoloogia ja kõrguskasvu muster on omavahel seotud, kuid ei kajasta samu bioloogilisi protsesse)</span>.</p>
+</section>
+<section id="metoodiliste-valikute-põhjendus-kokkuvõte" class="level3" data-number="2.5.4">
+<h3 data-number="2.5.4" class="anchored" data-anchor-id="metoodiliste-valikute-põhjendus-kokkuvõte"><span class="header-section-number">2.5.4</span> Metoodiliste valikute põhjendus (kokkuvõte)</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Küsimus</th>
+<th>Valitud lahendus</th>
+<th>Kõrvale jäetud alternatiiv</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Kõrguse ulatus</td>
+<td>Kogukõrgus koos õieroostiga – konkurentsiökoloogia “canopy height” traditsioon <span class="citation" data-cites="gaudetkeddy1988">(<a href="references.html#ref-gaudetkeddy1988" role="doc-biblioref">Gaudet ja Keddy 1988</a>)</span>, kuna oluline on taime tegelik positsioon koosluse valguskonkurentsis</td>
+<td>Puhas vegetatiivne kõrgus <span class="citation" data-cites="perezharguindeguy2013">(<a href="references.html#ref-perezharguindeguy2013" role="doc-biblioref">Pérez-Harguindeguy et al. 2013</a>)</span> – sobiks liikideülese struktuurse traidi võrdluseks, aga mitte käesoleva küsimuse jaoks</td>
+</tr>
+<tr class="even">
+<td>Kasvumõõdik rosett-liikidel</td>
+<td>Kõrgusele lisaks lehe max pikkus (läbivalt) ja roseti diameeter (viimasel korral)</td>
+<td>Ainult kõrgus – oleks jätnud <em>Leontodon</em>/<em>Achillea</em> kasvu suuresti nähtamatuks</td>
+</tr>
+<tr class="odd">
+<td>Vegetatiivne vs generatiivne kasv (<em>Silene latifolia</em>)</td>
+<td>Rosetikõrgus ja õieroote pikkus eraldi viimasel mõõtmiskorral – lubab lahutada kasvu- ja õitsemissignaali <span class="citation" data-cites="sunfrelich2011">(<a href="references.html#ref-sunfrelich2011" role="doc-biblioref">Sun ja Frelich 2011</a>)</span></td>
+<td>Üks koondnumber (kogukõrgus) – oleks segunud kaks erineva päritoluga signaali</td>
+</tr>
+<tr class="even">
+<td>Mõõtmistingimused</td>
+<td>Vältida mõõtmist vahetult pärast vihma (märg/lonti vajunud taim)</td>
+<td>Rangelt fikseeritud ajastus ilmastiku suhtes – jäi pigem põhimõtteks, mitte formaalseks protokolliks</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="kolonisatsiooni-mikroskoopia" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="kolonisatsiooni-mikroskoopia"><span class="header-section-number">2.6</span> Kolonisatsiooni mikroskoopia</h2>
+<ul>
+<li>Meetod: McGonigle jt 1990 RLC% (root length colonization) – <span class="citation" data-cites="mcgonigle1990">(<a href="references.html#ref-mcgonigle1990" role="doc-biblioref">McGonigle et al. 1990</a>)</span>.</li>
+<li>Mõõdetavad kategooriad: arbuskulid (arb), vesiikulid (ves), hüüfid (hyp), mitte-AMF struktuurid (noamf), kokku (total).</li>
+<li>Valim: 1 isend liigi kohta rõngas (focal); ülejäänud taimi mikroskoopiliselt ei hinnata (erinevus biomassi/kasvu keskmistamisest – selgita).</li>
+<li>Juurte ettevalmistus enne vaatlust (puhastus, värvimine – protokolli sammud, kemikaalid, kontsentratsioonid, inkubatsiooniajad).</li>
+<li>Hindamismetoodika praktikas: ristumispunktide loendamise meetod (magnification, vaatlusvälju rõnga kohta jne).</li>
+<li>Andmestiku struktuur: leht <code>Colonization_26</code>, veerud A:J sisend (loendusandmed), K+ arvutuslikud (RLC% valemid) – kirjelda valem(id).</li>
+<li>Liitmisvõti <code>plant_id</code>.</li>
+</ul>
+</section>
+<section id="juure--ja-lehekännide-analüüs-fiji-ij_rhizo" class="level2" data-number="2.7">
+<h2 data-number="2.7" class="anchored" data-anchor-id="juure--ja-lehekännide-analüüs-fiji-ij_rhizo"><span class="header-section-number">2.7</span> Juure- ja lehekännide analüüs (Fiji, IJ_Rhizo)</h2>
+<ul>
+<li>Fookus: <em>Dactylis glomerata</em> (focal puudub, kõik taimed <code>-2</code> real – analüüsitakse ainult keskmist).</li>
+<li>Skannimine: millise skanneriga/resolutsiooniga lehed ja juured skannitud (protokolli detailid vaja lisada).</li>
+<li>Lehepindala: Fiji (Mac) – Threshold + Analyze Particles töövoog, mõõdetav suurus (cm²), kalibratsioon (skaala/px-&gt;cm).</li>
+<li>Juured: Fiji plugin IJ_Rhizo [VIIDE: Pierret jt 2013] – mõõdetavad näitajad (juurepikkus, -pindala, -ruumala, -läbimõõdu jaotus jne, vastavalt sellele, mida IJ_Rhizo väljastab ja mida analüüsis kasutatakse).</li>
+<li>Põhjendus, miks WinRHIZO ja RhizoVision kõne alla ei tulnud (lühidalt – nt kättesaadavus, litsents, ühilduvus).</li>
+<li>Värske- ja kuivmassi mõõtmine (kaal, kuivatustingimused – temp/kestus).</li>
+<li>Seos juurte DNA-analüüsiga (juured kogutud, ootavad analüüsi – otsustamata, kas DNA ja mullatoitained tehakse – märgi lahtise küsimusena).</li>
+</ul>
+</section>
+<section id="biomass" class="level2" data-number="2.8">
+<h2 data-number="2.8" class="anchored" data-anchor-id="biomass"><span class="header-section-number">2.8</span> Biomass</h2>
+<ul>
+<li>Andmeallikas: <code>DistNet_Biomass.xlsx</code>, kuivkaalud (g).</li>
+<li>Struktuur: <code>-1</code> = focal taim, <code>-2</code> = ülejäänud taimed liigi/rõnga kohta koos (koondrida).</li>
+<li>Liitmisvõti: <strong><code>ring_id + species + focal</code></strong>, mitte <code>plant_id</code> – põhjenda lühidalt (miks plant_id ei sobi koondridade puhul).</li>
+<li>Koondridade (<code>-2</code>) kaalu jagamine <code>n_plants</code>-iga ning kasutamine mudelis <code>weights = n_plants</code> – kirjelda, kuidas see bioloogiliselt põhjendatud on (keskmine taimekohane kuivkaal vs koguv kaal).</li>
+<li>Kuivatusprotokoll (temperatuur, kestus) enne kaalumist.</li>
+<li>Surnud/eemaldatud taimede käsitlus: ei kustutata (<code>status</code>: alive/dead/missing/removed) – mõju biomassi keskmistesse.</li>
+</ul>
+</section>
+<section id="fungalrooti-kalibreerimine" class="level2" data-number="2.9">
+<h2 data-number="2.9" class="anchored" data-anchor-id="fungalrooti-kalibreerimine"><span class="header-section-number">2.9</span> FungalRoot’i kalibreerimine</h2>
+<ul>
+<li>Eesmärk: taustkalibreering/võrdlusraamistik, <strong>mitte iseseisev tulemus</strong> – selgita, milleks seda mudelis/tõlgenduses kasutatakse.</li>
+<li>Kasutusel ainult McGonigle 1990 RLC% kirjed (ühtlustamaks oma mikroskoopia meetodiga).</li>
+<li>Kategooriate vastendus: “forest” = temperate coniferous + broadleaf, “grassland” = temperate grassland – põhjenda vastendust lühidalt.</li>
+<li>Fallback-loogika (3 taset):
+<ol type="1">
+<li>habitat-spetsiifiline kirje liigi kohta,</li>
+<li>sama liik mis tahes biomis (kui habitat-spetsiifilist pole),</li>
+<li>käsitsi override.</li>
+</ol></li>
+<li>Käsitsi parandused tehakse R-koodis (mitte Excelis), päritolu märgitakse <code>data_source</code> veerus (<code>dplyr::rows_upsert()</code>).</li>
+<li>Liigid, mille oma mikroskoopia alles pooleli (ajutine FungalRoot-põhine väärtus): <em>Carex disticha</em>, <em>Helictotrichon pratensis</em>, <em>Artemisia campestris</em>, <em>Pulsatilla pratensis</em>.</li>
+<li>Andmeallikas: <code>data/raw/FungalRoot/</code> (lokaalsed CSV-d, liiginime järgi liidetud).</li>
+<li>Esialgsed/kalibreerimisel saadud keskmised (nt mets ~21%, niit ~73%) – tabel/joonis kalibreerimistulemustest.</li>
+<li><em>Silene latifolia</em> erijuht: species-tabelis märgitud FM (arbuskulaarne-mükoriisne), kuid kirjanduse järgi tavaliselt NM (mitte-mükoriisne) – lahtine küsimus, mida juhendajaga arutada; kirjelda, kuidas see analüüsis praegu käsitletud on (ja kuidas see mõjutab tõlgendust, kui staatus osutub valeks).</li>
+</ul>
+</section>
+<section id="naabruskonna-kooslusmükoriissus-cwm" class="level2" data-number="2.10">
+<h2 data-number="2.10" class="anchored" data-anchor-id="naabruskonna-kooslusmükoriissus-cwm"><span class="header-section-number">2.10</span> Naabruskonna kooslusmükoriissus (CWM)</h2>
+<ul>
+<li><p>Mõiste: kooslusmükoriissuse indeks – liikide mükoriisatunnuse koosluse keskmine, kaalutud liikide ohtrusega <span class="citation" data-cites="gerz2016">(<a href="references.html#ref-gerz2016" role="doc-biblioref">Gerz et al. 2016</a>)</span>.</p></li>
+<li><p>Erinevus allikast: Gerz jt kasutasid mükoriisastaatust; siin on tunnuseks liigi AM-kolonisatsiooni intensiivsus (McGonigle RLC%, FungalRoot’i kalibreeringust) ja kaaluks katvus kvadraadis – põhjenda lühidalt.</p></li>
+<li><p>Valem rõnga <span class="math inline">\(j\)</span> kvadraadi kohta:</p>
+<p><span class="math display">\[
+\mathrm{CWM}_j = \frac{\sum_i c_{ij} \, \mathrm{AM}_i}{\sum_i c_{ij}}
+\]</span></p>
+<p>kus <span class="math inline">\(c_{ij}\)</span> on liigi <span class="math inline">\(i\)</span> katvus (%) kvadraadis <span class="math inline">\(j\)</span> ja <span class="math inline">\(\mathrm{AM}_i\)</span> liigi AM-intensiivsus (%). Summeeritakse üle liikide, mille keskmine katvus kasvukoha 12 kvadraadis ületab lävendi.</p></li>
+<li><p>Katvuse lävend: juhuslike, kohale mitteomaste liikide väljajätmine – väärtus lahtine (0.8 / 0.5), vt docs/markmed.md.</p></li>
+<li><p><code>cover_share</code> = lävendi ületanud liikide katvus / kõigi liikide katvus kvadraadis – piiranguna: metsas 0.50–0.98, niidul 0.93–0.99.</p></li>
+<li><p>Arvutus: <code>R/CWM.R</code> (mitte Exceli CWM-leht).</p></li>
+</ul>
+</section>
+<section id="statistiline-analüüs" class="level2" data-number="2.11">
+<h2 data-number="2.11" class="anchored" data-anchor-id="statistiline-analüüs"><span class="header-section-number">2.11</span> Statistiline analüüs</h2>
+<ul>
+<li>Analüüsiüksus ja hierarhia: kasvukoht -&gt; rõngas -&gt; taim.</li>
+<li>Mixed model loogika: rõngas kui random effect (põhjenda, miks pseudo- replikatsiooni vältimiseks vajalik, kui rõnga sees on mitu taime/mõõtmist).</li>
+<li>Praegune baasmudel (piloot, <strong>WIP, kindlasti täienema</strong>): <code>lm(log_total ~ habitat * treatment + species, data = colonization)</code>, n = 44, R² = 0,60 – selgita, mida see praegu näitab ja mida see veel ei arvesta (random effect puudub, põhihüpotees puudub).</li>
+<li>Log-teisenduse põhjendus (<code>log_total</code>) – jaotuse kuju, heteroskedastsus vms.</li>
+<li><strong>Põhihüpotees (veel realiseerimata):</strong> kvadrati keskmine naabruse-AM pideva prediktorina + interaktsioon <code>treatment * quadrat_mean_AM</code> – kirjelda ootust/suunda (nt kas severing peaks nõrgestama naabruse-AM mõju).</li>
+<li>Kaalude kasutamine koondridade puhul (<code>weights = n_plants</code>) – vt “Biomass”.</li>
+<li>Referentstaimede (<code>treatment = "reference"</code>) koht analüüsis: kirjeldav võrdlus, mitte osa peamudelist.</li>
+<li>Mudeli diagnostika/eelduste kontroll (jäägid, kollineaarsus liik x habitat x treatment kombinatsioonides, kui valim on väike – n = 44 on väike paljude interaktsioonide jaoks, arutada piiranguna).</li>
+<li>Tarkvara/paketid (R versioon, <code>lme4</code>/<code>nlme</code> vms, kui valitud).</li>
+</ul>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-carmona2021" class="csl-entry" role="listitem">
+Carmona, Carlos P., C. Guillermo Bueno, Aurele Toussaint, Sabrina Träger, Sandra Díaz, Mari Moora, Alison D. Munson, Meelis Pärtel, Martin Zobel, ja Riin Tamme. 2021. <span>„Fine-root traits in the global spectrum of plant form and function“</span>. <em>Nature</em> 597 (7878): 683–87. <a href="https://doi.org/10.1038/s41586-021-03871-y">https://doi.org/10.1038/s41586-021-03871-y</a>.
+</div>
+<div id="ref-cornelissen2003" class="csl-entry" role="listitem">
+Cornelissen, J. H. C., S. Lavorel, E. Garnier, S. Díaz, N. Buchmann, D. E. Gurvich, P. B. Reich, et al. 2003. <span>„A handbook of protocols for standardised and easy measurement of plant functional traits worldwide“</span>. <em>Australian Journal of Botany</em> 51: 335–80. <a href="https://doi.org/10.1071/BT02124">https://doi.org/10.1071/BT02124</a>.
+</div>
+<div id="ref-gaudetkeddy1988" class="csl-entry" role="listitem">
+Gaudet, C. L., ja P. A. Keddy. 1988. <span>„A comparative approach to predicting competitive ability from plant traits“</span>. <em>Nature</em> 334: 242–43. <a href="https://doi.org/10.1038/334242a0">https://doi.org/10.1038/334242a0</a>.
+</div>
+<div id="ref-gerz2016" class="csl-entry" role="listitem">
+Gerz, Maret, C. Guillermo Bueno, Martin Zobel, ja Mari Moora. 2016. <span>„Plant community mycorrhization in temperate forests and grasslands: relations with edaphic properties and plant diversity“</span>. <em>Journal of Vegetation Science</em> 27 (1): 89–99. <a href="https://doi.org/10.1111/jvs.12338">https://doi.org/10.1111/jvs.12338</a>.
+</div>
+<div id="ref-mcgonigle1990" class="csl-entry" role="listitem">
+McGonigle, T. P., M. H. Miller, D. G. Evans, G. L. Fairchild, ja J. A. Swan. 1990. <span>„A new method which gives an objective measure of colonization of roots by vesicular-arbuscular mycorrhizal fungi“</span>. <em>New Phytologist</em> 115 (3): 495–501. <a href="https://doi.org/10.1111/j.1469-8137.1990.tb00476.x">https://doi.org/10.1111/j.1469-8137.1990.tb00476.x</a>.
+</div>
+<div id="ref-perezharguindeguy2013" class="csl-entry" role="listitem">
+Pérez-Harguindeguy, N., S. Díaz, E. Garnier, S. Lavorel, H. Poorter, P. Jaureguiberry, C. Urcelay, et al. 2013. <span>„New handbook for standardised measurement of plant functional traits worldwide“</span>. <em>Australian Journal of Botany</em> 61: 167–234. <a href="https://doi.org/10.1071/BT12225">https://doi.org/10.1071/BT12225</a>.
+</div>
+<div id="ref-sunfrelich2011" class="csl-entry" role="listitem">
+Sun, S., ja L. E. Frelich. 2011. <span>„Flowering phenology and height growth pattern are associated with maximum plant height, relative growth rate and stem tissue mass density in herbaceous grassland species“</span>. <em>Journal of Ecology</em> 99: 991–1000. <a href="https://doi.org/10.1111/j.1365-2745.2011.01830.x">https://doi.org/10.1111/j.1365-2745.2011.01830.x</a>.
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./01-sissejuhatus.html" class="pagination-link" aria-label="Sissejuhatus">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Sissejuhatus</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./03-tulemused.html" class="pagination-link" aria-label="Tulemused">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Tulemused</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
