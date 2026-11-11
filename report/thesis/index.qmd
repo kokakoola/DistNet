@@ -1,3 +1,15 @@
-# Sissejuhatus {.unnumbered}
+# Annotatsioon {.unnumbered}
 
-<!-- Sissejuhatus: uurimisküsimus, hüpoteesid, töö eesmärk. -->
+<!--
+Tiitelleht tuleb _quarto.yml-i book-metaandmetest (pealkiri, autor, kuupäev).
+Ülikooli nõutavad tiitellehe väljad (juhendaja, instituut, õppekava) lisada
+pärast vorminõuete kontrolli.
+-->
+
+**Annotatsioon**
+
+<!-- Eestikeelne annotatsioon: eesmärk, meetod, peamised tulemused, märksõnad. -->
+
+**Abstract**
+
+<!-- English abstract: aim, methods, main results, keywords. -->

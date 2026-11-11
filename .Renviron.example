@@ -1,4 +1,6 @@
 SHAREPOINT_SITE=your-site-name
-SHAREPOINT_PATH_COLONIZATION=path/to/colonization.xlsx
-SHAREPOINT_PATH_QUADRAT=path/to/quadrat.xlsx
-SHAREPOINT_PATH_TRAITS=path/to/traits.xlsx
+SHAREPOINT_LOCAL=/Users/you/Library/CloudStorage/OneDrive-SharedLibraries-YourOrg/your-library
+SHAREPOINT_PATH_MASTER=RawData/Fieldwork/master.xlsx
+SHAREPOINT_PATH_COLONIZATION=RawData/Fieldwork/colonization.xlsx
+SHAREPOINT_PATH_QUADRAT=RawData/Fieldwork/quadrat.xlsx
+SHAREPOINT_PATH_TRAITS=RawData/Fieldwork/traits.xlsx

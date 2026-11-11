@@ -4,6 +4,13 @@ Mare magistritöö kooslusökoloogias: arbuskulaarse mükoriisa (AMF) võrgustik
 Kõik projektiülesed otsused ja detailid on failis `docs/Claude_README.md`. Loe see läbi enne,
 kui muudad andmetorustikku, andmestruktuuri või metoodika teksti.
 
+**Dokumentatsiooni hooldus (Claude teeb ise, ilma küsimata):** kui sessioonis muutub
+andmetorustik, failistruktuur, töövoog või Mare teeb projektiotsuse, uuenda samas sessioonis
+vastavat jaotist failides `docs/Claude_README.md` ja/või `CLAUDE.md`. Lahtised küsimused ja
+tööjärjekord lähevad faili `docs/markmed.md`. Desktop-äpist tulevad ülesanded on failis
+`docs/handoff.md`; tehtud punktid märgi `[x]`. Ära muuda Mare otsuseid ega sisulisi kirjeldusi
+omal algatusel — kui README sisu tundub vananenud, küsi.
+
 ## Keel ja stiil
 - Lõputöö tekst on **eesti keeles** (ülikooli nõue).
 - R-koodi kommentaarid on **inglise keeles**, alati.
@@ -80,22 +87,24 @@ DistNet/
 ├── R/analyze.R
 ├── data/{raw,processed}/   # gitignore'itud
 ├── report/
-│   ├── thesis/      # Quarto book: _quarto.yml, index.qmd, peatükid, references.qmd
-│   └── blog/         # Quarto website → GitHub Pages (eraldi projekt)
+│   ├── thesis/      # Quarto book: index.qmd (annotatsioon), 01–05 peatükid, _kasvunaitajad.qmd (include), references.qmd
+│   └── blog/         # vana Quarto blogi, enam ei peeta ega avaldata (11.11.2026)
 ├── figures/
 ├── docs/Claude_README.md
 └── .here             # vajalik juurkaustas, ära kustuta
 ```
 - Failiteed kirjuta alati kujul `here::here(...)`, ära kasuta suhtelisi teid.
 - Uue paketi lisamise järel käivita `renv::snapshot()`.
-- `git push` (main) ja `quarto publish gh-pages` on eraldi sammud.
+- `./publish.sh` renderdab lõputöö (HTML + docx), push'ib `main`-i ja avaldab lõputöö HTML-i
+  GitHub Pages'i (gh-pages, asendas blogi). Lisaks kopeerib docx-i `upload_review()`-ga
+  SharePointi `Docs/Review/` uue versioonina (üle ei kirjuta). Commit'i ei tee — commit'i enne ise.
 
 ## Lõputöö kirjutamine
 - Lõputöö on Quartos, iga peatükk eraldi `.qmd` failina. Viited on `references.bib` failis
   (Zotero + Better BibTeX), tekstis kujul `[@key]`.
 - Juhendaja jaoks renderda `quarto render --to docx` (vormingu annab `reference-doc`). Juhendaja
   kommenteerib Word Online'is. Kommentaarid kantakse käsitsi tagasi `.qmd` faili.
-- Juba olemas: `meetodid_kasvunaitajad.qmd` (Traits'i metoodika).
+- Juba olemas: `_kasvunaitajad.qmd` (Traits'i metoodika, kaasatud `02-metoodika.qmd` alapeatükki).
 - **Ära kasuta lõplikus tekstis kinnitamata viiteid.** Näiteks `tordoniXXXX` on platseholder,
   viide on alles juhendajalt saamata.
 

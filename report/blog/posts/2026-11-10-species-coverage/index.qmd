@@ -1,0 +1,31 @@
+---
+title: "Andmete kogumise tulemused"
+date: 2026-11-10
+---
+
+### Kasvukohtade mükoriissus
+Muutused Quadrat analüüsi: Elupaikade eristamist pole vaja. Kõik liigid on mikroskoobitud või andmed artiklitest leitud (fail: DistNet_Quadrat.xlsx). 
+
+```r
+> habitat_means
+# A tibble: 2 × 3
+  habitat_class mean_am n_species
+  <chr>           <dbl>     <int>
+1 forest           20.03         8
+2 grassland        68.36        22
+```
+
+### Liikide kaetus katses
+Läbivalt igas ringis on ainult Dactylis. Leontodon on aga peaaegu sama hea: puudu on 4 ringi ja kõik neli katselahtrit on ühtlaselt esindatud.
+
+```r
+> species_coverage
+# A tibble: 5 × 6
+  species              n_rings F_control F_severed G_control G_severed
+  <chr>                  <int>     <int>     <int>     <int>     <int>
+1 Dactylis glomerata        24         6         6         6         6
+2 Leontodon hispidus        20         5         5         5         5
+3 Silene latifolia          16         4         1         6         5
+4 Achillea millefolium      15         4         3         4         4
+5 Cichorium intybus         13         2         4         3         4
+```

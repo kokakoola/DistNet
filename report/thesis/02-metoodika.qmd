@@ -4,9 +4,9 @@ title: "Metoodika"
 
 <!--
 See fail on alapeatükkide põhi (skeleton): iga alapeatüki all on märksõnad,
-mitte valmis tekst. Taimekasvu/kahjustuste seire metoodika on eraldi failis
-`meetodid_kasvunaitajad.qmd` -- siin seda ei korrata, vaid viidatakse sellele
-sobivas kohas (nt välitööde all).
+mitte valmis tekst. Taimekasvu/kahjustuste seire tekst on failis
+`_kasvunaitajad.qmd` ja kaasatakse alapeatükki "Taimede kasvu ja kahjustuste
+seire".
 
 Enne kirjutamist vaata üle docs/Claude_README.md ja CLAUDE.md -- eriti avatud
 küsimused (Dactylise ulatus, DNA/mullatoitained, Silene mükoriisastaatus).
@@ -14,9 +14,13 @@ küsimused (Dactylise ulatus, DNA/mullatoitained, Silene mükoriisastaatus).
 Zoterost kinnitatud, jäta märge [VIIDE: ...].
 -->
 
+## Kogutud andmed 
+{{< include _skeleton.qmd >}} 
+
 ## Katseala
 
 - Asukoht: Eesti, ~58°N; hemiboreaalne vöönd.
+
 - Kaks kasvukohta: mets (männi-/segamets) ja niit -- lühike iseloomustus
   mõlemast (puistu/rohurinde tüüp, muldkate, varasem maakasutus, kui teada).
 - Miks need kaks kasvukohta valitud (kontrast AMF-võrgustiku tiheduses/
@@ -56,8 +60,8 @@ Zoterost kinnitatud, jäta märge [VIIDE: ...].
 - Ajakava: katse algus- ja lõppkuupäev, kestus, severingu sagedus (kord
   nädalas).
 - Igakuised visiidid (Traits): mittedestruktiivne kasvu/kahjustuse seire --
-  detailne metoodika on failis `meetodid_kasvunaitajad.qmd`, siin ainult
-  viide + visiitide arv/ajavahemik.
+  detailne metoodika alapeatükis "Taimede kasvu ja kahjustuste seire", siin
+  ainult visiitide arv/ajavahemik.
 - Katse lõpp (saagikoristus): mis kogutakse, millises järjekorras
   (focal vs ülejäänud taimed, juured vs maapealne osa).
 - Focal-taime määramine väljas: rõnga x liigi suurim/esimene taim; kui
@@ -68,10 +72,14 @@ Zoterost kinnitatud, jäta märge [VIIDE: ...].
 - Kvadrati katvuse hindamine (koosluse struktuur, seotud DistNet_Quadrat
   andmestikuga) -- millal ja kuidas mõõdeti.
 
+## Taimede kasvu ja kahjustuste seire
+
+{{< include _kasvunaitajad.qmd >}}
+
 ## Kolonisatsiooni mikroskoopia
 
 - Meetod: McGonigle jt 1990 RLC% (root length colonization) --
-  [VIIDE: McGonigle, Miller, Evans, Fairchild & Swan 1990, New Phytologist].
+  [@mcgonigle1990].
 - Mõõdetavad kategooriad: arbuskulid (arb), vesiikulid (ves), hüüfid (hyp),
   mitte-AMF struktuurid (noamf), kokku (total).
 - Valim: 1 isend liigi kohta rõngas (focal); ülejäänud taimi mikroskoopiliselt
@@ -141,6 +149,28 @@ Zoterost kinnitatud, jäta märge [VIIDE: ...].
   (mitte-mükoriisne) -- lahtine küsimus, mida juhendajaga arutada; kirjelda,
   kuidas see analüüsis praegu käsitletud on (ja kuidas see mõjutab
   tõlgendust, kui staatus osutub valeks).
+
+## Naabruskonna kooslusmükoriissus (CWM)
+
+- Mõiste: kooslusmükoriissuse indeks -- liikide mükoriisatunnuse
+  koosluse keskmine, kaalutud liikide ohtrusega [@gerz2016].
+- Erinevus allikast: Gerz jt kasutasid mükoriisastaatust; siin on tunnuseks
+  liigi AM-kolonisatsiooni intensiivsus (McGonigle RLC%, FungalRoot'i
+  kalibreeringust) ja kaaluks katvus kvadraadis -- põhjenda lühidalt.
+- Valem rõnga $j$ kvadraadi kohta:
+
+  $$
+  \mathrm{CWM}_j = \frac{\sum_i c_{ij} \, \mathrm{AM}_i}{\sum_i c_{ij}}
+  $$
+
+  kus $c_{ij}$ on liigi $i$ katvus (%) kvadraadis $j$ ja $\mathrm{AM}_i$ liigi
+  AM-intensiivsus (%). Summeeritakse üle liikide, mille keskmine katvus
+  kasvukoha 12 kvadraadis ületab lävendi.
+- Katvuse lävend: juhuslike, kohale mitteomaste liikide väljajätmine --
+  väärtus lahtine (0.8 / 0.5), vt docs/markmed.md.
+- `cover_share` = lävendi ületanud liikide katvus / kõigi liikide katvus
+  kvadraadis -- piiranguna: metsas 0.50--0.98, niidul 0.93--0.99.
+- Arvutus: `R/CWM.R` (mitte Exceli CWM-leht).
 
 ## Statistiline analüüs
 

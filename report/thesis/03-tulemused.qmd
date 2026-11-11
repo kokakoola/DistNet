@@ -1,0 +1,10 @@
+# Tulemused
+
+<!--
+Märksõnad (mitte valmis tekst):
+- CWM ja naabruskond: naabruse kooslusmükoriissus kasvukohtades ja töötlustes
+  (habitat x treatment), lävendi ületanud liikide katvuse osakaal (cover_share).
+- Kolonisatsioon: RLC% (arb/ves/hyp/total), habitat x treatment, CWM kovariaadina.
+- Biomass ja kasv: kuivmass (focal vs koondread, weights = n_plants), Traits'i aegread.
+- Dactylise lisaanalüüsid: juure- ja lehekännid (Fiji, IJ_Rhizo), värske- ja kuivmass.
+-->

@@ -1,0 +1,36 @@
+Dactylis glomerata on kõige esinduslikemate andmetega. Leontodon on küllalt esinduslike andmetega.
+
+```r
+> species_coverage
+# A tibble: 5 × 6
+  species              n_rings F_control F_severed G_control G_severed
+  <chr>                  <int>     <int>     <int>     <int>     <int>
+1 Dactylis glomerata        24         6         6         6         6
+2 Leontodon hispidus        20         5         5         5         5
+3 Silene latifolia          16         4         1         6         5
+4 Achillea millefolium      15         4         3         4         4
+5 Cichorium intybus         13         2         4         3         4
+```
+**1. Funktsionaalsed tunnused**
+    1. Mõõdetud tunnused kasvuperioodi jooksul: taime kõrgus, laius, lehe pikkus. 6 mõõtmist maist septembrini. Patogeeni- ja herbivoorikahjustuse %,
+    2. Biomass: juurte ja lehtede kaalud (kuivmass). Dactylise korral lisaks 
+- leheskänn, 
+- kuiv- ja märgmass, 
+- juureskänn
+
+Analüüs Maapealne, maaalune, total ja root-shoot ratio. Mudel anova habitat*treatment
+
+**2. Kasvukoha omadused**
+Iga katseringi kohta:
+- liigiline mitmekesisus ruudu meetodil (katvus, ohtrus), 
+- liikide AMF kolonisatsioon (Fungal Root),
+
+**3. Katsetaimede juurte kolonisatsioon**
+- Iga katseringi iga liigi kohta keskmine kolonisatsioon, eraldi vesiikulid, arbuskulid, hüüfid. 
+- Iga 5 liigi kohta referentstaime keskmine kolonisatsioon (Cic ei ole kohalik, referents PlutoF)
+Ainult need millel on katvus - Dac, Ach, Leo. Sil ja Cic aint grassland.
+Analüüs - zero inflated
+
+**4. Lahtine, tegemata** 
+- juurte DNA analüüs (Dactylis), mulla toitainete analüüs
+

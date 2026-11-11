@@ -10,11 +10,15 @@ book:
   date-format: "D. MMMM YYYY"
   chapters:
     - index.qmd
-    - metoodika.qmd
-    - meetodid_kasvunaitajad.qmd
+    - 01-sissejuhatus.qmd
+    - 02-metoodika.qmd
+    - 03-tulemused.qmd
+    - 04-arutelu.qmd
+    - 05-kokkuvote.qmd
     - references.qmd
 
 lang: et
+toc-title: Sisukord
 bibliography: references.bib
 # csl: <ülikooli nõutav .csl fail>  # vaikimisi Chicago author-date
 
@@ -33,6 +37,8 @@ execute:
 format:
   html:
     toc: true
+    include-in-header:
+      text: <meta name="robots" content="noindex">
   docx:
     toc: true
     number-sections: true

@@ -13,3 +13,4 @@ renv/staging/
 _book/
 _freeze/
 data/.DS_Store
+review/

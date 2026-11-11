@@ -1,14 +1,8 @@
----
-title: "Taimede kasvu ja kahjustuste seire"
----
-
-<!--
-Märkus: kui lisad selle peatükiks oma Quarto-raamatusse/-töösse, eemalda
-ülalolev YAML-plokk (või jäta ainult see, mida sinu _quarto.yml juba ei
-määra) ja veendu, et `bibliography: references.bib` viitaks õigele
-suhtelisele teele ning et sinu projekti üldine .bib-fail sisaldaks neid
-kirjeid (või ühenda references.bib oma põhi-bib-failiga).
--->
+Taimede funktsionaalsed tunnused määravad, kuidas üksikisendid heterogeenses
+keskkonnas toime tulevad. Funktsionaalsete tunnuste omavahelise kooskõla ja
+kompromisside tõttu on mõned tunnuskombinatsioonid teistest palju levinumad,
+nii maapealsete kui ka peenjuurte funktsionaalsete tunnuste puhul
+[@carmona2021].
 
 Katsetaimede kasvu jälgiti mittedestruktiivselt igakuiste mõõtmiskordadena
 kogu katseperioodi jooksul, alates [KUUPÄEV] kuni [KUUPÄEV] (kokku [N]
@@ -18,7 +12,7 @@ koguti kõik katsetaimed täies mahus, eraldati juured ja maapealne osa, mis
 kuivatati ja kaaluti (kuivkaal, g) lõpliku biomassiproduktsiooni
 hindamiseks.
 
-## Taimekõrguse mõõtmine
+### Taimekõrguse mõõtmine
 
 Taime kõrgust mõõdeti selle loomulikus, sirutamata kasvuasendis maapinnast,
 järgides [TORDONI VIIDE -- vt märkus allpool] meetodit. Erinevalt levinud
@@ -34,7 +28,7 @@ pikelehised kõrrelised, kalduvad ajutiselt lonti vajuma) püüti mõõtmisi mit
 teha vahetult pärast sademeid, mõõtes taimi alles pärast lehestiku
 kuivamist.
 
-## Kasvuvormist tulenevad piirangud ja täiendavad mõõdikud
+### Kasvuvormist tulenevad piirangud ja täiendavad mõõdikud
 
 Kõrgusmõõt kajastab liikide kasvuedu ebaühtlaselt: rosett-tüüpi liigid (nt
 *Leontodon* spp., *Achillea millefolium*) investeerivad kasvades pigem
@@ -48,9 +42,9 @@ diameeter) võrdlemine tegeliku kuivkaaluga saagikoristusel võimaldab
 tagantjärele hinnata, milline mõõdik kajastab erineva kasvuvormiga liikide
 puhul kõige täpsemalt tegelikku biomassi.
 
-## Vegetatiivse ja generatiivse kasvu eristamine (*Silene alba*)
+### Vegetatiivse ja generatiivse kasvu eristamine (*Silene latifolia*)
 
-Liigil *Silene alba* kasvab õieroots vegetatiivsest rosetist selgelt eraldi
+Liigil *Silene latifolia* kasvab õieroots vegetatiivsest rosetist selgelt eraldi
 ja moodustab suure osa taime kogupikkusest. Katse viimasel mõõtmiskorral
 mõõdeti seetõttu eraldi vegetatiivse rosetti kõrgus ja õieroote pikkus, et
 analüüsis oleks võimalik lahutada vegetatiivset kasvu reproduktiivsest
@@ -58,12 +52,12 @@ investeeringust [vrd @sunfrelich2011, kes näitasid, et õitsemise
 fenoloogia ja kõrguskasvu muster on omavahel seotud, kuid ei kajasta samu
 bioloogilisi protsesse].
 
-## Metoodiliste valikute põhjendus (kokkuvõte)
+### Metoodiliste valikute põhjendus (kokkuvõte)
 
 | Küsimus | Valitud lahendus | Kõrvale jäetud alternatiiv |
 |---|---|---|
 | Kõrguse ulatus | Kogukõrgus koos õieroostiga -- konkurentsiökoloogia "canopy height" traditsioon [@gaudetkeddy1988], kuna oluline on taime tegelik positsioon koosluse valguskonkurentsis | Puhas vegetatiivne kõrgus [@perezharguindeguy2013] -- sobiks liikideülese struktuurse traidi võrdluseks, aga mitte käesoleva küsimuse jaoks |
 | Kasvumõõdik rosett-liikidel | Kõrgusele lisaks lehe max pikkus (läbivalt) ja roseti diameeter (viimasel korral) | Ainult kõrgus -- oleks jätnud *Leontodon*/*Achillea* kasvu suuresti nähtamatuks |
-| Vegetatiivne vs generatiivne kasv (*Silene alba*) | Rosetikõrgus ja õieroote pikkus eraldi viimasel mõõtmiskorral -- lubab lahutada kasvu- ja õitsemissignaali [@sunfrelich2011] | Üks koondnumber (kogukõrgus) -- oleks segunud kaks erineva päritoluga signaali |
+| Vegetatiivne vs generatiivne kasv (*Silene latifolia*) | Rosetikõrgus ja õieroote pikkus eraldi viimasel mõõtmiskorral -- lubab lahutada kasvu- ja õitsemissignaali [@sunfrelich2011] | Üks koondnumber (kogukõrgus) -- oleks segunud kaks erineva päritoluga signaali |
 | Mõõtmistingimused | Vältida mõõtmist vahetult pärast vihma (märg/lonti vajunud taim) | Rangelt fikseeritud ajastus ilmastiku suhtes -- jäi pigem põhimõtteks, mitte formaalseks protokolliks |
 
