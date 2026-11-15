@@ -1,0 +1,73 @@
+Liigil *Dactylis glomerata* mõõdeti lisaks kasvunäitajatele lehtede ja juurte funktsionaalsed
+tunnused. Kuna *Dactylis*'el focal-taime ei eristatud, käsitleti iga rõnga kõiki *Dactylis*'e
+taimi ühe koondproovina (üks lehe- ja üks juureskänn rõnga kohta).
+
+### Proovide ettevalmistus ja skaneerimine
+
+Igast rõngast võeti 3–5 (enamasti 5) noorimat täielikult arenenud tervet lehte; analüüsiti
+ainult leheplaate. Lehed rehüdreeriti 24 tundi suletud minigrip-kotis, seejärel mõõdeti
+01.10.2026 nende märgmass ning lehed skaneeriti skanneriga Epson V370 (peegeldav režiim,
+8-bitine hallskaala, 300 dpi). Igale skännile lisati mõõtkava kontrolliks must ruut.
+Kaaluti ja kuivatati samad skaneeritud leheplaadid.
+
+Juured pesti veevannis puhtaks, laotati vette akrüülalusele ja skaneeriti skanneriga Epson
+V800 (filmirežiim, 16-bitine hallskaala, 600 dpi). Niidu proovid
+skaneeriti 13.10.2026 ja metsa proovid 14.10.2026.
+
+Lehed pandi kuivatisse kohe pärast skaneerimist (01.10.2026) ja juured alates 14.10.2026;
+kuivatati temperatuuril 40 °C kolm päeva [KONTROLLI: kas lehtedel sama kestus]{.mark} ning kaaluti
+[KAAL, täpsus]{.mark}. Lehtede kuivmass mõõdeti mikrokaaluga.
+
+### Juurte pildianalüüs
+
+Labori protokollis ette nähtud RhizoVision Explorer töötab ainult Windowsis, seetõttu analüüsiti
+juureskännid programmis Fiji [@schindelin2012] pluginaga IJ_Rhizo (v0beta) [@pierret2013].
+IJ_Rhizo koodis lülitati välja pikkade ja piklike osakeste eemaldamise samm, kuna see eemaldas
+ka päris juuri.
+
+Enne analüüsi teisendati 16-bitised skännid ühtse fikseeritud vahemikuga (0–65535) 8-bitiseks,
+et sama lävi tähendaks kõigil piltidel sama halltooni. Pildid kärbiti akrüülaluse sisemuse
+järgi (60 px varuga igast servast) ja salvestati JPEG-vormingus kvaliteediga 100. Aluse
+kriimustused eemaldati käsitsi kõigilt piltidelt; juurejuppe ei eemaldatud.
+
+IJ_Rhizo seaded olid järgmised: resolutsioon 600 dpi, servatsoon 10 px, osakeste puhastus
+(minimaalne pindala 1 mm², ümarus 0,75), kasutaja määratud lävi 0–200, juurepikkuse
+parandus välja lülitatud ja Kimura pikkuse hinnang sisse lülitatud. Lävi valiti 200, mitte
+labori RhizoVisioni seadetes kasutatud 150, sest 150 juures katkesid ja kadusid kahvatud
+peened juured.
+
+Juurepikkuse põhinäitajana kasutati Kimura meetodil hinnatud pikkust (*L*, mm)
+[@kimura1999]. IJ_Rhizo väljastatud keskmine diameeter, pindala ja ruumala põhinevad
+parandamata skeletipikkusel, seetõttu arvutati need Kimura pikkuse põhjal ümber:
+keskmine diameeter $d = A_p / L$ (kus $A_p$ on juurte projektsioonipindala), pindala
+$S = \pi d L$ ja ruumala $V = \pi (d/2)^2 L$. Juurte diameetrijaotus arvutati IJ_Rhizo
+histogrammifailidest diameetriklassides 0–0,1, 0,1–0,2, 0,2–0,3 ja > 0,3 mm (labori
+RhizoVisioni seadete järgi) [LAHTINE: klasside osakaalud või absoluutpikkused; histogrammi
+pikkus põhineb parandamata skeletil]{.mark}.
+
+Mõõdetud diameeter sõltub valitud lävest (nt proovis G1N 0,136 mm lävel 150 ja 0,180 mm
+lävel 200), kuid kuna kõik proovid analüüsiti sama lävega, on proovidevaheline võrdlus
+korrektne. Erinevalt RhizoVision Explorerist puudub IJ_Rhizo-s juurte kärpimise (*root
+pruning*) võimalus.
+
+### Lehepindala
+
+Lehepindala mõõdeti programmis Fiji [@schindelin2012] makroga, mis järgib labori
+RhizoVisioni protokolli (*network area*, ehk lehte kuuluvate pikslite pindala). Igal skännil
+mõõdeti esmalt kontrollruudu pindala (lävi 0–60, suurim osake). Seejärel märgiti käsitsi
+lehti ümbritsev ala, millest jäeti välja kontrollruut ja kilelehe servad. Leheks loeti pikslid
+halltooniga 0–160 ning osakesed alla 1 mm² jäeti mürana välja. Lehepindala on alles jäänud
+osakeste pindalade summa. Labori seadetes oli lävi 200; lävi 160 valiti piltide visuaalse
+kontrolli põhjal. Iga skänni mask salvestati visuaalseks kontrolliks.
+
+Kontrollruudu (külg ligikaudu 31,5 mm) mõõdetud pindala oli kõigil skännidel 976–991 mm²,
+s.t mõõtkava oli skännide vahel stabiilne.
+
+### Tuletatud funktsionaalsed tunnused
+
+Mõõtmistulemustest arvutati [@perezharguindeguy2013]:
+
+- eri lehepind (SLA) = lehepindala / lehe kuivmass;
+- lehe kuivainesisaldus (LDMC) = lehe kuivmass / lehe märgmass;
+- eri juurepikkus (SRL) = Kimura juurepikkus / skaneeritud juureproovi kuivmass
+  [LAHTINE: skaneeritud proovid on veel kaalumata]{.mark}.

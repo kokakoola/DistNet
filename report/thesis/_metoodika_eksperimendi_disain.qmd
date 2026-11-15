@@ -1,0 +1,70 @@
+::: {.callout-note}
+## Liiginimed -- juhendajale ülevaatamiseks (15.11.2026), lõplikust tekstist eemaldada
+
+Kõik andmestiku taimenimed (MasterData `Species`, `Quadrat_Forest`, `Quadrat_Grassland`; 69
+nime) kontrolliti GBIF Backbone Taxonomy vastu (`R/gbif_name_check.R`). 62 nime vastavad
+kehtivale nimele. Ülejäänud:
+
+| Nimi andmestikus | GBIF Backbone Taxonomy | Otsus |
+|---|---|---|
+| *Pulsatilla pratense* (metsaleht) | *Pulsatilla pratensis* (L.) Mill. | parandatud andmestikus |
+| *Bromus mollis* | *B. mollis* L. on sünonüüm; kehtiv *Bromus hordeaceus* L. | [LAHTINE]{.mark} |
+| *Festuca pratensis* | *F. pratensis* Huds. on sünonüüm; kehtiv *Lolium pratense* (Huds.) Darbysh. | AM-väärtus päritud *Lolium pratense* nime all; nimi andmestikus [LAHTINE]{.mark} |
+| *Helictotrichon pratensis* | *Helictotrichon pratense* (L.) Besser; samuti kehtivana *Helictochloa pratensis* (L.) Romero Zarco | jääb praegu; epiteedi vorm erineb |
+| *Helictotrichon pubescens* | sünonüüm; kehtiv *Avenula pubescens* (Huds.) Dumort. | jääb |
+| *Hieracium* sp., *Euphrasia* sp. | ainult perekond | jääb perekonna tasemele |
+:::
+
+Hüpoteesi kontrollimiseks viidi läbi kaks vegetatsiooniperioodi (2025--2026) kestnud
+manipulatiivne välikatse. Pooltel katseringidel takistati katsetaimede liitumist ümbritseva
+koosluse arbuskulaarse mükoriisa seenevõrgustikuga (katkestatud töötlus, ingl *severed*),
+ülejäänud said liituda takistusteta (võrgustunud töötlus, ingl *intact*; nimetus tähistab
+liitumise võimalust). Ingliskeelsed nimetused järgivad @dassen2021, kes katkestasid
+mütseeliühenduse sarnaselt, kuid kasvusüdamike (*ingrowth core*) tõstmisega. Võrdluseks
+koguti referentsrühm koosluses looduslikult kasvavatest katseliikide isenditest.
+
+### Katsealad ja katseringid
+
+Katse viidi läbi kahes koosluses: lubjarikkal kuival niidul ja palumetsas. Mõlemasse
+kooslusesse rajati 2025. aasta kasvuperioodi alguses 12 katseringi (läbimõõt 150 mm,
+sügavus 150 mm). Katseringist eemaldati muld koos taimestikuga, auk vooderdati juurte
+läbikasvu takistamiseks 20 µm silmaga juuretõkkekangaga ning taimestikust puhastatud muld
+pandi tagasi. Mulda ei sõelutud ega töödeldud, seega sisaldas see eelnenud taimestiku
+juurefragmente ja nendega seotud mikroorganisme.
+
+Kummaski kasvukohas jaotati katseringid juhuslikult kuueks paariks ning paari sees määrati
+juhuslikult, kumb ring sai katkestatud ja kumb võrgustunud töötluse. Metsas
+paiknesid ringid rivis mööda rada juhuslikustatud järjekorras. Iga katseringi ümber
+kirjeldati 1 m² suurune kvadraat, mille taimestik iseloomustab katsetaimede naabruskonda.
+
+### Katseliigid
+
+Taimeliikide nomenklatuur järgib GBIF Backbone Taxonomy't [@gbif2023].
+
+Kasvuperioodi alguses külvati katseringidesse viis taimeliiki, mis erinevad mükoriisastaatuse
+ja arbuskulaarse mükoriisa moodustamise intensiivsuse (keskmise kolonisatsiooni, MC) poolest
+[@soudzilovskaia2020]. Liigid valiti nii, et katse keskmes on fakultatiivselt mükoriissed (FM)
+liigid *Achillea millefolium* (MC 73,7%), *Cichorium intybus* (MC 60%) ja *Dactylis
+glomerata* (MC 64%): need taimed saavad AM-seenega sümbioosi astuda või sellest loobuda,
+mistõttu peaks seenevõrgustikuga liitumise mõju avalduma eelkõige neil. Obligatoorselt
+mükoriisne (OM) *Leontodon hispidus* (MC 86%) on positiivne kontroll. *Silene latifolia*
+Poir. (syn. *S. alba* (Mill.) E.H.L.Krause, *S. pratensis* (Rafn) Godr.; vt @mcneill1981) on
+reeglina mittemükoriisne (NM), kohati fakultatiivselt mükoriisne, ning on negatiivne
+kontroll [VIIDE: *Silene* NM-staatus; MC]{.mark}. Kuuendana külvatud *Solidago virgaurea* ei
+idanenud ja jäi katsest välja.
+
+### Töötlus
+
+Katkestatud ringidel lõigati muld noaga 150 mm sügavuselt läbi mööda katseringi perimeetrit,
+et katkestada arbuskulaarse mükoriisa seente hüüfiühendus katseringi ja ümbritseva koosluse
+vahel. Läbilõikamist korrati mõlemal aastal kogu vegetatsiooniperioodi jooksul ühenädalaste
+vahedega. Võrgustunud ringidel läbilõikamist ei tehtud.
+
+### Referentsrühm
+
+Referentsrühma kuulusid katsealade koosluses looduslikult kasvavad katseliikide isendid.
+Need ei kuulu kasvukoha ja töötluse mõju hindavatesse mudelitesse, vaid on võrdlusbaas
+loodusliku kolonisatsioonitaseme hindamiseks. Katsealadel looduslikult mittekasvava liigi
+*Cichorium intybus* referents pärineb juhendajalt [KONTROLLI: päritolu]{.mark}. Liigi *Silene
+latifolia* kohta on PlutoF andmebaasis üks kirje, mis märgib arbuskulaarse mükoriisa
+esinemist, kuid ei esita kolonisatsiooni määra.

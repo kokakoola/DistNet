@@ -1,0 +1,49 @@
+### Kvadraatide kirjeldamine
+
+Iga katseringi ümber kirjeldati 1 m² suuruses kvadraadis taimestik: niidul 26.07.2026 ja
+metsas 27.07.2026 (kirjeldajad Kersti Püssa ja töö autor). Iga taimeliigi kohta hinnati
+katvus (%) ja ohtrus (skaalal 1--5) [KONTROLLI: Braun-Blanquet'/Domini skaala]{.mark}. Lisaks
+hinnati kvadraadi üldine taimkatte katvus (katseringi pindala arvestamata) ja sammalde
+katvus.
+
+### Liikide AM-kolonisatsiooni väärtused
+
+Kvadraatides kirjeldatud taimeliikide arbuskulaarse mükoriisa (AM) kolonisatsiooni
+intensiivsus saadi FungalRoot andmebaasist [@soudzilovskaia2020], mille kirjed päriti GBIF-i
+kaudu [@fungalroot_gbif]. Et väärtused oleksid võrreldavad käesoleva töö mikroskoopiaga,
+kasutati ainult McGonigle jt [-@mcgonigle1990] juurepikkuse kolonisatsiooni (RLC%)
+meetodiga mõõdetud kirjeid ning arvutati iga liigi kohta üks keskmine üle kõigi kirjete,
+sõltumata kasvukohast. Perekonna tasemel määratud taksonite (*Hieracium* sp., *Euphrasia* sp.)
+puhul kasutati perekonna kõiki kirjeid. Kahe mitmetähendusliku nime puhul päriti andmed
+kehtiva nime järgi: *Bromus mollis* → *Bromus hordeaceus* ja *Festuca pratensis* → *Lolium
+pratense* [@gbif2023].
+
+Liikidele, mille kohta McGonigle meetodiga kirjeid ei olnud, määrati väärtus muudest
+allikatest. *Artemisia campestris*'e väärtus on kolme mõõtmise keskmine [@koorem2024] ja
+*Pulsatilla pratensis*'e väärtus metsa ja niidu inokulumiga kasvanud taimede 14. nädala
+kolonisatsiooni keskmine [@moora2004]. *Carex disticha* ja *Helictotrichon pratensis*'e
+kolonisatsioon mõõdeti käesoleva töö käigus samal meetodil [@mcgonigle1990]. Liikidele,
+mille FungalRoot'i kirjed näitavad valdavalt ekto- või erikoidset mükoriisat (*Chimaphila
+umbellata*, *Corylus avellana*, *Orthilia secunda*, *Pinus sylvestris*, *Pyrola
+rotundifolia*, *Quercus robur*), ning mittemükoriissele *Melampyrum nemorosum*'ile määrati
+AM-kolonisatsiooniks 0%. Kuue liigi kohta väärtust ei leitud (*Carex ornithopoda*, *Galium
+album*, *Hepatica nobilis*, *Pimpinella major*, *Ranunculus bulbosus*, *Vicia tetrasperma*).
+### Naabruskonna kooslusmükoriissus (CWM)
+
+Katsetaimede naabruskonna mükoriissust iseloomustati kooslusmükoriissuse indeksiga, mis on
+liikide mükoriisatunnuse koosluse keskmine, kaalutud liikide ohtrusega [@gerz2016].
+Erinevalt Gerz jt-st [-@gerz2016], kes kasutasid tunnusena liikide mükoriisastaatust, on
+käesolevas töös tunnuseks liigi AM-kolonisatsiooni intensiivsus, mis eristab ka
+fakultatiivselt mükoriisseid liike omavahel. Kaaluna kasutati liigi katvust kvadraadis.
+Kooslusmükoriissus arvutati iga katseringi kvadraadi $j$ kohta:
+
+$$
+\mathrm{CWM}_j = \frac{\sum_i c_{ij} \, \mathrm{AM}_i}{\sum_i c_{ij}}
+$$
+
+kus $c_{ij}$ on liigi $i$ katvus (%) kvadraadis $j$ ja $\mathrm{AM}_i$ liigi
+AM-kolonisatsiooni intensiivsus (%). Summeeriti üle liikide, mille keskmine katvus
+kasvukoha 12 kvadraadis ületas lävendi; sellega jäeti välja juhuslikud, kohale mitteomased
+liigid [LAHTINE: lävend 0,8 või 0,5]{.mark}. Lävendi ületanud liikide osakaal kvadraadi
+kogu liikide katvusest oli metsas 0,50--0,98 ja niidul 0,93--0,99, mida tuleb indeksi
+tõlgendamisel arvestada.

@@ -5,9 +5,10 @@ nii maapealsete kui ka peenjuurte funktsionaalsete tunnuste puhul
 [@carmona2021].
 
 Katsetaimede kasvu jälgiti mittedestruktiivselt igakuiste mõõtmiskordadena
-kogu katseperioodi jooksul, alates [KUUPÄEV] kuni [KUUPÄEV] (kokku [N]
-mõõtmiskorda). Igal mõõtmiskorral hinnati taime kõrgust (cm), herbivoorset
-kahjustust (% lehepinnast) ja seenkahjustust (% lehepinnast). Katse lõpus
+kogu katseperioodi jooksul, alates 31.05.2026 kuni 23.09.2026 (kokku 6
+mõõtmiskorda: 31.05, 15.06, 23.06, 23.07, 23.08 ja 23.09). Igal mõõtmiskorral
+hinnati herbivoorset kahjustust (% lehepinnast) ja seenkahjustust (% lehepinnast);
+taime kõrgust (cm) mõõdeti alates teisest mõõtmiskorrast (15.06.2026). Katse lõpus
 koguti kõik katsetaimed täies mahus, eraldati juured ja maapealne osa, mis
 kuivatati ja kaaluti (kuivkaal, g) lõpliku biomassiproduktsiooni
 hindamiseks.
@@ -15,13 +16,13 @@ hindamiseks.
 ### Taimekõrguse mõõtmine
 
 Taime kõrgust mõõdeti selle loomulikus, sirutamata kasvuasendis maapinnast,
-järgides [TORDONI VIIDE -- vt märkus allpool] meetodit. Erinevalt levinud
+järgides @carmona2021 meetodit. Erinevalt levinud
 vegetatiivse kõrguse konventsioonist, mis jätab generatiivsed struktuurid
 (õisikud) arvestamata [algselt @cornelissen2003, hiljem täiendatud
 @perezharguindeguy2013], mõõdeti käesolevas katses
 taime kogukõrgus koos õieroostiga, kuna huviorbiidis oli taime tegelik
-positsioon koosluse valguskonkurentsis, mitte võrdlev struktuurne trait
-sensu globaalsed trait-andmebaasid [vrd @gaudetkeddy1988].
+positsioon koosluse valguskonkurentsis, mitte liikidevaheliseks võrdluseks
+mõeldud struktuurne funktsionaalne tunnus funktsionaalsete tunnuste andmebaaside mõttes [vrd @gaudetkeddy1988].
 
 Kõrguse süstemaatilise moonutuse vältimiseks (vihmast märjad taimed, eriti
 pikelehised kõrrelised, kalduvad ajutiselt lonti vajuma) püüti mõõtmisi mitte
@@ -34,9 +35,11 @@ Kõrgusmõõt kajastab liikide kasvuedu ebaühtlaselt: rosett-tüüpi liigid (nt
 *Leontodon* spp., *Achillea millefolium*) investeerivad kasvades pigem
 laiusesse kui kõrgusesse, mistõttu pelgalt kõrgusel põhinev mõõdik
 alahindab nende tegelikku kasvu. Selle piirangu osaliseks leevendamiseks
-mõõdeti alates [KUUPÄEV] igal taimel täiendavalt lehe maksimaalne pikkus
-(cm) ning katse viimasel mõõtmiskorral, vahetult enne saagikoristust, ka
-leheroseti diameeter (kaks ristuvat läbimõõtu, keskmistatuna). Viimase
+mõõdeti igal taimel täiendavalt lehe maksimaalne pikkus
+(cm; esimesel mõõtmiskorral 31.05.2026 kõrguse asemel ning alates 23.06.2026 igal
+mõõtmiskorral) ning kahel viimasel mõõtmiskorral (23.08 ja 23.09.2026) ka
+leheroseti diameeter (kaks ristuvat läbimõõtu, keskmistatuna). Roseti diameetrit ei
+mõõdetud liigil *Dactylis glomerata*, mille kasvukuju (mätas) seda ei võimalda. Viimase
 mõõtmiskorra mittedestruktiivsete näitajate (kõrgus, lehepikkus, roseti
 diameeter) võrdlemine tegeliku kuivkaaluga saagikoristusel võimaldab
 tagantjärele hinnata, milline mõõdik kajastab erineva kasvuvormiga liikide
@@ -56,8 +59,8 @@ bioloogilisi protsesse].
 
 | Küsimus | Valitud lahendus | Kõrvale jäetud alternatiiv |
 |---|---|---|
-| Kõrguse ulatus | Kogukõrgus koos õieroostiga -- konkurentsiökoloogia "canopy height" traditsioon [@gaudetkeddy1988], kuna oluline on taime tegelik positsioon koosluse valguskonkurentsis | Puhas vegetatiivne kõrgus [@perezharguindeguy2013] -- sobiks liikideülese struktuurse traidi võrdluseks, aga mitte käesoleva küsimuse jaoks |
-| Kasvumõõdik rosett-liikidel | Kõrgusele lisaks lehe max pikkus (läbivalt) ja roseti diameeter (viimasel korral) | Ainult kõrgus -- oleks jätnud *Leontodon*/*Achillea* kasvu suuresti nähtamatuks |
+| Kõrguse ulatus | Kogukõrgus koos õieroostiga -- konkurentsiökoloogia "canopy height" traditsioon [@gaudetkeddy1988], kuna oluline on taime tegelik positsioon koosluse valguskonkurentsis | Puhas vegetatiivne kõrgus [@perezharguindeguy2013] -- sobiks liikideülese struktuurse funktsionaalse tunnuse võrdluseks, aga mitte käesoleva küsimuse jaoks |
+| Kasvumõõdik rosett-liikidel | Kõrgusele lisaks lehe max pikkus (läbivalt) ja roseti diameeter (kahel viimasel korral) | Ainult kõrgus -- oleks jätnud *Leontodon*/*Achillea* kasvu suuresti nähtamatuks |
 | Vegetatiivne vs generatiivne kasv (*Silene latifolia*) | Rosetikõrgus ja õieroote pikkus eraldi viimasel mõõtmiskorral -- lubab lahutada kasvu- ja õitsemissignaali [@sunfrelich2011] | Üks koondnumber (kogukõrgus) -- oleks segunud kaks erineva päritoluga signaali |
 | Mõõtmistingimused | Vältida mõõtmist vahetult pärast vihma (märg/lonti vajunud taim) | Rangelt fikseeritud ajastus ilmastiku suhtes -- jäi pigem põhimõtteks, mitte formaalseks protokolliks |
 

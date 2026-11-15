@@ -5,7 +5,7 @@ title: "Metoodika"
 <!--
 See fail on alapeatükkide põhi (skeleton): iga alapeatüki all on märksõnad,
 mitte valmis tekst. Taimekasvu/kahjustuste seire tekst on failis
-`_kasvunaitajad.qmd` ja kaasatakse alapeatükki "Taimede kasvu ja kahjustuste
+`_metoodika_kasvunaitajad.qmd` ja kaasatakse alapeatükki "Taimede kasvu ja kahjustuste
 seire".
 
 Enne kirjutamist vaata üle docs/Claude_README.md ja CLAUDE.md -- eriti avatud
@@ -28,38 +28,20 @@ Zoterost kinnitatud, jäta märge [VIIDE: ...].
 - Katseala paiknemine/kaart, rõngaste paigutuse loogika (juhuslikustamine vs
   olemasolev taimestik, min vahekaugus rõngaste vahel jne -- kontrolli
   väliprotokollist).
-- [VIIDE: ala kirjeldav kirjandus/kaardimaterjal, kui on]
+- [VIIDE: ala kirjeldav kirjandus/kaardimaterjal, kui on]{.mark}
 
-## Katse disain
+## Eksperimendi disain
 
-- Rõngas kui katseüksus: d = 15 cm katserõngas 1 m² kvadraadi sees.
-- Manipulatsioon: **severed** vs **control** (mitte "disturbance" --
-  terminoloogia eeskuju [VIIDE: Dassen jt 2021, New Phytologist]).
-  - Severed: rõnga perimeeter lõigatakse noaga läbi kord nädalas, et katkestada
-    AMF-hüüfide ühendus rõnga ja ümbritseva koosluse vahel.
-  - Control: läbilõikamist ei tehta.
-- 12 rõngast kasvukoha kohta (pooled severed, pooled control) -> kokku
-  kasvukohtade arv x 12.
-- Katseliigid (5, istutatud rõngastesse): *Achillea millefolium*,
-  *Cichorium intybus*, *Dactylis glomerata*, *Leontodon hispidus*,
-  *Silene latifolia*.
-  - *Solidago virgaurea* ei idanenud -> katsest väljas, aga jääb
-    species-viitetabelisse (selgita joonealuses/märkuses).
-- Referentstaimed: loodusest kogutud samad liigid väljaspool katserõngaid,
-  `treatment = "reference"`, pseudo-ring_id (`FREF`/`GREF`/`OREF`).
-  - Miks eraldi: võrdlusbaas "looduslikule" kolonisatsioonitasemele; ei
-    kuulu `habitat * treatment` mudelisse -- põhjenda lühidalt.
-- Kvadrati (1 m²) naabertaimestiku roll disainis: kvadrati keskmine
-  naabruse-AM kui kontekst katserõnga taimele (seob kokku katse disaini ja
-  põhihüpoteesi -- vt "Statistiline analüüs").
-- Hierarhia: kasvukoht -> rõngas -> taim (katse ülesehituse joonis/skeem
-  siia, kui on).
+[UUS]{.mark}
+
+{{< include _metoodika_eksperimendi_disain.qmd >}}
+
 
 ## Välitööd ja proovide kogumine
 
-- Ajakava: katse algus- ja lõppkuupäev, kestus, severingu sagedus (kord
+- Ajakava: katse algus- ja lõppkuupäev, kestus, läbilõikamise sagedus (kord
   nädalas).
-- Igakuised visiidid (Traits): mittedestruktiivne kasvu/kahjustuse seire --
+- Igakuised visiidid (funktsionaalsed tunnused): mittedestruktiivne kasvu/kahjustuse seire --
   detailne metoodika alapeatükis "Taimede kasvu ja kahjustuste seire", siin
   ainult visiitide arv/ajavahemik.
 - Katse lõpp (saagikoristus): mis kogutakse, millises järjekorras
@@ -74,7 +56,7 @@ Zoterost kinnitatud, jäta märge [VIIDE: ...].
 
 ## Taimede kasvu ja kahjustuste seire
 
-{{< include _kasvunaitajad.qmd >}}
+{{< include _metoodika_kasvunaitajad.qmd >}}
 
 ## Kolonisatsiooni mikroskoopia
 
@@ -92,22 +74,12 @@ Zoterost kinnitatud, jäta märge [VIIDE: ...].
   (loendusandmed), K+ arvutuslikud (RLC% valemid) -- kirjelda valem(id).
 - Liitmisvõti `plant_id`.
 
-## Juure- ja lehekännide analüüs (Fiji, IJ_Rhizo)
+## Juure- ja leheskännide analüüs
 
-- Fookus: *Dactylis glomerata* (focal puudub, kõik taimed `-2` real --
-  analüüsitakse ainult keskmist).
-- Skannimine: millise skanneriga/resolutsiooniga lehed ja juured skannitud
-  (protokolli detailid vaja lisada).
-- Lehepindala: Fiji (Mac) -- Threshold + Analyze Particles töövoog, mõõdetav
-  suurus (cm²), kalibratsioon (skaala/px->cm).
-- Juured: Fiji plugin IJ_Rhizo [VIIDE: Pierret jt 2013] -- mõõdetavad
-  näitajad (juurepikkus, -pindala, -ruumala, -läbimõõdu jaotus jne, vastavalt
-  sellele, mida IJ_Rhizo väljastab ja mida analüüsis kasutatakse).
-- Põhjendus, miks WinRHIZO ja RhizoVision kõne alla ei tulnud (lühidalt --
-  nt kättesaadavus, litsents, ühilduvus).
-- Värske- ja kuivmassi mõõtmine (kaal, kuivatustingimused -- temp/kestus).
-- Seos juurte DNA-analüüsiga (juured kogutud, ootavad analüüsi -- otsustamata,
-  kas DNA ja mullatoitained tehakse -- märgi lahtise küsimusena).
+[UUS]{.mark}
+
+{{< include _metoodika_funktsionaalsed_naitajad_Dac.qmd >}}
+
 
 ## Biomass
 
@@ -123,54 +95,11 @@ Zoterost kinnitatud, jäta märge [VIIDE: ...].
 - Surnud/eemaldatud taimede käsitlus: ei kustutata (`status`:
   alive/dead/missing/removed) -- mõju biomassi keskmistesse.
 
-## FungalRoot'i kalibreerimine
+## Naabruskonna kooslus ja kooslusmükoriissus
 
-- Eesmärk: taustkalibreering/võrdlusraamistik, **mitte iseseisev tulemus**
-  -- selgita, milleks seda mudelis/tõlgenduses kasutatakse.
-- Kasutusel ainult McGonigle 1990 RLC% kirjed (ühtlustamaks oma
-  mikroskoopia meetodiga).
-- Kategooriate vastendus: "forest" = temperate coniferous + broadleaf,
-  "grassland" = temperate grassland -- põhjenda vastendust lühidalt.
-- Fallback-loogika (3 taset):
-  1. habitat-spetsiifiline kirje liigi kohta,
-  2. sama liik mis tahes biomis (kui habitat-spetsiifilist pole),
-  3. käsitsi override.
-- Käsitsi parandused tehakse R-koodis (mitte Excelis), päritolu märgitakse
-  `data_source` veerus (`dplyr::rows_upsert()`).
-- Liigid, mille oma mikroskoopia alles pooleli (ajutine FungalRoot-põhine
-  väärtus): *Carex disticha*, *Helictotrichon pratensis*,
-  *Artemisia campestris*, *Pulsatilla pratensis*.
-- Andmeallikas: `data/raw/FungalRoot/` (lokaalsed CSV-d, liiginime järgi
-  liidetud).
-- Esialgsed/kalibreerimisel saadud keskmised (nt mets ~21%, niit ~73%) --
-  tabel/joonis kalibreerimistulemustest.
-- *Silene latifolia* erijuht: species-tabelis märgitud FM
-  (arbuskulaarne-mükoriisne), kuid kirjanduse järgi tavaliselt NM
-  (mitte-mükoriisne) -- lahtine küsimus, mida juhendajaga arutada; kirjelda,
-  kuidas see analüüsis praegu käsitletud on (ja kuidas see mõjutab
-  tõlgendust, kui staatus osutub valeks).
+[UUS]{.mark}
 
-## Naabruskonna kooslusmükoriissus (CWM)
-
-- Mõiste: kooslusmükoriissuse indeks -- liikide mükoriisatunnuse
-  koosluse keskmine, kaalutud liikide ohtrusega [@gerz2016].
-- Erinevus allikast: Gerz jt kasutasid mükoriisastaatust; siin on tunnuseks
-  liigi AM-kolonisatsiooni intensiivsus (McGonigle RLC%, FungalRoot'i
-  kalibreeringust) ja kaaluks katvus kvadraadis -- põhjenda lühidalt.
-- Valem rõnga $j$ kvadraadi kohta:
-
-  $$
-  \mathrm{CWM}_j = \frac{\sum_i c_{ij} \, \mathrm{AM}_i}{\sum_i c_{ij}}
-  $$
-
-  kus $c_{ij}$ on liigi $i$ katvus (%) kvadraadis $j$ ja $\mathrm{AM}_i$ liigi
-  AM-intensiivsus (%). Summeeritakse üle liikide, mille keskmine katvus
-  kasvukoha 12 kvadraadis ületab lävendi.
-- Katvuse lävend: juhuslike, kohale mitteomaste liikide väljajätmine --
-  väärtus lahtine (0.8 / 0.5), vt docs/markmed.md.
-- `cover_share` = lävendi ületanud liikide katvus / kõigi liikide katvus
-  kvadraadis -- piiranguna: metsas 0.50--0.98, niidul 0.93--0.99.
-- Arvutus: `R/CWM.R` (mitte Exceli CWM-leht).
+{{< include _metoodika_kooslused.qmd >}}
 
 ## Statistiline analüüs
 

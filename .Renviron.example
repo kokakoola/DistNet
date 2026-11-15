@@ -3,4 +3,5 @@ SHAREPOINT_LOCAL=/Users/you/Library/CloudStorage/OneDrive-SharedLibraries-YourOr
 SHAREPOINT_PATH_MASTER=RawData/Fieldwork/master.xlsx
 SHAREPOINT_PATH_COLONIZATION=RawData/Fieldwork/colonization.xlsx
 SHAREPOINT_PATH_QUADRAT=RawData/Fieldwork/quadrat.xlsx
+SHAREPOINT_PATH_BIOMASS=RawData/Fieldwork/biomass.xlsx
 SHAREPOINT_PATH_TRAITS=RawData/Fieldwork/traits.xlsx

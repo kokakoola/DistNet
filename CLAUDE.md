@@ -22,8 +22,9 @@ omal algatusel — kui README sisu tundub vananenud, küsi.
 - **Küsimus:** kuidas ümbritsevate naabertaimede mükoriissus (1 m² quadrat) mõjutab
   katsetaimede AM-kolonisatsiooni (d = 15 cm rõngas).
 - **Manipulatsioon:** `severed` (rõnga perimeeter lõigatakse kord nädalas noaga läbi, AMF-hüüfid
-  katkevad) vs `control`. Termin on "severed", mitte "disturbance" (eeskuju: Dassen jt 2021,
-  *New Phytologist* 232: 753–761).
+  katkevad) vs `control`. Lõputöö tekstis (Mare 15.11.2026): eesti keeles **katkestatud** vs **võrgustunud**,
+  inglise keeles *severed* vs *intact* (Dassen jt 2021). Mitte "häiring"/"disturbance". Andmetes jäävad
+  `severed`/`control` (Meta-lehel `Severed`/`Control`); joonistel ja tabelitel eestikeelsed sildid.
 - **Kasvukohad:** mets (hemiboreaalne männi-/segamets, ~58°N) ja niit, kummaski 12 rõngast
   (pooled severed, pooled control).
 - **Referentstaimed:** loodusest kogutud, `treatment = "reference"`, pseudo-ring_id
@@ -71,14 +72,14 @@ Andmed asuvad SharePointis (TÜ), mitte gitis. Need tõmmatakse funktsiooniga
 - Mitme taime koondridade (`-2`) puhul jaga kaal `n_plants`-iga ja kasuta mudelis
   `weights = n_plants`.
 
-## FungalRoot (taustkalibreering, mitte iseseisev tulemus)
-- Kasutusel ainult McGonigle 1990 RLC%. Kategooria "forest" = temperate coniferous + broadleaf,
-  "grassland" = temperate grassland.
-- Fallback toimub kolmel tasandil: habitat-spetsiifiline kirje → sama liik mis tahes biomist →
-  manual override.
-- Oma mikroskoopia on veel pooleli neljal liigil: *Carex disticha*, *Helictotrichon pratensis*,
-  *Artemisia campestris*, *Pulsatilla pratensis*.
-- Esialgsed keskmised: mets ~21%, niit ~73%.
+## Liikide AM-kolonisatsioon (kvadraadiliigid, CWM-i sisend)
+- `R/am_colonization.R`: FungalRoot'i kirjed GBIF API kaudu (andmestik DOI 10.15468/a7ujmj), ainult McGonigle 1990
+  RLC%, **üks koondkeskmine liigi kohta** (mitte kasvukohtade kaupa — juhendaja soov). "sp" nimed → perekonna kirjed.
+  Käsitsi väärtused (`rows_upsert`, `data_source`): Artemisia (Koorem jt 2024), Pulsatilla (Moora jt 2004), Carex disticha ja
+  Helictotrichon pratensis (oma mikroskoopia), EcM/ErM liigid ja Melampyrum nemorosum = 0.
+- Kordab Exceli veergu "AM intensity FungalRoot" täpselt (kontrollitud 15.11.2026). Vana `R/AM_intensity.R` (habitat-põhine
+  fallback, kohalikud CSV-d) on kasutusest väljas.
+- Metoodika tekst: `report/thesis/_metoodika_kooslused.qmd`.
 
 ## Repo struktuur
 ```
@@ -87,13 +88,15 @@ DistNet/
 ├── R/analyze.R
 ├── data/{raw,processed}/   # gitignore'itud
 ├── report/
-│   ├── thesis/      # Quarto book: index.qmd (annotatsioon), 01–05 peatükid, _kasvunaitajad.qmd (include), references.qmd
+│   ├── thesis/      # Quarto book: index.qmd (annotatsioon), 01–05 peatükid, _metoodika_kasvunaitajad.qmd, _tulemused_kooslused.qmd (include'id), references.qmd
 │   └── blog/         # vana Quarto blogi, enam ei peeta ega avaldata (11.11.2026)
 ├── figures/
 ├── docs/Claude_README.md
 └── .here             # vajalik juurkaustas, ära kustuta
 ```
-- Failiteed kirjuta alati kujul `here::here(...)`, ära kasuta suhtelisi teid.
+- Failiteed kirjuta alati kujul `here::here(...)`, ära kasuta suhtelisi teid. Lõputöö `.qmd`-s enne seda
+  `here::i_am("report/thesis/<peatükk>.qmd")` (muidu on juur `report/thesis/`).
+- Analüüs: arvutus `R/` skriptis → `data/processed/*.rda` → `_fail.qmd` laeb ja joonistab, include peatükki.
 - Uue paketi lisamise järel käivita `renv::snapshot()`.
 - `./publish.sh` renderdab lõputöö (HTML + docx), push'ib `main`-i ja avaldab lõputöö HTML-i
   GitHub Pages'i (gh-pages, asendas blogi). Lisaks kopeerib docx-i `upload_review()`-ga
@@ -104,12 +107,16 @@ DistNet/
   (Zotero + Better BibTeX), tekstis kujul `[@key]`.
 - Juhendaja jaoks renderda `quarto render --to docx` (vormingu annab `reference-doc`). Juhendaja
   kommenteerib Word Online'is. Kommentaarid kantakse käsitsi tagasi `.qmd` faili.
-- Juba olemas: `_kasvunaitajad.qmd` (Traits'i metoodika, kaasatud `02-metoodika.qmd` alapeatükki).
-- **Ära kasuta lõplikus tekstis kinnitamata viiteid.** Näiteks `tordoniXXXX` on platseholder,
-  viide on alles juhendajalt saamata.
+- Juba olemas: `_metoodika_kasvunaitajad.qmd` (Traits'i metoodika, kaasatud `02-metoodika.qmd` alapeatükki).
+- Kohatäited tekstis kollase esiletõstuga (HTML `<mark>`, docx highlight): `[KONTROLLI: ...]{.mark}`,
+  `[LAHTINE: ...]{.mark}`. Uus alapeatükk saab pealkirja alla eraldi reale `[UUS]{.mark}` (juhendajale; eemaldada,
+  kui üle vaadatud). Pealkirjadesse programmide nimesid ei panda.
+- **Ära kasuta lõplikus tekstis kinnitamata viiteid.** Kohatäide tekstis on `[... VIIDE]{.mark}`, mitte
+  väljamõeldud `.bib` kirje.
 
 ## Lahtised küsimused (juhendajaga arutamiseks)
 - Dactylise ulatus: kas eraldi peatükk, millised lisaanalüüsid.
 - Kas DNA ja mullatoitained tehakse.
-- *Silene latifolia* mükoriisastaatus: species-tabelis on FM, kuid Silene on tavaliselt NM.
+- *Silene latifolia*: reeglina NM (kohati FM) = negatiivne kontroll; *Leontodon* OM = positiivne kontroll; FM liigid
+  (Achillea, Cichorium, Dactylis) = katse põhiliigid (Mare 15.11). species-tabeli `Myc_status` on Silenel veel FM; viide NM-staatusele puudu.
 - species-tabeli `Mean_col`/`Mean_CV` allikas.

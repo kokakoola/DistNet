@@ -1,0 +1,170 @@
+::: {.callout-note}
+## Andmete parandus (14.11.2026) -- juhendajale, lõplikust tekstist eemaldada
+
+Lehe `Community` (failis `DistNet_Quadrat.xlsx`) kontrollimisel lehtede `Quadrat_Forest` ja
+`Quadrat_Grassland` vastu leidsin metsa ridades kopeerimisnihked. Niidu 12 rõngast klappisid
+täpselt. Leht on nüüd genereeritud uuesti `Quadrat_*` lehtedest, originaal on alles eraldi
+failis. Parandused:
+
+- metsa liikide plokis olid väärtused alates *Berberis vulgaris*'est nihkunud ühe veeru võrra
+  paremale; rea viimane väärtus (*Veronica chamaedrys*) oli nimeta veerus, mis on eemaldatud;
+- mitmel mõlemas kasvukohas esineval liigil (*Festuca ovina*, *F. pratensis*, *F. rubra*,
+  *Knautia arvensis*, *Luzula campestris*, *L. pilosa* jt) olid metsa ridades naaberliigi
+  väärtused;
+- *Galium album* ja *G. verum* olid kahes veerus ning metsa väärtused läksid arvesse topelt;
+- *Pulsatilla pratense* (kirjaviga metsalehel) puudus, nüüd liidetud *P. pratensis*'ega.
+
+Analüüsi kood on muutmata (nüüd failis `R/community_ordination.R`). Parandus järeldusi ei
+muutnud:
+
+| | Enne parandust | Pärast parandust |
+|---|---|---|
+| PERMANOVA, kasvukoht | R² = 0.544, p = 0.001 | R² = 0.541, p = 0.001 |
+| PERMANOVA, töötlus | R² = 0.014, p = 0.639 | R² = 0.013, p = 0.685 |
+| PERMANOVA, kasvukoht × töötlus | R² = 0.014, p = 0.643 | R² = 0.014, p = 0.617 |
+| Osaline dbRDA, töötlus | p = 0.794 | p = 0.833 |
+:::
+
+```{r}
+#| label: community-load
+library(ggplot2)
+library(vegan)
+
+# Inside report/thesis, here() would stop at _quarto.yml; anchor it to the repo root
+here::i_am("report/thesis/03-tulemused.qmd")
+
+# Objects from R/community_ordination.R (run it first)
+load(here::here("data/processed/community.rda"))
+
+# Estonian labels for plots and tables
+Distnet_meta$Kasvukoht <- factor(Distnet_meta$Habitat, levels = c("Forest", "Grassland"), labels = c("Mets", "Niit"))
+Distnet_meta$Töötlus <- factor(Distnet_meta$Treatment, levels = c("Control", "Severed"), labels = c("Võrgustunud", "Katkestatud"))
+perm_terms <- c(Habitat = "Kasvukoht", Treatment = "Töötlus", `Habitat:Treatment` = "Kasvukoht × töötlus",
+                Model = "Töötlus", Residual = "Jäägid", Total = "Kokku")
+perm_table <- function(x) {
+  x <- as.data.frame(x)
+  rownames(x) <- perm_terms[rownames(x)]
+  x
+}
+pr <- function(x, term) as.data.frame(x)[term, "Pr(>F)"]
+r2 <- function(x, term) as.data.frame(x)[term, "R2"]
+fn <- function(x, d = 2) format(round(x, d), nsmall = d, decimal.mark = ",")
+fp <- function(p) ifelse(p < 0.001, "< 0,001", paste("=", format(round(p, 3), decimal.mark = ",")))
+```
+
+Taimekoosluste liigikoosseis erines kasvukohtade vahel tugevalt (PERMANOVA, kasvukoht
+R² = `r fn(r2(permanova_model, "Habitat"))`, p `r fp(pr(permanova_model, "Habitat"))`;
+@tbl-permanova), kuid töötlus ega selle koosmõju kasvukohaga liigikoosseisu ei mõjutanud
+(töötlus p `r fp(pr(permanova_model, "Treatment"))`, koosmõju p
+`r fp(pr(permanova_model, "Habitat:Treatment"))`). Sama tulemuse andis osaline dbRDA, kus
+kasvukoha mõju oli eemaldatud (p `r fp(dbrda_anova[1, "Pr(>F)"])`; @tbl-dbrda).
+
+Metsa ja niidu kooslustel oli vähe ühiseid liike, mistõttu kõigi 24 rõnga ühine
+NMDS-ordinatsioon eraldas ainult kaks kasvukohta (stress ≈ 0; @fig-nmds) ega näidanud
+kasvukohasisest struktuuri. Kasvukohtade kaupa tehtud ordinatsioonide stress oli vastuvõetav
+(@tbl-ordination-summary, @fig-nmds-habitat). Ka kasvukohtade kaupa töötlus liigikoosseisu
+ei mõjutanud (@tbl-permanova-habitat). Metsas paiknesid paaride F1, F4, F5 ja F6 rõngad
+ordinatsioonis teineteise lähedal ning paarid F1 ja F6 vastasotstes, mis viitab, et
+liigikoosseisu mõjutas mikrokasvukoht rohkem kui töötlus.
+
+| | NMDS stress | PERMANOVA, töötlus |
+|---|---|---|
+| Kõik rõngad | ≈ 0 | R² = `r fn(r2(permanova_model, "Treatment"), 3)`, p `r fp(pr(permanova_model, "Treatment"))` |
+| Niit | `r fn(ndms_G$stress)` | R² = `r fn(r2(permanova_G, "Model"), 3)`, p `r fp(pr(permanova_G, "Model"))` |
+| Mets | `r fn(ndms_F$stress)` | R² = `r fn(r2(permanova_F, "Model"), 3)`, p `r fp(pr(permanova_F, "Model"))` |
+
+: Ordinatsioonide sobivus ja töötluse mõju liigikoosseisule kõigis rõngastes koos ja kasvukohtade kaupa. {#tbl-ordination-summary}
+
+<!--
+NB: kõigi 24 rõnga NMDS-i stress on peaaegu null (< 0.0001): metsa ja niidu kooslustel on
+vähe ühiseid liike ja ordinatsioon eraldab need kaheks kaugeks kobaraks, kasvukohasisene
+struktuur jääb nähtamatuks. Seepärast on allpool NMDS ka kasvukohtade kaupa
+(stress niit ~0.16, mets ~0.13).
+-->
+
+```{r}
+#| label: fig-nmds
+#| fig-cap: "Taimekoosluste NMDS-ordinatsioon (Bray-Curtis) kasvukoha ja töötluse järgi."
+
+# Extract coordinates and combine with metadata
+plot_data <- cbind(as.data.frame(scores(nmds, display = "sites")), Distnet_meta)
+
+ggplot(plot_data, aes(x = NMDS1, y = NMDS2, color = Kasvukoht, shape = Töötlus)) +
+  geom_point(size = 4) +
+  geom_text(aes(label = Code), vjust = -1, size = 3, show.legend = FALSE) +
+  stat_ellipse(aes(group = Habitat), linetype = 2) +
+  theme_minimal() +
+  labs(
+    title = "NMDS Plot (Bray-Curtis)",
+    subtitle = paste("Stress =", round(nmds$stress, 3))
+  )
+```
+
+```{r}
+#| label: tbl-permanova
+#| tbl-cap: "PERMANOVA: kasvukoha ja töötluse mõju liigikoosseisule (Bray-Curtis, 999 permutatsiooni, terminid järjestikku)."
+knitr::kable(perm_table(permanova_model), digits = 3)
+```
+
+```{r}
+#| label: fig-dbrda
+#| fig-cap: "Osaline dbRDA: töötluse mõju liigikoosseisule pärast kasvukoha mõju eemaldamist."
+
+dbrda_scores <- as.data.frame(scores(dbrda_model, display = "sites"))
+plot_df <- cbind(dbrda_scores, Distnet_meta)
+
+# Percentage of constrained variance on axis 1
+# (Treatment has 2 levels, so there is only 1 constrained axis: dbRDA1)
+eig <- dbrda_model$CCA$eig
+prop_var <- round(eig[1] / sum(eig) * 100, 1)
+
+ggplot(plot_df, aes(x = dbRDA1, y = MDS1, color = Kasvukoht, shape = Töötlus)) +
+  geom_point(size = 4, alpha = 0.8) +
+  theme_bw() +
+  labs(
+    title = "Partial dbRDA of Plant Communities",
+    subtitle = "Variation partitioned by Treatment, controlling for Habitat",
+    x = paste0("dbRDA1 (", prop_var, "% of constrained variance)"),
+    y = "Unconstrained MDS1"
+  )
+```
+
+```{r}
+#| label: tbl-dbrda
+#| tbl-cap: "Osalise dbRDA permutatsioonitest (999 permutatsiooni)."
+knitr::kable(as.data.frame(dbrda_anova), digits = 3)
+```
+
+```{r}
+#| label: fig-nmds-habitat
+#| fig-cap: "Taimekoosluste NMDS-ordinatsioon (Bray-Curtis) kasvukohtade kaupa töötluse järgi. Joon ühendab sama paari rõngaid."
+#| fig-height: 4
+
+habitat_scores <- function(fit, h) {
+  sc <- as.data.frame(scores(fit, display = "sites"))
+  sc$Code <- rownames(sc)
+  sc <- merge(sc, Distnet_meta, by = "Code")
+  sc$panel <- paste0(h, " (stress = ", round(fit$stress, 2), ")")
+  sc
+}
+plot_hab <- rbind(habitat_scores(ndms_G, "Niit"), habitat_scores(ndms_F, "Mets"))
+
+ggplot(plot_hab, aes(x = NMDS1, y = NMDS2)) +
+  geom_line(aes(group = Pair), colour = "grey70") +
+  geom_point(aes(shape = Töötlus, colour = Töötlus), size = 3) +
+  geom_text(aes(label = Code), vjust = -1, size = 2.5, show.legend = FALSE) +
+  facet_wrap(~panel, scales = "free") +
+  labs(shape = "Töötlus", colour = "Töötlus") +
+  theme_bw()
+```
+
+```{r}
+#| label: tbl-permanova-habitat
+#| tbl-cap: "PERMANOVA kasvukohtade kaupa: töötluse mõju liigikoosseisule (Bray-Curtis; permutatsioonid rõngapaaride sees, 64 võimalikku)."
+hab_tab <- rbind(
+  cbind(Kasvukoht = "Niit", as.data.frame(permanova_G)["Model", c("Df", "R2", "F", "Pr(>F)")]),
+  cbind(Kasvukoht = "Mets", as.data.frame(permanova_F)["Model", c("Df", "R2", "F", "Pr(>F)")])
+)
+rownames(hab_tab) <- NULL
+knitr::kable(hab_tab, digits = 3)
+```

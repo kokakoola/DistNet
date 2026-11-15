@@ -1,3 +1,48 @@
 # Sissejuhatus
 
-<!-- Sissejuhatus: uurimisküsimus, hüpoteesid, töö eesmärk. -->
+[UUS]{.mark}
+
+<!--
+Põhineb Mare 2025. aasta magistritöö projekti tekstil (juhendaja Kadri Koorem;
+esialgne teema "Naabertaimede ja häiringu mõju krohmseente kolonisatsioonile").
+Ajakohastatud: "häiring" -> seenevõrgustiku katkestamine (katkestatud / võrgustunud),
+hüpoteesid seotud praeguse katse disainiga.
+-->
+
+Suhted mikroorganismidega on mänginud olulist rolli taimede evolutsioonis. Esimeste
+maismaad koloniseerinud taimede juurtes on leitud tänapäevastele krohmseentele sarnaseid
+struktuure [VIIDE]{.mark}. Krohmseened [Glomeromycotina, @spatafora2016] on mikroskoopilised seened, kes elavad
+mullas ja taimede juurtes, saades taimelt kogu elutegevuseks vajaliku süsiniku ning pakkudes
+taimele vastu paremat toitainetega varustatust ja kaitset abiootilise ning biootilise stressi
+vastu. Toitainete vahetus toimub taimejuure rakkudes, kus krohmseente hüüfid moodustavad
+arbuskuleid (ld *arbusculum* -- väike puu), millest tuleb ka nimetus arbuskulaarne mükoriisa
+(AM). Taimejuurest väljapoole ulatuvad hüüfid moodustavad omavahel ja naabertaimede
+juurtega tiheda võrgustiku: üks hüüfistik võib koloniseerida mitut taime ning keskmiselt
+koloniseerib ühte taime 15 erinevat krohmseent [VIIDE]{.mark}. Sümbioosi loomine on
+kahepoolne -- taim eritab juureeritiste koosseisus hormoone (nt strigolaktoone) ja seen
+saadab keemilisi signaale (Myc-faktoreid) [@parniske2008; @mostofa2018; @lopezraez2013].
+
+Fülogeneesi käigus on väike osa taimeliike arendanud välja teist tüüpi mükoriisa (14% liikidest
+on ekto-, orhidee- või erikoidmükoriissed), kuid enamik soontaimi sõltub endiselt
+sümbioosist AM-seentega: 71% liikidest sõltub krohmseentest täielikult (obligatoorselt
+mükoriissed, OM), 7% on valikuliselt mükoriissed (fakultatiivselt mükoriissed, FM) ja 8% on
+mükoriisasuhtest loobunud (mittemükoriissed, NM) [@brundrett2018].
+
+Krohmseeni iseloomustab madal endeemsus [@davison2015] ning nende levik sõltub mükoriissete
+peremeestaimede levikust. Mulla viljakuse kasvades kolonisatsioon väheneb, eriti FM
+taimeliikidel; kolonisatsioon väheneb ka mulla happesuse kasvades ning OM taimede suurem
+osakaal ei ole otseselt seotud AM-seente suurema osakaaluga [@koorem2024].
+
+## Uurimisküsimus ja hüpoteesid
+
+Töö uurimisküsimus on: kuidas mõjutavad naabertaimed ja ühenduse katkestamine ümbritseva
+koosluse seenevõrgustikuga katsetaimede krohmseente kolonisatsiooni?
+
+Hüpoteesid:
+
+a) katkestatud töötluse taimede AM-kolonisatsioon on väiksem kui võrgustunud töötluse
+   taimedel, kes said vabalt seenevõrgustikuga liituda;
+b) erinevus on suurem fakultatiivselt mükoriissetel liikidel, obligatoorselt mükoriissel
+   liigil (positiivne kontroll) erinevust ei ilmne;
+c) seenevõrgustiku katkestamise mõju on suurem, kui naabertaimed moodustavad valdavalt
+   arbuskulaarset mükoriisat (kõrge naabruskonna kooslusmükoriissus).

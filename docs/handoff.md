@@ -111,3 +111,73 @@ report/thesis/
   Taasta struktuur: jaotiste pealkirjad `##`/`###`, R-/bash-/yaml-koodi ja kaustapuude ümber koodiplokid,
   loendid `-` märgiga, failinimed ja koodinimed `backtick`-ides. **Sisu ära muuda** ja ära lühenda.
   Näita Marele diffi.
+
+## 7. Dactylise juureskannid → R (13.11.2026)
+
+Juureskannid on analüüsitud väljaspool repot (Fiji + IJ_Rhizo). Kaust:
+`DistNet Master/RootLeaf_ScanAnalysis/` (`macros/`, `Root_scan/` originaalid, `Root_input_8bit/`, `Root_output/`).
+
+**Mare otsused (kanna `docs/Claude_README.md`-sse, uus jaotis „Juureskannide analüüs"):**
+- Tarkvara: Fiji + IJ_Rhizo v0beta (Pierret jt 2013). Labori protokoll on RhizoVision Explorer (Windows), mis Macis ei tööta.
+  IJ_Rhizo koopias on rida 462 välja kommenteeritud (eemaldas pikki piklikke osakesi, võis eemaldada päris juuri).
+- Eeltöötlus (`macros/01_preprocess_roots.ijm`): 16-bit TIFF, 600 dpi → 8-bit fikseeritud vahemikuga 0–65535;
+  aluse sisemus lõigatakse välja pildipõhise ROI-ga (60 px varu); JPEG kvaliteet 100.
+- Aluse kriimustused eemaldati enne analüüsi käsitsi kõigilt piltidelt (Fiji Edit → Clear). Juurejuppe ei eemaldatud.
+- IJ_Rhizo seaded: 600 dpi; border 10 px; particle cleaning sees (min 1 mm², circularity 0.75);
+  root length correction väljas; Kimura sees; lävi user defined 0–200.
+  Fiji Process → Binary → Options: „Black background" peab olema väljas.
+- Lävi 200, mitte labori RhizoVisioni 150: 150 juures katkesid ja kadusid kahvatud peened juured (kontrollitud g4n, f4n).
+- Põhiline pikkuse näitaja: `Kimura_length` (mm).
+- Diameeter sõltub lävest (g1n: 0.136 mm @150 vs 0.180 mm @200) → metoodikas mainida; omavaheline võrdlus korrektne.
+- IJ_Rhizo-s puudub root pruning (RhizoVisioni seade oli 1) → metoodikas mainida.
+
+**Ülesanded:**
+- [ ] `ResultAll.xls`: veerg `Skel_Corr` on makro veaga (stringide liitmine, rida 390) — ära kasuta.
+  Ridade lõpus on tühi tab → eemalda tühi viimane veerg. `.Renviron`-is puudub endiselt `SHAREPOINT_PATH_BIOMASS` — lisa.
+- [ ] `*_Histo.txt` (24 tk) ja `ResultAll.xls`: Mare kopeeris need käsitsi kausta `data/raw/root_scan/` (15.11.2026,
+  gitignore'itud nagu kogu `data/raw/`). Loe sealt otse `here::here("data", "raw", "root_scan")`, `get_data()` pole vaja.
+  Originaalid SharePointis: `RawData/Dac_RootAnalysis/Root_output/`. Kanna see erand (nagu FungalRoot) `Claude_README.md`-sse.
+  **Otsus (Mare, 15.11.2026):** R loeb `ResultAll.xls` (tabulaatoriga tekst, `read_tsv()`). Biomassi leht `Dac_RootResults` jääb
+  ainult juhendajale nähtavaks koopiaks, R seda ei loe.
+- [ ] Failinimest tunnused: `dac20261013_g1n` → `ring_id = "G1N"` (suurtähed, sama kuju mis `rings` tabelis, kontrolli),
+  `scan_date`, `species = "Dac"`.
+- [ ] Arvuta `Kimura_length` põhjal ümber: `dia_mm = Surf_Area / Kimura_length`, `surf_mm2 = pi * dia_mm * Kimura_length`,
+  `vol_mm3 = pi * (dia_mm/2)^2 * Kimura_length`. IJ_Rhizo omad (`Mean_Dia`, `Eq_Surf`, `Eq_Vol`) põhinevad toorpikkusel.
+- [ ] Diameetriklassid `*_Histo.txt` failidest: veerg 1 = raadius (mm) → diameeter = 2 × raadius; veerg 2 = pikkus (mm).
+  Klassid (labori RhizoVisioni seaded): 0–0.1, 0.1–0.2, 0.2–0.3, >0.3 mm. NB: Histo pikkus on toorskelett, mitte Kimura —
+  küsi Marelt, kas kasutada klasside osakaale või absoluutpikkust.
+- [ ] Liida Biomassiga `ring_id + species` kaudu (Dactylisel focal puudub, kõik `-2` real). Dactylise `root_dry_g` on mittetäielik
+  (mikroskoopiaosa lisamata) → SRL (`Kimura_length / root_dry_g`) alles pärast selle lisamist.
+
+## 8. Dactylise leheskannid → R (15.11.2026; pindalad mõõdetud, kalibreerimine lahtine)
+
+Kaust: `DistNet Master/RootLeaf_ScanAnalysis/` (`Dac_LeafScan/` 24 skanni, `LeafScanInstructions/` labori protokoll,
+`macros/02_leaf_area.ijm`, väljund `Leaf_output/leaf_area.csv`).
+
+**Teada (kanna `docs/Claude_README.md`-sse, kui analüüs on tehtud):**
+- Värsked lehed (kaalutud märjalt, siis 40 °C kuivatus ja kuivkaal). Epson V370, 8-bit hall, 300 dpi.
+- Lehed ei ole volditud; kahetooniline triip on keskroodu soon.
+- Lävi 160 (Mare valis visuaalselt 15.11.2026; labori RhizoVisioni seade oli 200). 175 juures oli lehe alumise serva vari
+  täielikult sees (pindala üle hinnatud), 150 juures tekkisid lehe sisse augud; 160 lõikab servi vähe, vari jääb osaliselt sisse.
+  Labori taustamüra filter 1 mm². Labori seade „Keep largest component = true" jäetakse kõrvale
+  (jätaks alles ainult suurima lehetüki); Fijis summeeritakse kõik tükid ≥ 1 mm².
+- Tulemus: `Leaf_output/leaf_area.csv` (24 rida, 15.11.2026); Mare kopeeris selle faili `data/raw/leaf_area.csv` — R loeb sealt
+  (`read_csv()`, punkt kümnenderaldajana). Koopia ka `DistNet_Biomass.xlsx` lehel juhendaja jaoks, R seda ei loe. `leaf_area_mm2` on õige; `n_pieces` on vale skannidel,
+  kus lehed puutuvad kokku (liidetakse üheks tükiks). Praegu ei kasutata; kui vaja (nt pindala lehe kohta), Mare annab
+  õiged arvud → parandus R-is `rows_upsert()`, `data_source = "manual"`.
+- Failinimest kasutatakse ainult esimest osa: `F4_N_001` → `ring_id = "F4N"`. Lõpunumber ei ole vajalik.
+
+**LAHTINE – kontrollruudu suurus (Mare kontrollib laboris 16.11.2026):**
+- Protokolli järgi on kontrollruut 3 × 3 cm (900 mm²). 300 dpi järgi mõõdab see kõigil 24 pildil ~989 mm² (lävi < 60)
+  kuni ~1005 mm² (lävi < 128), külg ~31.5 mm; varju mõju see ei ole (must tuum üksi on juba ~989 mm²).
+- Kui ruut on tegelikult 30 mm → skanneri tegelik resolutsioon erineb ~5 % → kõik pindalad kalibreerida ruudu järgi
+  (tegur ~900/1001, pildipõhiselt); mõjutab otse SLA-d. Kui ruut on ~31.5 mm → kasutatakse 300 dpi, kalibreerimist pole vaja.
+- [ ] Pärast otsust kirjelda kalibreerimine metoodikas (`02-metoodika.qmd`, leheskannide alapeatükk).
+
+**Ülesanded:**
+- [ ] Loe `data/raw/leaf_area.csv`; `ring_id` failinimest (`F4_N_001` → `"F4N"`), `species = "Dac"`.
+- [ ] Kalibreerimine sõltub Mare kontrollist (vt LAHTINE): vajadusel `leaf_area_cal = leaf_area_mm2 * 900 / control_square_mm2`
+  (veerg on CSV-s olemas, pilte pole vaja uuesti läbi käia).
+- [ ] Liida Dactylise lehekaaludega (värske ja kuiv; Dactylise eraldi tabel `DistNet_Biomass.xlsx`-is — lehe/veergude nimi küsi Marelt)
+  `ring_id + species` kaudu. SLA = lehe pindala / lehe kuivkaal; LDMC = kuivkaal / värske kaal. Kumbagi pole veel otsustatud
+  analüüsi kaasata — küsi Marelt.

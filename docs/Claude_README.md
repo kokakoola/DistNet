@@ -37,7 +37,10 @@ Cichorium intybus (FM) — käitub sarnaselt Achilleaga (piklik, mitte rosett).
 Dactylis glomerata (FM) — kõrreline; märjana/vihma järel kaldub lonti vajuma (mõjutab kõrguse mõõtmist, mitte laiust).
 Leontodon hispidus (OM) — tõeline rosett, kasvab laiusesse.
 Silene latifolia (FM???, vt allpool) — kasvatab õieroote vegetatiivsest rosetist selgelt eraldi.
-Silene taksonoomia (lahendatud): "Silene alba" ja "Silene pratensis" on sama taksoni kaks vana sünonüümi — kehtiv nimi on Silene latifolia (täpsemalt subsp. alba). Pole kaks segiaetavat liiki, vaid üks liik kahe nimega. Silene nutans on aga päriselt teine liik — seemnepakil oli vale märgistus (tellitud/märgitud S. nutans, tegelikult kasvas S. latifolia/alba). TODO: liigi species-tabeli Myc_status "FM" oli määratud S. nutans eeldusel — kontrollida, kas kehtib ka S. latifolia kohta (kasutaja mainis, et Silene on tavaliselt NM — vastuolu, juhendajalt kinnitust vaja).
+Läbilõikamine: mõlemal aastal (2025, 2026) kogu vegetatsiooniperioodi jooksul 1-nädalaste vahedega. Referentsid: Cichorium — juhendaja allikast (päritolu teadmata); Silene — PlutoF-is 1 kirje 'AM leitud', % puudub (Mare 15.11).
+Silene tundlik teema (Mare 15.11.2026): mükoloogide järgi fülogeneetiliselt AMF-iks võimetu, Mare leidis oma mikroskoopias vesiikuleid ja hüüfe; juhendaja pani liigi katsesse teadlikult. Hüpoteesidesse ei lisata ja tekstis ei tõsteta esile. Krohmseente taksonoomia: Glomeromycotina (spatafora2016).
+Liikide valiku loogika (Mare 15.11.2026): FM liigid (Achillea, Cichorium, Dactylis) on katse keskmes — saavad AMF-i kasutada või mitte, seega peaks võrgustiku mõju avalduma neil; Leontodon (OM) = positiivne kontroll; Silene latifolia (reeglina NM, kohati FM) = negatiivne kontroll. Katseringid jaotati kummaski kasvukohas juhuslikult 6 paariks, paari sees töötlus juhuslikult.
+Silene taksonoomia (lahendatud): "Silene alba" ja "Silene pratensis" on sama taksoni kaks vana sünonüümi — kehtiv nimi on Silene latifolia (täpsemalt subsp. alba). Pole kaks segiaetavat liiki, vaid üks liik kahe nimega. Silene nutans on aga päriselt teine liik — seemnepakil oli vale märgistus; MasterData Species parandatud S. latifolia'ks 15.11.2026, lõputöös ei mainita (Mare: infomüra). TODO: liigi species-tabeli Myc_status "FM" oli määratud S. nutans eeldusel — kontrollida, kas kehtib ka S. latifolia kohta (kasutaja mainis, et Silene on tavaliselt NM — vastuolu, juhendajalt kinnitust vaja).
 Lõputöö tekstis kasutatakse nime Silene latifolia (otsus 11.11.2026, Mare kinnitas); "Silene alba" asendatakse kõikjal tekstis.
 
 6. liik ära langes: Solidago virgaurea (OM) oli algselt plaanis, aga ei idanenud — pole katses, aga jäetakse species-tabelisse alles koos märkega (ei kustutata, dokumenteeritakse kõrvalekaldena).
@@ -103,7 +106,7 @@ DistNet_Colonization.xlsx (OODAB saagikoristust/mikroskoopiat) — mikroskoopia 
 Mullastik (pH, N-P-K) ja eDNA-põhised liigiandmed lisanduvad tulevikus — samuti oma failidena (lab/väline allikas, teine vaatlusühik), mitte MasterData sisse. Ellenberg väärtused (kui juhendaja need lisab) → väike lookup-fail/CSV, kuna on tõeline väline referents (ainus, mida kasutaja ise ei mõõda).
 
 Traits metoodika (kasvu/kahjustuste mõõtmine)
-Failid: report/thesis/_kasvunaitajad.qmd (kaasatud {{< include >}}-iga 02-metoodika.qmd alapeatükki "Taimede kasvu ja kahjustuste seire") + report/thesis/references.bib. Varem meetodid_kasvunaitajad.qmd (ümber nimetatud 11.11.2026).
+Failid: report/thesis/_metoodika_kasvunaitajad.qmd (kaasatud {{< include >}}-iga 02-metoodika.qmd alapeatükki "Taimede kasvu ja kahjustuste seire") + report/thesis/references.bib. Varem meetodid_kasvunaitajad.qmd (ümber nimetatud 11.11.2026).
 
 Igakuine mittedestruktiivne seire kuni katse lõpuni; lõpus saagikoristus (juured + maapealne osa eraldi, kuivkaal) — kuivkaalud lähevad eraldi faili DistNet_Biomass.xlsx, mitte Traits'i (vt "Andmefailide struktuur").
 Kõrgus = kogukõrgus koos õieroostiga (mitte puhas vegetatiivne), juhendaja valik — põhjendus: konkurentsiökoloogia "canopy height" traditsioon (Gaudet & Keddy 1988), erinevalt trait-andmebaaside konventsioonist (Cornelissen jt 2003; Pérez-Harguindeguy jt 2013). Mõõtmisel väldita vahetult pärast vihma (lonti vajumise müra).
@@ -139,11 +142,19 @@ Bonham, C.D. (2013). Measurements for Terrestrial Vegetation, 2nd ed. Wiley. Ptk
 Determining herbivory rate. PROMETHEUS Protocols (prometheusprotocols.net) — "100% leheherbivooriat jäetakse tihti mõõtmata", lehtede arvu jälgimise põhjendus (leaf_count idee algallikas, kuigi lõpuks ei kasutata).
 HerbVar Damage Estimation Guidelines (herbvar.org) — võrdlusleht (petiole/midrib) täielikult söödud lehe suuruse tuletamiseks.
 Dassen jt (2021) — vt "severed" terminoloogia jaotist ülal.
-Lahtine/kinnitamata: "Tordoni" meetod (juhendaja algne kõrgusmõõtmise soovitus) — täpne publikatsioon endiselt kinnitamata. .bib failis platseholder tordoniXXXX. Ära kasuta lõplikus tekstis enne juhendajalt viite saamist.
+Traits'i metoodika viited (Desktopist 15.11.2026; kõik kontrollitud, .bib võtmed sulgudes):
+- Kõrgus (kogukõrgus koos õieroostiga): Cornelissen jt 2003 (cornelissen2003) — algne vegetatiivse kõrguse protokoll, õisikud välja jäetud; Pérez-Harguindeguy jt 2013 (perezharguindeguy2013) — täiendatud versioon, kontrast meie valikuga; Gaudet & Keddy 1988 (gaudetkeddy1988) — põhjendus kogukõrgusele (canopy height, valguskonkurents).
+- Vegetatiivse vs generatiivse kasvu eristamine (Silene): Sun & Frelich 2011 (sunfrelich2011).
+- Roseti laius/võra (Leontodon, Achillea, Cichorium): Bonham 2013, Measurements for Terrestrial Vegetation, 2. tr, ptk 6.5 "Crown diameter and canopy closure method" (bonham2013). NB: peatüki täpset sõnastust/valemit pole kontrollitud (paywall) → tsiteerida kui "standardne meetod (Bonham 2013)", mitte otsetsitaadina.
+- Herbivooria/kahjustuse hindamine (kadunud lehed, estimation_flag): Richards, PROMETHEUS Protocols "Determining herbivory rate" (richards_prometheus_herbivory) — 100% leheherbivooriat jäetakse tihti mõõtmata, lehtede arvu jälgimise põhjendus; HerbVar Damage Estimation Guidelines (herbvar_damage) — võrdlusleht (petiole/midrib) täielikult söödud lehe suuruse tuletamiseks.
+- Lehe max pikkuse mõõtmise allikas endiselt puudu.
+Kaldkriipsuga kõrgused (23.08/23.09, nt 55/45; Mare 15.11): suurem number = generatiivne (kogukõrgus koos õisikuga), väiksem = vegetatiivne, sõltumata järjekorrast. Nomenklatuur: GBIF Backbone Taxonomy (gbif2023); Silene latifolia Poir. (syn. S. alba, S. pratensis; mcneill1981).
+Kõrgusmõõtmise meetodi viide: MITTE Tordoni — Mare segas nimed (15.11.2026), õige on Carlos Carmona (andsid koos loengut). Mare otsus 15.11: viide = carmona2021 (tordoniXXXX eemaldatud .bib-ist). Mõõtmiskorrad 2026: 31.05, 15.06, 23.06, 23.07, 23.08, 23.09 (Traits-faili lehtede nimed). 31.05 mõõdeti max_leaf, mitte kõrgust; 15.06 kõrgus, mitte max_leaf.
 FungalRoot võrdlusandmestiku pipeline
 Eesmärk: FungalRoot andmebaasi põhjal arvutatud forest vs grassland keskmine AM-kolonisatsioon on taustvõrdlus/kalibreering, mitte iseseisev tulemus.
 
 Quadrat (kooslus-)andmed liiguvad edaspidi DistNet_Quadrat.xlsx faili (vt "Andmefailide struktuur" ülal — varem MasterData sees). Veerud Species/Mean_Cover/Mean_Abundance, katvuse lävend liigi kaasamiseks 0.8% (juhendaja soovitas 1%, kasutaja valis 0.8%). LAHTINE (11.11.2026): Mare hüpotees on, et severed/control CWM-erinevust mõjutasid juhuslikud, kohale mitteomased liigid (mitte tallamine) — juhendaja nõustus need välja võtma, sellest arutelu lävendi 0.5 üle (Mean_cover ≤ 0.5 välja, ala tasemel). Lõplik lävend otsustamata; vt docs/markmed.md.
+AM-väärtused (15.11.2026): R/am_colonization.R kordab Exceli veergu 'AM intensity FungalRoot' — FungalRoot GBIF-i kaudu (DOI 10.15468/a7ujmj), ainult McGonigle RLC%, koondkeskmine liigi kohta (juhendaja soov, mitte habitat'i kaupa); käsitsi väärtused Exceli lahtrikommentaaridest. Kolmetasandiline habitat-fallback (allpool) on ajalugu.
 CWM (11.11.2026): naabruse kooslusmükoriissus arvutatakse R-is (R/CWM.R) kvadraadilehtede liigiridadest — weighted.mean(AM %, w = katvus) üle lävendi ületanud liikide, lisaks cover_share (lävendi ületanud liikide katvus / kogu liikide katvus). Exceli CWM-lehte ei kasutata (see võtab kõik liigid). Exceli niidulehe KW_means ei ole CWM. AM-väärtuste allikas praegu Exceli veerg "AM intensity FungalRoot"; erineb R/AM_intensity.R pipeline'ist 11 liigil — lõplik allikas otsustamata. FungalRoot liikide CSV-d data/raw/FungalRoot/ (üks fail liigi kohta; veerud: id, ID [liiginimi], Rights holder, Last modified, Habitat, Mycorrhiza type, AM method, AM intensity — järjekord varieerub, pole probleem, read_csv/bind_rows ühendavad nime järgi).
 Kasutatakse ainult McGonigle jt 1990 RLC% meetodit (mitte Selivanov 1981 — sarnane põhimõte, erinev protokoll, hoitakse eraldi).
 Biomi kategoriseerimine: "forest" = temperate coniferous + broadleaf forest biome kokku (katsekoht hemiboreaalne, 58°N — ENVO "subpolar" ei kvalifitseeru, see on pigem 60-70°N). "grassland" = temperate grassland biome.
@@ -187,11 +198,12 @@ SHAREPOINT_PATH_MASTER=RawData/Fieldwork/DistNet_MasterData.xlsx
 SHAREPOINT_PATH_COLONIZATION=RawData/Fieldwork/DistNet_Colonization.xlsx
 SHAREPOINT_PATH_QUADRAT=RawData/Fieldwork/DistNet_Quadrat.xlsx
 SHAREPOINT_PATH_TRAITS=RawData/Fieldwork/DistNet_Traits.xlsx
-(SHAREPOINT_PATH_BIOMASS veel lisamata; fail on RawData/Fieldwork/DistNet_Biomass.xlsx.)
+SHAREPOINT_PATH_BIOMASS=RawData/Fieldwork/DistNet_Biomass.xlsx (lisatud 15.11.2026).
 
 .Renviron.example (LÄHEB git'i, placeholder-väärtustega) dokumenteerib samu muutujaid.
 Miks eraldi .Renviron: peegeldab tavapärast .env-mustrit — täpne asukoht ei pea olema avalikult git'is nähtav. .Renviron loetakse ainult R-sessiooni alguses — pärast muutmist Session → Restart R (või readRenviron(here::here(".Renviron"))). NB: .Renviron kirjutab üle samanimelised shelli keskkonnamuutujad, s.t SHAREPOINT_LOCAL-i ei saa testimiseks käsurealt ümber suunata.
 
+Juhendaja oma arvutis (15.11.2026): projekti README.md alguses on juhend (Windows + RStudio): kloonimine avalikust repost (File → New Project → Version Control), renv::restore(), SharePointi sünk + .Renviron (Docs/Renviron.txt, SHAREPOINT_LOCAL oma teeks), uuendused Git → Pull. Repos on DistNet.Rproj (et RStudio ei muudaks juhendaja masinas .gitignore'i).
 Ülevaatuse töövoog (R/helpers/review_sync.R, 11.11.2026):
 - upload_review(local_file) kopeerib renderdatud docx-i sünkitud kausta Docs/Review/, nimega <nimi>_v<N>_<kuupäev>.docx (nt DistNet_thesis_v1_2026-11-11.docx; peatüki puhul eesliide "02-" kaob: metoodika_v1_...). Versioon valitakse automaatselt järgmine vaba; olemasolevat faili üle ei kirjutata. ./publish.sh kutsub selle iga kord välja (Mare otsus 11.11.2026), s.t iga avaldamine = uus versioon Review kaustas.
 - Juhendaja kommenteerib Word Online'is.
@@ -211,6 +223,10 @@ DistNet/
 │   │   └── review_sync.R   # upload_review(), download_review(), read_review() — juhendaja ülevaatus
 │   ├── CWM.R               # naabruse CWM (AM %) kvadraadi liigiridadest + habitat × treatment mudel
 │   ├── quadrat_cover.R     # kvadraatide katvus ja liigid severed vs control
+│   ├── community_ordination.R # juhendaja NMDS/PERMANOVA/partial dbRDA (Quadrat-faili lehed Community + Meta) → data/processed/community.rda; + Mare NMDS kasvukohtade kaupa (ndms_G, ndms_F) ja PERMANOVA kasvukohtade kaupa, permutatsioonid paaride sees (permanova_G, permanova_F)
+│   ├── dac_leaf_traits.R   # Dactylis SLA/LDMC (Biomass: Dac_weight_all + Dac_LeafResults), habitat × treatment → data/processed/dac_leaf_traits.rda
+│   ├── gbif_name_check.R   # kõik liiginimed GBIF Backbone'i vastu → data/processed/gbif_name_check.csv (Excelit ei muuda)
+│   ├── am_colonization.R   # kvadraadiliikide AM % FungalRoot'ist GBIF API kaudu (McGonigle, koondkeskmine) + käsitsi väärtused → data/processed/am_colonization.csv
 │   └── analyze.R           # mudelid, statistika — kasutab helpereid, ei tea/hooli päritolust
 ├── data/{raw,processed}/   # mõlemad gitignore'itud
 ├── report/
@@ -249,14 +265,33 @@ r
   colonization <- read_csv(here::here("data", "processed", "colonization.csv"))
 Analüüsi (analyze.R) ja avaldamise (Quarto blog, vt allpool) vaheline koodikordus (mudeli-kood mõlemas kohas) on WIP-faasis teadlikult aktsepteeritud (paindlikkus katsetamiseks) — kui mudel stabiliseerub, kaaluda mudeli-loogika tõstmist eraldi funktsiooniks (nt R/models.R), mida kutsutakse mõlemast kohast.
 Praegune baasmudel, esimesed tulemused (21.08.2026): lm(log_total ~ habitat * treatment + species, data = colonization) — jooksutatud edukalt, n=44 (13 vaatlust NA tõttu välja jäetud), R² = 0.60. Esialgne, WIP.
+Juure- ja lehekännide analüüs (Dactylis; handoff 7, 13.–15.11.2026)
+Kaust väljaspool repot: DistNet Master/RootLeaf_ScanAnalysis/ (koopia SharePointis RawData/Dac_RootAnalysis/). Tulemused ka DistNet_Biomass.xlsx lehtedel Dac_RootResults (IJ_Rhizo ResultAll) ja Dac_LeafResults (leaf_area.csv); kaalud lehel Dac_weight_all. Metoodika tekst: report/thesis/_metoodika_funktsionaalsed_naitajad_Dac.qmd (include 02-metoodika.qmd).
+- Juured: Fiji + IJ_Rhizo v0beta (Pierret jt 2013); labori RhizoVision Explorer on ainult Windowsile. IJ_Rhizo koopias rida 462 välja kommenteeritud (eemaldas pikki piklikke osakesi = päris juuri).
+- Eeltöötlus macros/01_preprocess_roots.ijm: 16-bit TIFF 600 dpi → 8-bit fikseeritud vahemik 0–65535; ROI aluse sisemus, 60 px varu; JPEG 100. Kriimustused käsitsi eemaldatud (Edit → Clear), juurejuppe mitte.
+- IJ_Rhizo: 600 dpi, border 10 px, particle cleaning (1 mm², circularity 0.75), root length correction väljas, Kimura sees, lävi 0–200 (mitte labori 150: kahvatud peened juured kadusid). Binary Options "Black background" väljas.
+- Põhinäitaja Kimura_length (mm; Kimura jt 1999, kimura1999). dia = Surf_Area / Kimura_length, surf = pi·dia·L, vol = pi·(dia/2)²·L (IJ_Rhizo omad põhinevad toorpikkusel). Skel_Corr on makro veaga — ära kasuta. ResultAll.xls on TSV.
+- Diameeter sõltub lävest → metoodikas mainitud; root pruning puudub → mainitud.
+- Lehed: Epson V370, 8-bit, 300 dpi; macros/02_leaf_area.ijm, lävi 0–160 (labori 200), ROI käsitsi, osakesed ≥ 1 mm², kontrollruut lävi 0–60.
+- Kuivatus 40 °C: lehed kohe pärast skaneerimist 01.10.2026, juured 3 päeva alates 14.10.2026 (Mare 15.11). Lehe kuivmass: veerg leaf_dry_micro (mikrokaal), mitte leaf_dry_weight (Mare 15.11).
+- Tuletatud: SLA, LDMC, SRL (perezharguindeguy2013).
+- Lehed (Mare 15.11): noorimad täielikult arenenud terved lehed, ainult leheplaat; rehüdreeritud 24 h minigrip-kotis, märgmass 01.10.2026; leaf_* kaalud = samad skaneeritud lehejupid. Kontrollruut ~31,5 mm külg (mõõdetud 976–991 mm²), mitte 3 cm — lehepindu ei parandata.
+- SRL: skaneeritud juured on alamproov; vaja skaneeritud proovi kuivkaalu (kaalumata). root_dry_g = kogu juurestik, SRL-iks ei sobi.
+
 Lõputöö struktuur (report/thesis/, Quarto book, 11.11.2026)
+Analüüs vs tekst (Mare otsus 14.11.2026): andmete lugemine ja raske arvutus R/ skriptides, tulemused salvestatakse data/processed/*.rda (save/load, nagu Community analysis kursusel); _fail.qmd laeb .rda ja teeb joonised/tabelid, kaasatakse peatükki include'iga. .qmd chunk'is: here::i_am("report/thesis/<peatükk>.qmd") enne here() kasutamist — muidu peatub here() _quarto.yml juures (report/thesis/). .rda tuleb enne renderdust R-skriptiga teha (data/ on gitignore'itud).
 report/thesis/
 ├── _quarto.yml           # project type: book; lang: et; docx + html; reference-doc/csl veel lisamata
 ├── index.qmd             # annotatsioon + abstract (nummerdamata)
 ├── 01-sissejuhatus.qmd
-├── 02-metoodika.qmd      # sh alapeatükk 2.4 = {{< include _kasvunaitajad.qmd >}}
-├── _kasvunaitajad.qmd    # Traits'i metoodika; alakriips = Quarto ei renderda eraldi
-├── 03-tulemused.qmd      # põhi (märksõnad)
+├── 02-metoodika.qmd      # sh alapeatükk 2.4 = {{< include _metoodika_kasvunaitajad.qmd >}}
+├── _metoodika_kasvunaitajad.qmd    # Traits'i metoodika; alakriips = Quarto ei renderda eraldi
+├── 03-tulemused.qmd      # põhi (märksõnad); alapeatükk "Taimekoosluste liigikoosseis" = {{< include _tulemused_kooslused.qmd >}}
+├── _metoodika_eksperimendi_disain.qmd # 02-metoodika "Eksperimendi disain" (Mare ettekande 2025 tekst, ajakohastatud) + liiginimede callout juhendajale
+├── _metoodika_kooslused.qmd # 02-metoodika "Naabruskonna kooslus ja kooslusmükoriissus": kvadraadid, AM-väärtused, CWM (asendas "FungalRoot'i kalibreerimine")
+├── _tulemused_kooslused.qmd        # laeb community.rda, joonised + tabelid; parandusteate callout juhendajale (eemaldada lõplikust tekstist)
+├── _metoodika_funktsionaalsed_naitajad_Dac.qmd           # Dactylise juure- ja lehekännide metoodika (include 02-metoodika)
+├── _tulemused_funktsionaalsed_naitajad_Dac.qmd # Dactylise lehtede SLA/LDMC tulemused (include 03-tulemused), laeb dac_leaf_traits.rda
 ├── 04-arutelu.qmd        # põhi (märksõnad)
 ├── 05-kokkuvote.qmd      # põhi
 ├── references.qmd        # "Kasutatud kirjandus" ({#refs})
