@@ -23,6 +23,8 @@ muutnud:
 | PERMANOVA, töötlus | R² = 0.014, p = 0.639 | R² = 0.013, p = 0.685 |
 | PERMANOVA, kasvukoht × töötlus | R² = 0.014, p = 0.643 | R² = 0.014, p = 0.617 |
 | Osaline dbRDA, töötlus | p = 0.794 | p = 0.833 |
+
+Kasvukoha tugev mõju ning töötluse ja koosmõju puudumine jäid samaks.
 :::
 
 ```{r}

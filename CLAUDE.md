@@ -111,6 +111,9 @@ DistNet/
 - Kohatäited tekstis kollase esiletõstuga (HTML `<mark>`, docx highlight): `[KONTROLLI: ...]{.mark}`,
   `[LAHTINE: ...]{.mark}`. Uus alapeatükk saab pealkirja alla eraldi reale `[UUS]{.mark}` (juhendajale; eemaldada,
   kui üle vaadatud). Pealkirjadesse programmide nimesid ei panda.
+- docx: callout (`::: {.callout-...}`) ei tohi lõppeda tabeliga -- Wordis on callout ise tabel ja tabel lahtri
+  lõpus teeb faili "rikutuks". Pane tabeli järele lause. `_quarto.yml`-is `freeze: false`, sest `freeze: auto` ei
+  märka include-failide muudatusi (vananenud väljund).
 - **Ära kasuta lõplikus tekstis kinnitamata viiteid.** Kohatäide tekstis on `[... VIIDE]{.mark}`, mitte
   väljamõeldud `.bib` kirje.
 
