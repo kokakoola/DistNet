@@ -14,19 +14,16 @@ küsimused (Dactylise ulatus, DNA/mullatoitained, Silene mükoriisastaatus).
 Zoterost kinnitatud, jäta märge [VIIDE: ...].
 -->
 
-## Kogutud andmed 
-{{< include _skeleton.qmd >}} 
-
 ## Katseala
 
-- Asukoht: Eesti, ~58°N; hemiboreaalne vöönd.
+- Asukoht: Eesti, ~58°N; hemiboreaalne vöönd. 
 
 - Kaks kasvukohta: mets (männi-/segamets) ja niit -- lühike iseloomustus
   mõlemast (puistu/rohurinde tüüp, muldkate, varasem maakasutus, kui teada).
 - Miks need kaks kasvukohta valitud (kontrast AMF-võrgustiku tiheduses/
   koosseisus -- vt FungalRoot'i esialgsed keskmised: mets ~21%, niit ~73%).
-- Katseala paiknemine/kaart, rõngaste paigutuse loogika (juhuslikustamine vs
-  olemasolev taimestik, min vahekaugus rõngaste vahel jne -- kontrolli
+- Katseala paiknemine/kaart, ringide paigutuse loogika (juhuslikustamine vs
+  olemasolev taimestik, min vahekaugus ringide vahel jne -- kontrolli
   väliprotokollist).
 - [VIIDE: ala kirjeldav kirjandus/kaardimaterjal, kui on]{.mark}
 
@@ -46,12 +43,12 @@ Zoterost kinnitatud, jäta märge [VIIDE: ...].
   ainult visiitide arv/ajavahemik.
 - Katse lõpp (saagikoristus): mis kogutakse, millises järjekorras
   (focal vs ülejäänud taimed, juured vs maapealne osa).
-- Focal-taime määramine väljas: rõnga x liigi suurim/esimene taim; kui
+- Focal-taime määramine väljas: ringi x liigi suurim/esimene taim; kui
   focal suri enne koristust, järgmine ellujäänud isend saab focal'iks --
   protokolli samm, mitte ainult andmetöötluse reegel.
 - Proovide märgistamine ja transport (kiirkülmutus/kuivatus, kui kohaldub),
   mikroskoopia jaoks juurte fikseerimine/säilitamine.
-- Kvadrati katvuse hindamine (koosluse struktuur, seotud DistNet_Quadrat
+- Taimeruudu katvuse hindamine (koosluse struktuur, seotud DistNet_Quadrat
   andmestikuga) -- millal ja kuidas mõõdeti.
 
 ## Taimede kasvu ja kahjustuste seire
@@ -66,12 +63,12 @@ Zoterost kinnitatud, jäta märge [VIIDE: ...].
   [@mcgonigle1990].
 - Mõõdetavad kategooriad: arbuskulid (arb), vesiikulid (ves), hüüfid (hyp),
   mitte-AMF struktuurid (noamf), kokku (total).
-- Valim: 1 isend liigi kohta rõngas (focal); ülejäänud taimi mikroskoopiliselt
+- Valim: 1 isend liigi kohta ringis (focal); ülejäänud taimi mikroskoopiliselt
   ei hinnata (erinevus biomassi/kasvu keskmistamisest -- selgita).
 - Juurte ettevalmistus enne vaatlust (puhastus, värvimine -- protokolli
   sammud, kemikaalid, kontsentratsioonid, inkubatsiooniajad).
 - Hindamismetoodika praktikas: ristumispunktide loendamise meetod
-  (magnification, vaatlusvälju rõnga kohta jne).
+  (magnification, vaatlusvälju ringi kohta jne).
 - Andmestiku struktuur: leht `Colonization_26`, veerud A:J sisend
   (loendusandmed), K+ arvutuslikud (RLC% valemid) -- kirjelda valem(id).
 - Liitmisvõti `plant_id`.
@@ -86,7 +83,7 @@ Zoterost kinnitatud, jäta märge [VIIDE: ...].
 ## Biomass
 
 - Andmeallikas: `DistNet_Biomass.xlsx`, kuivkaalud (g).
-- Struktuur: `-1` = focal taim, `-2` = ülejäänud taimed liigi/rõnga kohta
+- Struktuur: `-1` = focal taim, `-2` = ülejäänud taimed liigi/ringi kohta
   koos (koondrida).
 - Liitmisvõti: **`ring_id + species + focal`**, mitte `plant_id` -- põhjenda
   lühidalt (miks plant_id ei sobi koondridade puhul).
@@ -97,7 +94,7 @@ Zoterost kinnitatud, jäta märge [VIIDE: ...].
 - Surnud/eemaldatud taimede käsitlus: ei kustutata (`status`:
   alive/dead/missing/removed) -- mõju biomassi keskmistesse.
 
-## Naabruskonna kooslus ja kooslusmükoriissus
+## Naabruskonna kooslus ja selle mükoriissus
 
 [UUS]{.mark}
 
@@ -105,16 +102,16 @@ Zoterost kinnitatud, jäta märge [VIIDE: ...].
 
 ## Statistiline analüüs
 
-- Analüüsiüksus ja hierarhia: kasvukoht -> rõngas -> taim.
-- Mixed model loogika: rõngas kui random effect (põhjenda, miks pseudo-
-  replikatsiooni vältimiseks vajalik, kui rõnga sees on mitu taime/mõõtmist).
+- Analüüsiüksus ja hierarhia: kasvukoht -> ring -> taim.
+- Mixed model loogika: ring kui random effect (põhjenda, miks pseudo-
+  replikatsiooni vältimiseks vajalik, kui ringi sees on mitu taime/mõõtmist).
 - Praegune baasmudel (piloot, **WIP, kindlasti täienema**):
   `lm(log_total ~ habitat * treatment + species, data = colonization)`,
   n = 44, R² = 0,60 -- selgita, mida see praegu näitab ja mida see veel ei
   arvesta (random effect puudub, põhihüpotees puudub).
 - Log-teisenduse põhjendus (`log_total`) -- jaotuse kuju, heteroskedastsus
   vms.
-- **Põhihüpotees (veel realiseerimata):** kvadrati keskmine naabruse-AM
+- **Põhihüpotees (veel realiseerimata):** taimeruudu keskmine naabruse-AM
   pideva prediktorina + interaktsioon `treatment * quadrat_mean_AM` --
   kirjelda ootust/suunda (nt kas severing peaks nõrgestama naabruse-AM
   mõju).

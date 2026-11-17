@@ -1,7 +1,7 @@
 ::: {.callout-note}
 ## Liiginimed -- juhendajale ülevaatamiseks (15.11.2026), lõplikust tekstist eemaldada
 
-Kõik andmestiku taimenimed (MasterData `Species`, `Quadrat_Forest`, `Quadrat_Grassland`; 69
+Kõik andmestiku liiginimed (MasterData `Species`, `Quadrat_Forest`, `Quadrat_Grassland`; 69
 nime) kontrolliti GBIF Backbone Taxonomy vastu (`R/gbif_name_check.R`). 62 nime vastavad
 kehtivale nimele. Ülejäänud:
 
@@ -19,8 +19,8 @@ Otsust vajavad kollaselt märgitud read.
 
 Hüpoteesi kontrollimiseks viidi läbi kaks vegetatsiooniperioodi (2025--2026) kestnud
 manipulatiivne välikatse. Pooltel katseringidel takistati katsetaimede liitumist ümbritseva
-koosluse arbuskulaarse mükoriisa seenevõrgustikuga (katkestatud töötlus, ingl *severed*),
-ülejäänud said liituda takistusteta (võrgustunud töötlus, ingl *intact*; nimetus tähistab
+koosluse arbuskulaarse mükoriisa seenevõrgustikuga (katkestatud ringid, ingl *severed*),
+ülejäänud said liituda takistusteta (võrgustunud ringid, ingl *intact*; nimetus tähistab
 liitumise võimalust). Ingliskeelsed nimetused järgivad @dassen2021, kes katkestasid
 mütseeliühenduse sarnaselt, kuid kasvusüdamike (*ingrowth core*) tõstmisega. Võrdluseks
 koguti referentsrühm koosluses looduslikult kasvavatest katseliikide isenditest.
@@ -35,15 +35,15 @@ pandi tagasi. Mulda ei sõelutud ega töödeldud, seega sisaldas see eelnenud ta
 juurefragmente ja nendega seotud mikroorganisme.
 
 Kummaski kasvukohas jaotati katseringid juhuslikult kuueks paariks ning paari sees määrati
-juhuslikult, kumb ring sai katkestatud ja kumb võrgustunud töötluse. Metsas
+juhuslikult, kumb ring katkestati ja kumb jäi võrgustunuks. Metsas
 paiknesid ringid rivis mööda rada juhuslikustatud järjekorras. Iga katseringi ümber
-kirjeldati 1 m² suurune kvadraat, mille taimestik iseloomustab katsetaimede naabruskonda.
+kirjeldati 1 m² suurune taimeruut, mille taimestik iseloomustab katsetaimede naabruskonda.
 
 ### Katseliigid
 
-Taimeliikide nomenklatuur järgib GBIF Backbone Taxonomy't [@gbif2023].
+Liikide nomenklatuur järgib GBIF Backbone Taxonomy't [@gbif2023].
 
-Kasvuperioodi alguses külvati katseringidesse viis taimeliiki, mis erinevad mükoriisastaatuse
+Kasvuperioodi alguses külvati katseringidesse viis liiki, mis erinevad mükoriisastaatuse
 ja arbuskulaarse mükoriisa moodustamise intensiivsuse (keskmise kolonisatsiooni, MC) poolest
 [@soudzilovskaia2020]. Liigid valiti nii, et katse keskmes on fakultatiivselt mükoriissed (FM)
 liigid *Achillea millefolium* (MC 73,7%), *Cichorium intybus* (MC 60%) ja *Dactylis

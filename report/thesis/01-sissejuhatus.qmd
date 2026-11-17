@@ -30,7 +30,7 @@ mükoriisasuhtest loobunud (mittemükoriissed, NM) [@brundrett2018].
 
 Krohmseeni iseloomustab madal endeemsus [@davison2015] ning nende levik sõltub mükoriissete
 peremeestaimede levikust. Mulla viljakuse kasvades kolonisatsioon väheneb, eriti FM
-taimeliikidel; kolonisatsioon väheneb ka mulla happesuse kasvades ning OM taimede suurem
+liikidel; kolonisatsioon väheneb ka mulla happesuse kasvades ning OM taimede suurem
 osakaal ei ole otseselt seotud AM-seente suurema osakaaluga [@koorem2024].
 
 ## Uurimisküsimus ja hüpoteesid
@@ -40,9 +40,9 @@ koosluse seenevõrgustikuga katsetaimede krohmseente kolonisatsiooni?
 
 Hüpoteesid:
 
-a) katkestatud töötluse taimede AM-kolonisatsioon on väiksem kui võrgustunud töötluse
+a) katkestatud ringide taimede AM-kolonisatsioon on väiksem kui võrgustunud ringide
    taimedel, kes said vabalt seenevõrgustikuga liituda;
 b) erinevus on suurem fakultatiivselt mükoriissetel liikidel, obligatoorselt mükoriissel
    liigil (positiivne kontroll) erinevust ei ilmne;
 c) seenevõrgustiku katkestamise mõju on suurem, kui naabertaimed moodustavad valdavalt
-   arbuskulaarset mükoriisat (kõrge naabruskonna kooslusmükoriissus).
+   arbuskulaarset mükoriisat (kõrge mükoriissusega taimekooslus).

@@ -20,12 +20,16 @@ omal algatusel — kui README sisu tundub vananenud, küsi.
 
 ## Katse lühidalt
 - **Küsimus:** kuidas ümbritsevate naabertaimede mükoriissus (1 m² quadrat) mõjutab
-  katsetaimede AM-kolonisatsiooni (d = 15 cm rõngas).
-- **Manipulatsioon:** `severed` (rõnga perimeeter lõigatakse kord nädalas noaga läbi, AMF-hüüfid
+  katsetaimede AM-kolonisatsiooni (d = 15 cm ring). Tekstis **ring / katsering**, mitte "rõngas" (Mare 16.11.2026).
+  Ka: **liigiline koosseis** (mitte liigikoosseis), **kasvukoha sisene** (kaks sõna), **lehe eripind** (SLA), **taimeruut** (mitte kvadraat; koodis `quadrat`).
+  **liik**, mitte "taimeliik", kui kontekstist on selge (nt "5 liiki", "liikide nomenklatuur").
+  **koosluse mükoriissus** (CWM; mitte "kooslusmükoriissus"); hüpoteesis "kõrge mükoriissusega taimekooslus".
+  Võrgustunud ringid ei ole "töötlus" (töötluse puudumine): "võrgustunud ringid", mitte "võrgustunud töötlus".
+- **Manipulatsioon:** `severed` (ringi perimeeter lõigatakse kord nädalas noaga läbi, AMF-hüüfid
   katkevad) vs `control`. Lõputöö tekstis (Mare 15.11.2026): eesti keeles **katkestatud** vs **võrgustunud**,
   inglise keeles *severed* vs *intact* (Dassen jt 2021). Mitte "häiring"/"disturbance". Andmetes jäävad
   `severed`/`control` (Meta-lehel `Severed`/`Control`); joonistel ja tabelitel eestikeelsed sildid.
-- **Kasvukohad:** mets (hemiboreaalne männi-/segamets, ~58°N) ja niit, kummaski 12 rõngast
+- **Kasvukohad:** mets (hemiboreaalne männi-/segamets, ~58°N) ja niit, kummaski 12 ringi
   (pooled severed, pooled control).
 - **Referentstaimed:** loodusest kogutud, `treatment = "reference"`, pseudo-ring_id
   `FREF`/`GREF`/`OREF`. Neid **ei** kaasata `habitat * treatment` mudelisse.
@@ -33,10 +37,10 @@ omal algatusel — kui README sisu tundub vananenud, küsi.
   *Leontodon hispidus*, *Silene latifolia*. *Solidago virgaurea* ei idanenud ja on katsest
   väljas, kuid jääb species-tabelisse alles.
 - **Kolonisatsioon:** McGonigle jt 1990 RLC% (arb/ves/hyp/noamf/total), 1 isend liigi kohta
-  rõngas (focal).
-- **Focal-reegel:** focal on rõnga × liigi suurim (esimene) taim. Kui see suri, saab focal'iks
+  ringis (focal).
+- **Focal-reegel:** focal on ringi × liigi suurim (esimene) taim. Kui see suri, saab focal'iks
   järgmine ellujäänu. Ülejäänud taimed keskmistatakse.
-- **Hierarhia:** kasvukoht → rõngas → taim. Kaalu mixed model'it (rõngas kui random effect).
+- **Hierarhia:** kasvukoht → ring → taim. Kaalu mixed model'it (ring kui random effect).
 - **Praegune baasmudel (piloot, WIP):** `lm(log_total ~ habitat * treatment + species, data = colonization)`,
   n = 44, R² = 0.60.
 - **Põhihüpotees (veel koodis realiseerimata):** quadrat'i keskmine naabruse-AM läheb mudelisse
@@ -72,7 +76,7 @@ Andmed asuvad SharePointis (TÜ), mitte gitis. Need tõmmatakse funktsiooniga
 - Mitme taime koondridade (`-2`) puhul jaga kaal `n_plants`-iga ja kasuta mudelis
   `weights = n_plants`.
 
-## Liikide AM-kolonisatsioon (kvadraadiliigid, CWM-i sisend)
+## Liikide AM-kolonisatsioon (taimeruudu liigid, CWM-i sisend)
 - `R/am_colonization.R`: FungalRoot'i kirjed GBIF API kaudu (andmestik DOI 10.15468/a7ujmj), ainult McGonigle 1990
   RLC%, **üks koondkeskmine liigi kohta** (mitte kasvukohtade kaupa — juhendaja soov). "sp" nimed → perekonna kirjed.
   Käsitsi väärtused (`rows_upsert`, `data_source`): Artemisia (Koorem jt 2024), Pulsatilla (Moora jt 2004), Carex disticha ja

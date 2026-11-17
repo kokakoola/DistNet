@@ -1,10 +1,10 @@
 Liigil *Dactylis glomerata* mõõdeti lisaks kasvunäitajatele lehtede ja juurte funktsionaalsed
-tunnused. Kuna *Dactylis*'el focal-taime ei eristatud, käsitleti iga rõnga kõiki *Dactylis*'e
-taimi ühe koondproovina (üks lehe- ja üks juureskänn rõnga kohta).
+tunnused. Kuna *Dactylis*'el focal-taime ei eristatud, käsitleti iga ringi kõiki *Dactylis*'e
+taimi ühe koondproovina (üks lehe- ja üks juureskänn ringi kohta).
 
 ### Proovide ettevalmistus ja skaneerimine
 
-Igast rõngast võeti 3–5 (enamasti 5) noorimat täielikult arenenud tervet lehte; analüüsiti
+Igast ringist võeti 3–5 (enamasti 5) noorimat täielikult arenenud tervet lehte; analüüsiti
 ainult leheplaate. Lehed rehüdreeriti 24 tundi suletud minigrip-kotis, seejärel mõõdeti
 01.10.2026 nende märgmass ning lehed skaneeriti skanneriga Epson V370 (peegeldav režiim,
 8-bitine hallskaala, 300 dpi). Igale skännile lisati mõõtkava kontrolliks must ruut.
@@ -67,7 +67,7 @@ s.t mõõtkava oli skännide vahel stabiilne.
 
 Mõõtmistulemustest arvutati [@perezharguindeguy2013]:
 
-- eri lehepind (SLA) = lehepindala / lehe kuivmass;
+- lehe eripind (SLA) = lehepindala / lehe kuivmass;
 - lehe kuivainesisaldus (LDMC) = lehe kuivmass / lehe märgmass;
 - eri juurepikkus (SRL) = Kimura juurepikkus / skaneeritud juureproovi kuivmass
   [LAHTINE: skaneeritud proovid on veel kaalumata]{.mark}.

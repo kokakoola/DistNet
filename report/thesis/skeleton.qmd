@@ -1,0 +1,77 @@
+# Tööplaan {.unnumbered}
+
+:::{.callout-tip appearance="simple"}
+
+## Kogutud materjal
+Dac on kõige esinduslikumalt kaetud - igas katseringis olemas. 
+Leo on küllalt esinduslike andmetega - ühtlaselt 5 igas faktoris.
+
+```r
+> species_coverage
+# A tibble: 5 × 6
+species              n_rings F_control F_severed G_control G_severed
+<chr>                  <int>     <int>     <int>     <int>     <int>
+1 Dactylis glomerata        24         6         6         6         6
+2 Leontodon hispidus        20         5         5         5         5
+3 Silene latifolia          16         4         1         6         5
+4 Achillea millefolium      15         4         3         4         4
+5 Cichorium intybus         13         2         4         3         4
+```
+:::
+
+## Mõõtmised
+### Funktsionaalsed tunnused
+
+**1. Mõõdetud tunnused kasvuperioodi jooksul:**
+
+1. [x] taime kõrgus, laius, lehe pikkus. 6 mõõtmist maist septembrini. 
+
+    > Korrasta perioodilised tabelid, lisandunud isenditel Master tabelis ridu pole.
+
+1. [x] Patogeeni- ja herbivoorikahjustuse %,
+
+**2. Biomass**
+
+1. [x] juurte ja lehtede kaalud (kuivmass). 
+
+Dactylise korral lisaks 
+1. [x] Dac leheskänn, 
+1. [x] Dac lehtede kuiv- ja märgmass, 
+1. [x] Dac juureskänn,
+1. [x] Dac skännide analüüsid (Fiji äpp)
+
+**Analüüs** 
+- anova, mudel habitat*treatment. Maapealne, maaalune, total ja root-shoot ratio.
+
+### Kasvukoha omadused
+
+1. [x] liigiline mitmekesisus ruudu meetodil (katvus, ohtrus). Iga katseringi kohta.
+1. [x] ruudu liikide AMF kolonisatsioon (Fungal Root jt allikad)
+
+**Analüüs**
+- [x] nmds - koos, eraldi kumbki kasvukoht
+- permanova
+- cwm
+
+### Kolonisatsioon
+
+Eraldi vesiikulid, arbuskulid, hüüfid (endofüüdid)
+
+- Kõik hea katvusega liikide kohta. Järjekorras:
+    - [ ] Dac 
+    - [ ] Leo
+    - [ ] Ach
+- Ainult G Sil ja Cic kohta
+- Referentsliigid (Cic pole kohalik, PlutoF andmed)
+
+**Analüüs**
+- lm
+
+### DNA Dac juurtest
+
+> Pole alustatud
+
+
+### Mulla toitainete analüüs
+
+> Pole alustatud

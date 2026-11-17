@@ -1,14 +1,14 @@
-### Kvadraatide kirjeldamine
+### Taimeruutude kirjeldamine
 
-Iga katseringi ümber kirjeldati 1 m² suuruses kvadraadis taimestik: niidul 26.07.2026 ja
-metsas 27.07.2026 (kirjeldajad Kersti Püssa ja töö autor). Iga taimeliigi kohta hinnati
+Iga katseringi ümber kirjeldati 1 m² suuruses taimeruudus taimestik: niidul 26.07.2026 ja
+metsas 27.07.2026 (kirjeldajad Kersti Püssa ja töö autor). Iga liigi kohta hinnati
 katvus (%) ja ohtrus (skaalal 1--5) [KONTROLLI: Braun-Blanquet'/Domini skaala]{.mark}. Lisaks
-hinnati kvadraadi üldine taimkatte katvus (katseringi pindala arvestamata) ja sammalde
+hinnati taimeruudu üldine taimkatte katvus (katseringi pindala arvestamata) ja sammalde
 katvus.
 
 ### Liikide AM-kolonisatsiooni väärtused
 
-Kvadraatides kirjeldatud taimeliikide arbuskulaarse mükoriisa (AM) kolonisatsiooni
+Taimeruutudes kirjeldatud liikide arbuskulaarse mükoriisa (AM) kolonisatsiooni
 intensiivsus saadi FungalRoot andmebaasist [@soudzilovskaia2020], mille kirjed päriti GBIF-i
 kaudu [@fungalroot_gbif]. Et väärtused oleksid võrreldavad käesoleva töö mikroskoopiaga,
 kasutati ainult McGonigle jt [-@mcgonigle1990] juurepikkuse kolonisatsiooni (RLC%)
@@ -28,22 +28,22 @@ umbellata*, *Corylus avellana*, *Orthilia secunda*, *Pinus sylvestris*, *Pyrola
 rotundifolia*, *Quercus robur*), ning mittemükoriissele *Melampyrum nemorosum*'ile määrati
 AM-kolonisatsiooniks 0%. Kuue liigi kohta väärtust ei leitud (*Carex ornithopoda*, *Galium
 album*, *Hepatica nobilis*, *Pimpinella major*, *Ranunculus bulbosus*, *Vicia tetrasperma*).
-### Naabruskonna kooslusmükoriissus (CWM)
+### Naabruskonna koosluse mükoriissus (CWM)
 
-Katsetaimede naabruskonna mükoriissust iseloomustati kooslusmükoriissuse indeksiga, mis on
+Katsetaimede naabruskonna mükoriissust iseloomustati koosluse mükoriissuse indeksiga, mis on
 liikide mükoriisatunnuse koosluse keskmine, kaalutud liikide ohtrusega [@gerz2016].
 Erinevalt Gerz jt-st [-@gerz2016], kes kasutasid tunnusena liikide mükoriisastaatust, on
 käesolevas töös tunnuseks liigi AM-kolonisatsiooni intensiivsus, mis eristab ka
-fakultatiivselt mükoriisseid liike omavahel. Kaaluna kasutati liigi katvust kvadraadis.
-Kooslusmükoriissus arvutati iga katseringi kvadraadi $j$ kohta:
+fakultatiivselt mükoriisseid liike omavahel. Kaaluna kasutati liigi katvust taimeruudus.
+Koosluse mükoriissus arvutati iga katseringi taimeruudu $j$ kohta:
 
 $$
 \mathrm{CWM}_j = \frac{\sum_i c_{ij} \, \mathrm{AM}_i}{\sum_i c_{ij}}
 $$
 
-kus $c_{ij}$ on liigi $i$ katvus (%) kvadraadis $j$ ja $\mathrm{AM}_i$ liigi
+kus $c_{ij}$ on liigi $i$ katvus (%) taimeruudus $j$ ja $\mathrm{AM}_i$ liigi
 AM-kolonisatsiooni intensiivsus (%). Summeeriti üle liikide, mille keskmine katvus
-kasvukoha 12 kvadraadis ületas lävendi; sellega jäeti välja juhuslikud, kohale mitteomased
-liigid [LAHTINE: lävend 0,8 või 0,5]{.mark}. Lävendi ületanud liikide osakaal kvadraadi
+kasvukoha 12 taimeruudus ületas lävendi; sellega jäeti välja juhuslikud, kohale mitteomased
+liigid [LAHTINE: lävend 0,8 või 0,5]{.mark}. Lävendi ületanud liikide osakaal taimeruudu
 kogu liikide katvusest oli metsas 0,50--0,98 ja niidul 0,93--0,99, mida tuleb indeksi
 tõlgendamisel arvestada.

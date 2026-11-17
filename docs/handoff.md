@@ -9,8 +9,8 @@ Kui midagi on ebaselge, küsi Marelt, ära oleta. Lahtised sisulised küsimused 
 - [x] `R/CWM.R` loeb praegu Exceli `CWM` lehte. Asenda see arvutusega R-is
   `Quadrat_Forest`/`Quadrat_Grassland` liigiridadest (sama lugemisloogika nagu `R/quadrat_cover.R`, `read_quadrat()`).
 - Lävend: `Mean_cover >= 0.8` (sama mis `R/AM_intensity.R` failis, `cover_threshold`). Juhendaja soovitas 0.7, Mare valis 0.8.
-- Valem rõnga kohta: `weighted.mean(am_intensity, w = cover)` üle lävendi ületanud liikide.
-- Lisa väljundisse veerg `cover_share` = lävendi ületanud liikide katvus / kõigi liikide katvus rõngas.
+- Valem ringi kohta: `weighted.mean(am_intensity, w = cover)` üle lävendi ületanud liikide.
+- Lisa väljundisse veerg `cover_share` = lävendi ületanud liikide katvus / kõigi liikide katvus ring.
   See läheb metoodikasse piiranguna (metsas kohati madal, F6N ~0.50).
 - Kontrollväärtused (AM %, Exceli praeguste FungalRoot'i väärtustega, lävend 0.8, arvutatud 10.11):
 
@@ -52,7 +52,7 @@ Kui midagi on ebaselge, küsi Marelt, ära oleta. Lahtised sisulised küsimused 
 
 Lisa DOI järgi (Crossref) ja kontrolli metaandmed üle:
 - [x] Gerz, Bueno, Zobel, Moora 2016. *Journal of Vegetation Science* 27: 89–99. doi:10.1111/jvs.12338
-  (kooslusmükoriissus metsas ja niidul, CWM-i põhjendus).
+  (koosluse mükoriissus metsas ja niidul, CWM-i põhjendus).
 - [x] Bueno, Gerz, Zobel, Moora 2019. *Mycorrhiza* 29: 1–11. doi:10.1007/s00572-018-0869-1
   (empiiriline vs taksonoomiline mükoriisatunnuste omistamine, FungalRoot'i override'ide põhjendus).
 - [x] Gerz, Bueno, Ozinga, Zobel, Moora 2019. *Oikos*. DOI on kontrollimata, leia see üles.
@@ -146,6 +146,16 @@ Juureskannid on analüüsitud väljaspool repot (Fiji + IJ_Rhizo). Kaust:
 - [ ] Diameetriklassid `*_Histo.txt` failidest: veerg 1 = raadius (mm) → diameeter = 2 × raadius; veerg 2 = pikkus (mm).
   Klassid (labori RhizoVisioni seaded): 0–0.1, 0.1–0.2, 0.2–0.3, >0.3 mm. NB: Histo pikkus on toorskelett, mitte Kimura —
   küsi Marelt, kas kasutada klasside osakaale või absoluutpikkust.
+- [ ] **Dactylise juurte kogumass (Mare otsus 16.11.2026).** Biomassi tabelisse lisanduvad veerud (kuivkaal, mikrokaal
+  Radwag XA 6.5.Y.M.A, d = 0.1 mg; veerunimes `_micro`):
+  - `root_scan_micro` – skannitud ja analüüsitud juured (mõõdetud). SRL = `Kimura_length / root_scan_micro` (samad juured).
+  - `root_rest_micro` – jäägid (mõõdetud).
+  - `root_col_micro` – kolonisatsiooni jaoks eraldatud (värvitud) osa, **hinnang**, `data_source = "estimated"`:
+    Mare eraldab pärast kaalumist ühe värvimisportsuga võrdse portsu ja kaalub → koefitsient; slaide tehes hindab iga rõnga
+    kassetti (sama / suurem / väiksem) ja kohandab koefitsienti rõnga kaupa. Kohandamise reegel (tegurid) küsi Marelt ja pane kirja.
+  - Põhiosa `root_dry_g` on kaalutud Mettler Toledo ME203 kaaluga (d = 0.001 g).
+  - Kogumass = `root_dry_g + root_scan_micro + root_rest_micro + root_col_micro` (Mare kinnitas 16.11.2026). Ühikud (g vs mg) kontrolli.
+  - Tundlikkuskontroll: tulemus koos ja ilma `root_col_micro`-ta. Metoodikasse üks neutraalne lause hinnangu meetodi kohta.
 - [ ] Liida Biomassiga `ring_id + species` kaudu (Dactylisel focal puudub, kõik `-2` real). Dactylise `root_dry_g` on mittetäielik
   (mikroskoopiaosa lisamata) → SRL (`Kimura_length / root_dry_g`) alles pärast selle lisamist.
 
@@ -181,3 +191,19 @@ Kaust: `DistNet Master/RootLeaf_ScanAnalysis/` (`Dac_LeafScan/` 24 skanni, `Leaf
 - [ ] Liida Dactylise lehekaaludega (värske ja kuiv; Dactylise eraldi tabel `DistNet_Biomass.xlsx`-is — lehe/veergude nimi küsi Marelt)
   `ring_id + species` kaudu. SLA = lehe pindala / lehe kuivkaal; LDMC = kuivkaal / värske kaal. Kumbagi pole veel otsustatud
   analüüsi kaasata — küsi Marelt.
+
+## 9. Biomassi kaalude kontroll (16.11.2026)
+
+- Kaalud: põhikaal Mettler Toledo ME203 (d = 0.001 g); mikrokaal Radwag XA 6.5.Y.M.A (d = 0.1 mg). Mõlemad metoodikasse.
+- Dactylis kontrollitud ja parandatud (Mare, 16.11): G6Y shoot 0.377 → 3.77 (komaviga), juur üle kaalutud; G2N juur/vars olid
+  vahetuses; n_plants parandatud (G1Y 3, F5Y 4, G3Y 5, F1N 8, F6N 5). `Dac_weight_all` ja `RootShoot_DryWeight_all` on kooskõlas.
+- Teised liigid: < 0.010 g väärtused kaalutakse mikrokaaluga üle (nimekiri `DistNet Master/kaalu_kontroll_2026-11-16.csv`).
+  Mikrokaalu väärtusi tähistab Biomassi `notes` "micro" (nt G5Y-C1) — R-is vajadusel veerg `balance` ("ME203"/"micro").
+- [ ] Andmete korrastus `clean_data.R`-is: `status` suurtähed (`DEAD`, `REMOVED`) → väiketähed; 4 tühja `status`-t; `n_plants = "??"`
+  (G4Y-L1, G5N-L3) — küsi Marelt; rida 171 `plant_id = "Leo"` — Mare parandab Excelis.
+- [ ] `focal`: paljudel `-1` ridadel `focal = n` → README reegel „focal ⇔ number 1" võib olla vananenud (CLAUDE.md: kui taim 1 suri,
+  saab focal'iks järgmine). Küsi Marelt ja uuenda `docs/Claude_README.md`.
+- Seis 16.11.2026 õhtul: < 0.010 g väärtused on mikrokaaluga üle kaalutud (`notes` „micro"); rida 171 → F5Y-L1.
+  Lahtine (Mare teeb 17.11): uued taimed (G5N-C1, G6Y-L3, F3N-L2, F5Y-L1 jt „ilmus välja") → read `plants` tabelisse ja
+  Traits'i lehtedele; kontrollruudu suurus laboris.
+  Tehtud 16.11: `n_plants` G3Y-A2 = 1 (üks risoomiga taim), G2Y-L2 = 3 (sh L1); G1Y-A1, F3Y-C1 mikrokaaluga; G1N-L2 liik kinnitatud (Leo).

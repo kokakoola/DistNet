@@ -2,7 +2,7 @@
 ## Andmete parandus (14.11.2026) -- juhendajale, lõplikust tekstist eemaldada
 
 Lehe `Community` (failis `DistNet_Quadrat.xlsx`) kontrollimisel lehtede `Quadrat_Forest` ja
-`Quadrat_Grassland` vastu leidsin metsa ridades kopeerimisnihked. Niidu 12 rõngast klappisid
+`Quadrat_Grassland` vastu leidsin metsa ridades kopeerimisnihked. Niidu 12 ringi klappisid
 täpselt. Leht on nüüd genereeritud uuesti `Quadrat_*` lehtedest, originaal on alles eraldi
 failis. Parandused:
 
@@ -54,32 +54,32 @@ fn <- function(x, d = 2) format(round(x, d), nsmall = d, decimal.mark = ",")
 fp <- function(p) ifelse(p < 0.001, "< 0,001", paste("=", format(round(p, 3), decimal.mark = ",")))
 ```
 
-Taimekoosluste liigikoosseis erines kasvukohtade vahel tugevalt (PERMANOVA, kasvukoht
+Taimekoosluste liigiline koosseis erines kasvukohtade vahel tugevalt (PERMANOVA, kasvukoht
 R² = `r fn(r2(permanova_model, "Habitat"))`, p `r fp(pr(permanova_model, "Habitat"))`;
-@tbl-permanova), kuid töötlus ega selle koosmõju kasvukohaga liigikoosseisu ei mõjutanud
+@tbl-permanova), kuid töötlus ega selle koosmõju kasvukohaga liigilist koosseisu ei mõjutanud
 (töötlus p `r fp(pr(permanova_model, "Treatment"))`, koosmõju p
 `r fp(pr(permanova_model, "Habitat:Treatment"))`). Sama tulemuse andis osaline dbRDA, kus
 kasvukoha mõju oli eemaldatud (p `r fp(dbrda_anova[1, "Pr(>F)"])`; @tbl-dbrda).
 
-Metsa ja niidu kooslustel oli vähe ühiseid liike, mistõttu kõigi 24 rõnga ühine
+Metsa ja niidu kooslustel oli vähe ühiseid liike, mistõttu kõigi 24 ringi ühine
 NMDS-ordinatsioon eraldas ainult kaks kasvukohta (stress ≈ 0; @fig-nmds) ega näidanud
-kasvukohasisest struktuuri. Kasvukohtade kaupa tehtud ordinatsioonide stress oli vastuvõetav
-(@tbl-ordination-summary, @fig-nmds-habitat). Ka kasvukohtade kaupa töötlus liigikoosseisu
-ei mõjutanud (@tbl-permanova-habitat). Metsas paiknesid paaride F1, F4, F5 ja F6 rõngad
+kasvukoha sisest struktuuri. Kasvukohtade kaupa tehtud ordinatsioonide stress oli vastuvõetav
+(@tbl-ordination-summary, @fig-nmds-habitat). Ka kasvukohtade kaupa töötlus liigilist koosseisu
+ei mõjutanud (@tbl-permanova-habitat). Metsas paiknesid paaride F1, F4, F5 ja F6 ringid
 ordinatsioonis teineteise lähedal ning paarid F1 ja F6 vastasotstes, mis viitab, et
-liigikoosseisu mõjutas mikrokasvukoht rohkem kui töötlus.
+liigilist koosseisu mõjutas mikrokasvukoht rohkem kui töötlus.
 
 | | NMDS stress | PERMANOVA, töötlus |
 |---|---|---|
-| Kõik rõngad | ≈ 0 | R² = `r fn(r2(permanova_model, "Treatment"), 3)`, p `r fp(pr(permanova_model, "Treatment"))` |
+| Kõik ringid | ≈ 0 | R² = `r fn(r2(permanova_model, "Treatment"), 3)`, p `r fp(pr(permanova_model, "Treatment"))` |
 | Niit | `r fn(ndms_G$stress)` | R² = `r fn(r2(permanova_G, "Model"), 3)`, p `r fp(pr(permanova_G, "Model"))` |
 | Mets | `r fn(ndms_F$stress)` | R² = `r fn(r2(permanova_F, "Model"), 3)`, p `r fp(pr(permanova_F, "Model"))` |
 
-: Ordinatsioonide sobivus ja töötluse mõju liigikoosseisule kõigis rõngastes koos ja kasvukohtade kaupa. {#tbl-ordination-summary}
+: Ordinatsioonide sobivus ja töötluse mõju liigilisele koosseisule kõigis ringides koos ja kasvukohtade kaupa. {#tbl-ordination-summary}
 
 <!--
-NB: kõigi 24 rõnga NMDS-i stress on peaaegu null (< 0.0001): metsa ja niidu kooslustel on
-vähe ühiseid liike ja ordinatsioon eraldab need kaheks kaugeks kobaraks, kasvukohasisene
+NB: kõigi 24 ringi NMDS-i stress on peaaegu null (< 0.0001): metsa ja niidu kooslustel on
+vähe ühiseid liike ja ordinatsioon eraldab need kaheks kaugeks kobaraks, kasvukoha sisene
 struktuur jääb nähtamatuks. Seepärast on allpool NMDS ka kasvukohtade kaupa
 (stress niit ~0.16, mets ~0.13).
 -->
@@ -104,13 +104,13 @@ ggplot(plot_data, aes(x = NMDS1, y = NMDS2, color = Kasvukoht, shape = Töötlus
 
 ```{r}
 #| label: tbl-permanova
-#| tbl-cap: "PERMANOVA: kasvukoha ja töötluse mõju liigikoosseisule (Bray-Curtis, 999 permutatsiooni, terminid järjestikku)."
+#| tbl-cap: "PERMANOVA: kasvukoha ja töötluse mõju liigilisele koosseisule (Bray-Curtis, 999 permutatsiooni, terminid järjestikku)."
 knitr::kable(perm_table(permanova_model), digits = 3)
 ```
 
 ```{r}
 #| label: fig-dbrda
-#| fig-cap: "Osaline dbRDA: töötluse mõju liigikoosseisule pärast kasvukoha mõju eemaldamist."
+#| fig-cap: "Osaline dbRDA: töötluse mõju liigilisele koosseisule pärast kasvukoha mõju eemaldamist."
 
 dbrda_scores <- as.data.frame(scores(dbrda_model, display = "sites"))
 plot_df <- cbind(dbrda_scores, Distnet_meta)
@@ -139,7 +139,7 @@ knitr::kable(as.data.frame(dbrda_anova), digits = 3)
 
 ```{r}
 #| label: fig-nmds-habitat
-#| fig-cap: "Taimekoosluste NMDS-ordinatsioon (Bray-Curtis) kasvukohtade kaupa töötluse järgi. Joon ühendab sama paari rõngaid."
+#| fig-cap: "Taimekoosluste NMDS-ordinatsioon (Bray-Curtis) kasvukohtade kaupa töötluse järgi. Joon ühendab sama paari ringe."
 #| fig-height: 4
 
 habitat_scores <- function(fit, h) {
@@ -162,7 +162,7 @@ ggplot(plot_hab, aes(x = NMDS1, y = NMDS2)) +
 
 ```{r}
 #| label: tbl-permanova-habitat
-#| tbl-cap: "PERMANOVA kasvukohtade kaupa: töötluse mõju liigikoosseisule (Bray-Curtis; permutatsioonid rõngapaaride sees, 64 võimalikku)."
+#| tbl-cap: "PERMANOVA kasvukohtade kaupa: töötluse mõju liigilisele koosseisule (Bray-Curtis; permutatsioonid ringipaaride sees, 64 võimalikku)."
 hab_tab <- rbind(
   cbind(Kasvukoht = "Niit", as.data.frame(permanova_G)["Model", c("Df", "R2", "F", "Pr(>F)")]),
   cbind(Kasvukoht = "Mets", as.data.frame(permanova_F)["Model", c("Df", "R2", "F", "Pr(>F)")])

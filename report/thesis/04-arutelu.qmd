@@ -2,22 +2,22 @@
 
 <!--
 Märksõnad (mitte valmis tekst):
-- Töötluste ebatasakaal naabruse CWM-is: katkestatud rõngaste CWM keskmiselt
+- Töötluste ebatasakaal naabruse CWM-is: katkestatud ringide CWM keskmiselt
   madalam (mitteoluline, kui metsa ja niidu erinev hajuvus arvesse võtta);
   CWM on põhimudelis kovariaadina. Vt docs/markmed.md.
-- Kooslusmükoriissus ja liigirikkus (Gerz jt 2016, @gerz2016): metsas oli
+- Koosluse mükoriissus ja liigirikkus (Gerz jt 2016, @gerz2016): metsas oli
   üldine mükoriissus (EcM/ErM-domineeritud) negatiivselt ja arbuskulaarne
   mükoriissus positiivselt seotud liigirikkusega. Võimalik seos: metsa
-  katkestatud rõngaste kvadraatides vähem liike ja madalam CWM. Gerz jt arutelus
+  katkestatud ringide taimeruutudes vähem liike ja madalam CWM. Gerz jt arutelus
   viidatud allikad (Dickie jt 2014, Averill jt 2014, Moora & Zobel 2010,
   Koorem jt 2012, 2014 jt) -- lisada .bib-i ainult siis, kui neid tekstis
   kasutad.
 - Niidul ei leidnud Gerz jt (2016) seost arbuskulaarse mükoriissuse ja
   liigirikkuse vahel; AM-sümbioosi mõju niidu mitmekesisusele on
   kirjanduses vastuoluline ja kontekstisõltuv [@gerz2016].
-- Mõõtkava piirang: kooslusmükoriissuse indeksi seletusvõime väheneb
+- Mõõtkava piirang: koosluse mükoriissuse indeksi seletusvõime väheneb
   mõõtkava vähenedes, kus kooslust võivad määrata spetsiifilisemad
-  interaktsioonid [@gerz2016]. Siin on CWM arvutatud 1 m² kvadraadis --
+  interaktsioonid [@gerz2016]. Siin on CWM arvutatud 1 m² taimeruudus --
   väike mõõtkava; arutada CWM-i kui prediktori piiranguna.
 - "Fine-scale effects" [@hart2003; vt ka @gerz2016]: sh ühised
   mütseelivõrgustikud, mis toimivad, kui AM-seened on rohked ja kontaktis
@@ -26,12 +26,12 @@ Märksõnad (mitte valmis tekst):
 - Vähem uuritud liikide mükoriisatunnustega tuleb indeksi arvutamisel olla
   ettevaatlik [@gerz2016] -- seob FungalRoot'i fallback'ide, override'ide ja
   puuduvate liikidega (oma mikroskoopia pooleli).
-- Liigikoosseis (NMDS, PERMANOVA): töötlus koosseisu ei mõjutanud kummaski kasvukohas.
-  Metsas paiknesid paaride F1, F4, F5, F6 rõngad ordinatsioonis koos, F1 ja F6 vastasotstes
+- Liigiline koosseis (NMDS, PERMANOVA): töötlus koosseisu ei mõjutanud kummaski kasvukohas.
+  Metsas paiknesid paaride F1, F4, F5, F6 ringid ordinatsioonis koos, F1 ja F6 vastasotstes
   (F1 kompostihunniku juures maja kõrval, F6 metsaservas) -- mikrokasvukoht mõjutab koosseisu
   rohkem kui töötlus. Põhjendus paarile kui juhuslikule efektile mudelites. Paarid F2, F3
-  ordinatsioonis lahus -- paari rõngad mikrokasvukohalt erinevad?
+  ordinatsioonis lahus -- paari ringid mikrokasvukohalt erinevad?
 - Dactylise lehed (SLA, LDMC): metsas õhemad ja veerikkamad lehed -- kooskõlas varjulehtede
-  tunnustega [VIIDE]; töötluse mõju ei ilmnenud. Väike valim (6 rõngast grupi kohta) --
+  tunnustega [VIIDE]; töötluse mõju ei ilmnenud. Väike valim (6 ringi grupi kohta) --
   töötluse mõju puudumine ei tõesta, et mõju poleks. LDMC jäägid ei ole päris normaaljaotusega.
 -->

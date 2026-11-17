@@ -2,10 +2,19 @@
 
 Tööjärjekord, mitte lõputöö tekst. Tehtud punktid märgi `[x]` või kustuta.
 
+## Järgmisena (16.11.2026)
+
+- [ ] **Word (docx) on ikka "corrupted"** – ka pärast callout'ide parandust (tabel callout'i lõpus) ja `freeze: false`.
+  Uurida: renderdada uuesti, valideerida `word/document.xml` (nt python-docx / LibreOffice avamine), otsida muid
+  kehtetuid elemente (tabelid joonise/tabeli allkirjadega, `{.mark}` tabelis, inline r tabelis).
+- [ ] Rikutud `Docs/Review/DistNet_thesis_v2_2026-11-15.docx` SharePointis – kas kustutada?
+- [ ] Tegur "Töötlus" joonistel/tabelites (tasemed võrgustunud/katkestatud) ja disaini alapealkiri "Töötlus":
+  kas nimetada ümber (nt "Seenevõrgustik")? Mare otsustab.
+
 ## Analüüs: CWM ja naabruskond
 
 - [ ] **Treatment-ebatasakaal naabruse CWM-is.** CWM arvutatakse nüüd R-is (`R/CWM.R`, lävend
-  Mean_cover ≥ 0.8, AM %). Severed-rõngaste CWM on keskmiselt madalam
+  Mean_cover ≥ 0.8, AM %). Severed-ringide CWM on keskmiselt madalam
   (mets 7.0 vs 14.3 %, niit 80.4 vs 83.5 %). `lm` p = 0.020, kuid metsa jääkide SD on ~2.4× niidu omast;
   `gls` (`varIdent(~1 | habitat)`) p = 0.068, paar juhusliku efektina p = 0.079.
   Järeldus: mitteoluline, kuid metoodikas/arutelus mainida. CWM läheb põhimudelisse kovariaadina.
@@ -27,16 +36,16 @@ Tööjärjekord, mitte lõputöö tekst. Tehtud punktid märgi `[x]` või kustut
   Excelisse veergu `incidental` (oma liigiteadmise põhjal). Kui lävend tuleb, arvutada CWM R-is,
   mitte Excelis (Exceli CWM jätab välja ainult AM-väärtuseta liigid).
 - [ ] **Tallamise hüpotees – välistatud** (oma välikogemuse põhjal). Katvus severed/control ei
-  erinenud (`R/quadrat_cover.R`). Kvadraadid kirjeldati 26.–27.07.2026, s.t pärast severing'u algust.
+  erinenud (`R/quadrat_cover.R`). Taimeruudud kirjeldati 26.–27.07.2026, s.t pärast severing'u algust.
 - [ ] **Metsas korreleerub katsetaimede biomass negatiivselt naabruse CWM-iga**
-  (Spearman rho = −0.67, p = 0.02, n = 12; kõik rõngad biomassiga > 4.5 g on CWM < 0.10).
+  (Spearman rho = −0.67, p = 0.02, n = 12; kõik ringid biomassiga > 4.5 g on CWM < 0.10).
   NB: arvutatud vana, Exceli CWM-iga – korrata uue `R/CWM.R` väärtustega.
   Võimalik, et madal CWM tähistab paremat mikrokasvukohta (valgus/muld?). Puudutab põhihüpoteesi
   (kas CWM-i mõju on eraldatav kasvukoha mõjust) – **arutada juhendajaga.**
 - [ ] Ajutised kontrollarvutused (lävendi võrdlus, biomass × CWM) pole koodis – kirjutada
   skriptiks, kui tulemust töös kasutatakse.
 
-- [ ] **Liigikoosseis kasvukohtade kaupa (15.11):** NMDS stress niit 0,16, mets 0,13; PERMANOVA töötlus (permutatsioonid paaride
+- [ ] **Liigiline koosseis kasvukohtade kaupa (15.11):** NMDS stress niit 0,16, mets 0,13; PERMANOVA töötlus (permutatsioonid paaride
   sees) niit R² = 0,055, p = 0,50; mets R² = 0,063, p = 0,34 → töötlus koosseisu ei mõjuta. Metsas paarid F1, F4, F5, F6
   koos (mikrokasvukoht), F1 ja F6 ordinatsiooni vastasotstes – kooskõlas metsa heterogeensusega (vt Metoodika tekst: katseala).
 
@@ -52,7 +61,7 @@ Tööjärjekord, mitte lõputöö tekst. Tehtud punktid märgi `[x]` või kustut
     Kumb on õige? Mõned `Dac_all` taimekeskmised kahtlaselt suured (G1Y 8.7 g, F5Y 5.2 g).
   - [x] `SHAREPOINT_PATH_BIOMASS` lisatud `.Renviron`-i (15.11).
 - [ ] **`DistNet_Quadrat.xlsx` leht `Community` (juhendaja NMDS/PERMANOVA sisend) – metsaosa nihkes (14.11).**
-  Niidu 12 rõngast vastavad `Quadrat_Grassland` lehele täpselt. Metsas on väärtused nihkunud ühe liigiveeru
+  Niidu 12 ringi vastavad `Quadrat_Grassland` lehele täpselt. Metsas on väärtused nihkunud ühe liigiveeru
   võrra paremale (nt F1Y: *Carex hirta* 5 → `Carex ornithopoda` all, *Melampyrum nemorosum* 20 → `Orthilia secunda` all),
   viimane väärtus on nimeta veerus 68. Lisaks on *Galium album* ja *G. verum* kaks korda (metsa väärtused topelt),
   *Pulsatilla pratense* (metsa kirjaviga) puudub. **Parandatud 14.11** (Claude): `Community` leht genereeriti
@@ -60,20 +69,20 @@ Tööjärjekord, mitte lõputöö tekst. Tehtud punktid märgi `[x]` või kustut
   Ülejäänud lehed muutmata, `Meta` oli korras. Originaal on juhendaja eraldi failis.
   - [ ] Juhendajale teada anda (metsa NMDS/PERMANOVA vanade andmetega valed).
 - [x] **Kirjaviga:** `Pulsatilla pratense` parandatud 15.11.
-- [ ] Metsa kehvad rõngad (biomass < 1.5 g): F6N, F6Y (metsaserv), F2Y, F5N.
+- [ ] Metsa kehvad ringid (biomass < 1.5 g): F6N, F6Y (metsaserv), F2Y, F5N.
 
 ## Metoodika tekst
 
-- [ ] **Katseala:** kirjeldada metsa ruumiline paigutus – rõngad rivis mööda rada, juhuslikustatud
+- [ ] **Katseala:** kirjeldada metsa ruumiline paigutus – ringid rivis mööda rada, juhuslikustatud
   järjekord; F1 kompostihunniku taga maja kõrval, F2 kadakate vahel varjus, F6 metsaservas;
   mikrokasvukohad heterogeensed. Niit ühtlane.
-- [ ] Kvadraadikirjelduse aeg (26.–27.07.2026) ja meetod (Braun-Blanquet/Domin – kontrolli).
+- [ ] Taimeruudu kirjelduse aeg (26.–27.07.2026) ja meetod (Braun-Blanquet/Domin – kontrolli).
 - [ ] Viide `Midolo jt 2023` (häiringu indikaatorväärtused) – ainult kui kasutad; kontrolli Zoteros.
 
 ## Dactylise skännid (`_metoodika_funktsionaalsed_naitajad_Dac.qmd`)
 
 - [ ] **Lehe kontrollruut:** mõõdetud 976–991 mm² → külg ~31,5 mm (mitte 3 cm). Tekstis 31,5 mm; Mare kontrollib laboris joonlauaga.
-- [ ] Kaalu täpsus (Mare vaatab). Lehtede arv rõnga kohta = osakeste arv (3–5), Mare: „peaaegu õige“.
+- [ ] Kaalu täpsus (Mare vaatab). Lehtede arv ringi kohta = osakeste arv (3–5), Mare: „peaaegu õige“.
 - [ ] **SRL:** skaneeritud juurepikkus on alamproov (4–9 m, ei korreleeru kogu juurte massiga) → vaja skaneeritud proovide kuivkaalu. Proovid kastis, Mare kaalub. Kuni selleni SRL-i ei arvutata.
 - [ ] Diameetriklassid: osakaalud või absoluutpikkus (Histo = toorskelett, mitte Kimura).
 - [ ] Andmed R-i (handoff 7 ülesanded): lugemine, `ring_id`, ümberarvutused, liitmine Biomassiga.
@@ -88,9 +97,9 @@ Tööjärjekord, mitte lõputöö tekst. Tehtud punktid märgi `[x]` või kustut
 - [ ] **Silene `width_x/y_cm`** viimastel mõõtmistel kasutatud muuks otstarbeks, numbrid imelikud (Mare 15.11) – selgitada, mida
   need tähendavad; kuni selleni Silene roseti diameetrit analüüsis mitte kasutada.
 - [ ] Dassen jt 2021 erineb meetodilt: nemad kasvatasid seemikuid terasvõrgust ingrowth-südamikes, mida tõsteti/pöörati
-  2× nädalas (abstract: "cores that had been lifted"); siin lõigati rõnga perimeeter noaga 1× nädalas. Terminoloogia sama,
+  2× nädalas (abstract: "cores that had been lifted"); siin lõigati ringi perimeeter noaga 1× nädalas. Terminoloogia sama,
   meetod mitte identne – tekstis nii sõnastada.
-- [ ] Puudulikud mõõtmised: 31.05 mõõdeti ainult iga rõnga × liigi suurim isend (taim nr 1, 90 tk), ainult max_leaf
+- [ ] Puudulikud mõõtmised: 31.05 mõõdeti ainult iga ringi × liigi suurim isend (taim nr 1, 90 tk), ainult max_leaf
   (Mare 15.11); 23.07 max_leaf ainult 60. Metoodikasse kirja.
 - [ ] 31.05 + 15.06 liitmine üheks mõõtmiskorraks: andmed ei toeta – max_leaf kasvas 31.05 → 23.06 mediaan +2,3 cm
   (ainult 30 % taimedest ≤ 1 cm), kõrgus 15.06 → 23.06 mediaan 0. Ettepanek: iga tunnuse aegrida oma kuupäevadega,

@@ -3,12 +3,20 @@ project:
   output-dir: _book
 
 book:
-  title: "[PEALKIRI]"
+  title: "Seenevõrgustiku katkestamise ja naabertaimede tüübi mõju krohmseente kolonisatsioonile"
+  subtitle: "Magistritöö"
   output-file: DistNet_thesis
-  author: "Mare Hunt"
+  author: 
+    - name: "Mare Hunt"
+    - name: "Juhendaja: Kadri Koorem"
+      affiliation: 
+      - name: "Tartu Ülikool"
+      - name: "Ökoloogia ja Maateaduste Instituut"
+      - name: "Botaanika osakond"
   date: today
   date-format: "D. MMMM YYYY"
   chapters:
+    - skeleton.qmd
     - index.qmd
     - 01-sissejuhatus.qmd
     - 02-metoodika.qmd
@@ -32,7 +40,7 @@ execute:
   echo: false
   warning: false
   message: false
-  freeze: false  # freeze: auto ignores changes in {{< include >}} files -> stale output
+  freeze: true  # freeze: auto ignores changes in {{< include >}} files -> stale output
 
 format:
   html:

@@ -18,12 +18,12 @@ fp <- function(p) ifelse(p < 0.001, "< 0,001", paste("=", format(round(p, 3), de
 fn <- function(x, d = 1) format(round(x, d), nsmall = d, decimal.mark = ",")
 ```
 
-*Dactylis glomerata* lehtede eri lehepind (SLA) oli metsas suurem kui niidul
+*Dactylis glomerata* lehtede eripind (SLA) oli metsas suurem kui niidul
 (keskmiselt `r fn(hab_mean["forest"])` vs `r fn(hab_mean["grassland"])` mm² mg⁻¹;
 F~1,20~ = `r fn(a_sla["habitat", "F value"], 2)`, p `r fp(a_sla["habitat", "Pr(>F)"])`) ning
 lehe kuivainesisaldus (LDMC) metsas väiksem kui niidul (`r fn(hab_ldmc["forest"], 0)` vs
 `r fn(hab_ldmc["grassland"], 0)` mg g⁻¹; F~1,20~ = `r fn(a_ldmc["habitat", "F value"], 2)`,
-p `r fp(a_ldmc["habitat", "Pr(>F)"])`). Töötlus (katkestatud vs võrgustunud) kumbagi tunnust ei
+p `r fp(a_ldmc["habitat", "Pr(>F)"])`). Seenevõrgustiku katkestamine kumbagi tunnust ei
 mõjutanud (SLA p `r fp(a_sla["treatment", "Pr(>F)"])`, LDMC p
 `r fp(a_ldmc["treatment", "Pr(>F)"])`) ning kasvukoha ja töötluse koosmõju ei ilmnenud
 (SLA p `r fp(a_sla["habitat:treatment", "Pr(>F)"])`, LDMC p
@@ -31,17 +31,17 @@ mõjutanud (SLA p `r fp(a_sla["treatment", "Pr(>F)"])`, LDMC p
 
 Metsas kasvanud *Dactylis*'e lehed olid seega niidul kasvanutest õhemad ja suhteliselt
 veerikkamad. Kasvukohtade erinevus oli siiski mõõdukas (p 0,01--0,05) ning kuna igas
-kasvukoha ja töötluse kombinatsioonis oli ainult kuus rõngast, on testide võimsus väike:
+kasvukoha ja töötluse kombinatsioonis oli ainult kuus ringi, on testide võimsus väike:
 töötluse mõju puudumine ei tähenda, et mõju poleks. LDMC mudeli jäägid ei olnud päris
 normaaljaotusega (Shapiro-Wilki test, p ≈ 0,02).
 
 <!--
-NB: rõngapaar ei ole veel mudelis juhusliku efektina (vt docs/markmed.md).
+NB: ringipaar ei ole veel mudelis juhusliku efektina (vt docs/markmed.md).
 -->
 
 ```{r}
 #| label: tbl-dac-leaf
-#| tbl-cap: "*Dactylis glomerata* lehtede eri lehepind (SLA, mm² mg⁻¹) ja kuivainesisaldus (LDMC, mg g⁻¹) kasvukohtade ja töötluste kaupa (keskmine ± standardviga, n = 6 rõngast grupi kohta)."
+#| tbl-cap: "*Dactylis glomerata* lehtede eripind (SLA, mm² mg⁻¹) ja kuivainesisaldus (LDMC, mg g⁻¹) kasvukohtade ja töötluste kaupa (keskmine ± standardviga, n = 6 ringi grupi kohta)."
 tab <- data.frame(
   Kasvukoht = ifelse(dac_leaf_summary$habitat == "forest", "Mets", "Niit"),
   Töötlus = ifelse(dac_leaf_summary$treatment == "severed", "Katkestatud", "Võrgustunud"),
@@ -53,7 +53,7 @@ knitr::kable(tab)
 
 ```{r}
 #| label: fig-dac-leaf
-#| fig-cap: "*Dactylis glomerata* lehtede eri lehepind (SLA) ja kuivainesisaldus (LDMC) kasvukohtade ja töötluste kaupa. Punktid on rõngad (koondproov rõnga kohta)."
+#| fig-cap: "*Dactylis glomerata* lehtede eripind (SLA) ja kuivainesisaldus (LDMC) kasvukohtade ja töötluste kaupa. Punktid on ringid (koondproov ringi kohta)."
 #| fig-height: 3.5
 plot_df <- rbind(
   data.frame(dac_leaf[c("habitat", "treatment")], trait = "SLA~(mm^2~mg^-1)", value = dac_leaf$sla),

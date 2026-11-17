@@ -19,12 +19,12 @@ R-koodi kommentaarid tuleb kirjutada inglise keeles — kasutaja eelistus, kehti
 Katse eesmärk ja hüpotees
 Katse teel tuvastada, kuidas ümbritsevate naabertaimede mükoriissus (mõõdetud 1m² quadrat'ina) mõjutab katsetaimede mükoriissust (mõõdetud d=15cm ringis, mikroskoopia, McGonigle jt 1990 RLC%-meetod).
 
-5 katseliiki (vt allpool) külvatud igasse katserõngasse, mittesteriilsesse kohalikku mulda (muld sisaldab juba kasvukohale omaseid AMF-spoore).
-Manipulatsioon: "severed" (varem kutsutud "disturbance" — vahetatud täpsuse pärast, vt allpool): rõnga perimeeter lõigatakse 1x nädalas noaga läbi, et katkestada AMF-hüüfide ühendus naabertaimede ja katsetaimede vahel. Võrreldakse häirimata "control" rõngastega.
-2 kasvukohta (forest, grassland), 12 katserõngast igas (pooled control, pooled severed).
+5 katseliiki (vt allpool) külvatud igasse katseringi, mittesteriilsesse kohalikku mulda (muld sisaldab juba kasvukohale omaseid AMF-spoore).
+Manipulatsioon: "severed" (varem kutsutud "disturbance" — vahetatud täpsuse pärast, vt allpool): ringi perimeeter lõigatakse 1x nädalas noaga läbi, et katkestada AMF-hüüfide ühendus naabertaimede ja katsetaimede vahel. Võrreldakse häirimata "control" ringidega.
+2 kasvukohta (forest, grassland), 12 katseringi igas (pooled control, pooled severed).
 Lisaks kogutakse referentstaimed looduses (kummastki kasvukohast, liigi kohta) loomuliku mükoriissuse mõõtmiseks — neil pole quadrat'i tehtud (juhendaja otsus, pole vajalik), pole osa treatment-disainist.
-Teadaolev keerukus mudeldamisel: rõnga sees on kõik 5 liiki koos — nemad võivad ka omavahel (rõnga sees) võrgustuda, st "naaber" pole ainult väljaspool rõngast (quadrat), vaid ka rõnga-sisesed teised katsetaimed. Ei tühista quadrat-analüüsi, aga tasub diskussioonis mainida.
-Hierarhiline struktuur mudeldamiseks: kasvukoht (2) → rõngas (12 igas) → katsetaim rõnga sees. Kaaluda mixed model'it (rõngas kui random effect), et vältida pseudorepikatsiooni.
+Teadaolev keerukus mudeldamisel: ringi sees on kõik 5 liiki koos — nemad võivad ka omavahel (ringi sees) võrgustuda, st "naaber" pole ainult väljaspool ringi (quadrat), vaid ka ringisisesed teised katsetaimed. Ei tühista quadrat-analüüsi, aga tasub diskussioonis mainida.
+Hierarhiline struktuur mudeldamiseks: kasvukoht (2) → ring (12 igas) → katsetaim ringi sees. Kaaluda mixed model'it (ring kui random effect), et vältida pseudorepikatsiooni.
 Põhihüpotees analüüsi jaoks: quadrat'i keskmine naabruse-AM läheb mudelisse pideva prediktorina, koos interaktsiooniga treatment × quadrat_mean_AM. Veel kontseptuaalses faasis, pole koodis realiseeritud.
 Praegune pilootanalüüsi baasmudel: `lm(log_total ~ habitat * treatment
 species, data = colonization)`.
@@ -48,10 +48,10 @@ Lõputöö tekstis kasutatakse nime Silene latifolia (otsus 11.11.2026, Mare kin
 Treatment terminoloogia: "severed", mitte "disturbance"
 "Disturbance" on liiga üldine (kõlab nagu füüsiline mullahäiring). Vahetatud "severed" vastu, järgides otsest metoodilist eeskuju: Dassen, S., van der Putten, W.H., De Deyn, G.B. (2021). Severance of arbuscular mycorrhizal fungal mycelial networks in restoration grasslands enhances seedling biomass. New Phytologist, 232(2), 753–761. — identne meetod (hüüfid läbi lõigatud 2x nädalas pooltel katsekehadel, "severed" vs "control"), erinev küsimus (nemad: biomass ühes elupaigas kunstlikes südamikes; DistNet: kolonisatsioon, 2 elupaika, naabruse-mükoriissuse ülekanne võrgustiku kaudu). See ei tähenda, et DistNeti teema on juba "ära tehtud" — meetod kattub, uurimisküsimus mitte.
 
-Y/N koodid rõngastel (vt allpool) võivad jääda samaks, muutub ainult kirjeldav silt tabelites/tekstis.
+Y/N koodid ringidel (vt allpool) võivad jääda samaks, muutub ainult kirjeldav silt tabelites/tekstis.
 
 Ring_id / plant_id koodistandard
-ring_id: habitat-täht (F=forest, G=grassland) + number + Y (severed) / N (control). Nt F1Y, G4N. Referentstaimede jaoks (loodusest kogutud, pole päris rõngas) pseudo-ring_id GREF/FREF, treatment = "reference" (kolmas väärtus, EI ole severed ega control — ei tohi kogemata sattuda habitat * treatment põhimudelisse).
+ring_id: habitat-täht (F=forest, G=grassland) + number + Y (severed) / N (control). Nt F1Y, G4N. Referentstaimede jaoks (loodusest kogutud, pole päris ring) pseudo-ring_id GREF/FREF, treatment = "reference" (kolmas väärtus, EI ole severed ega control — ei tohi kogemata sattuda habitat * treatment põhimudelisse).
 Referentstaimede habitat-täht valitakse HABITAT-TÜÜBI, mitte täpse asukoha järgi — kas leiukoht on ökoloogiliselt niidu- või metsa-tüüpi, mitte kas see on täpselt katseala. Nt:
 Leontodon (rannakarjamaa serv) → G (niidu-tüüpi, kuigi mitte identne katseniiduga — note: "rannakarjamaa, võimalik erinevus soolasuse/mullatüübi/karjatamise poolest").
 Silene (metsa vahel, teeäärne) → F (mets, kuigi teeäärne/edge — note: "võimalik edge-efekt vs katseala metsa sisemus").
@@ -123,13 +123,13 @@ Tühjad väärtused: kas tühi lahter VÕI kirjutatud "NA" (mõlemad ok). Kasuta
 estimation_flag veerg EEMALDATI (otsus, 20.08.2026). Algne idee oli eristada "measured" vs "estimated" vs "unknown" chew_pct/ pathogen_pct väärtuste juures. Kasutaja täheldas, et tema praktikas on see eristus väärtuse enda deterministlik funktsioon, mitte sõltumatu info: väikesed väärtused (<50%) ja väga suured väärtused (>90-95%, kui taimest on järel vähe, saab suure kindlusega öelda "üle 90% söödud") on mõlemad kindlad; ebakindel on ainult keskmine vahemik (~50-90%). Flag ei lisanud seega midagi, mida väärtusest endast poleks juba näha — eemaldati kui üleliigne. Tõeliselt määramatu juht (nt leht 100% kadunud, pole baasi millega võrrelda, % pole üldse omistatav) ei kao kuhugi — see väljendub lihtsalt tühja/NA chew_pct/pathogen_pct väärtusena + selgitus notes veerus, mitte eraldi flag'ina.
 Neli erinevat "NA/erilise staatuse põhjust" (dead, removed, struktuurne mittekohaldatavus, reaalne lünk) EI vaja nelja erinevat tühja-lahtri esitust. Põhjus elab metaandmetes, mitte mõõtmislahtris: dead/removed → status, struktuurne (nt width_cm ei kehti Dactylisele/Silenele tavajuhul) → tuleneb liigist (species joinituna) + notes erandjuhtudel (vt "Erandliku õitsemise probleem" ülal), reaalne lünk (unustati, vihmane, või täiesti määramatu kahjustuse ulatus) → notes. Mõõtmisveerg ise ütleb ainult "kehtivat numbrit pole", mis on statistiliselt kõigil juhtudel õige.
 Esimese mõõtmiskorra (31.05) protokolliprobleem — otsus
-Kronoloogia: 31.05 mõõdeti ainult suurim isend rõnga kohta (n=1/ rõngas; eeldati, et ülejäänud lähevad niikuinii välja kitkumisele), kõrgus mõõdetud ebajärjekindlalt (vahel lehte venitades, vahel mitte). Juhendaja täpsustas hiljem nõude: kõik isendid, loomulik kõrgus — 15.06 mõõdeti vastavalt (kõik taimed, loomuliku kõrgus, ja sellest visiidist alates kehtib balanced-panel struktuur, vt "Traits metoodika"). 23.06 lisandus width_cm + max_leaf_cm (juuni), 23.07 sama protokoll (juuli). Visiidid pole ühtlaste vahedega: 31.05→15.06 = 16 päeva, 15.06→23.06 = 8 päeva, 23.06→23.07 = 30 päeva.
+Kronoloogia: 31.05 mõõdeti ainult suurim isend ringi kohta (n=1/ ring; eeldati, et ülejäänud lähevad niikuinii välja kitkumisele), kõrgus mõõdetud ebajärjekindlalt (vahel lehte venitades, vahel mitte). Juhendaja täpsustas hiljem nõude: kõik isendid, loomulik kõrgus — 15.06 mõõdeti vastavalt (kõik taimed, loomuliku kõrgus, ja sellest visiidist alates kehtib balanced-panel struktuur, vt "Traits metoodika"). 23.06 lisandus width_cm + max_leaf_cm (juuni), 23.07 sama protokoll (juuli). Visiidid pole ühtlaste vahedega: 31.05→15.06 = 16 päeva, 15.06→23.06 = 8 päeva, 23.06→23.07 = 30 päeva.
 
-Otsus: 31.05 ja 15.06 EI liideta üheks "mai" mõõtmiseks. Põhjused: (1) erinev valim (n=1/rõngas vs kõik isendid — enamiku taimede kohta poleks 31.05 andmeid, tagantjärele täitmine oleks 15.06 andmete valemai-nimeliseks tegemine); (2) erinev ja isegi seesmiselt ebajärjekindel mõõtmismeetod (juhuslik vs defineeritud loomulik kõrgus) — keskmistamine seguneb süstemaatilise nihkega, mitte juhusliku müraga; (3) mitmed taimed surid 31.05→15.06 vahel (elus → surnud 2 nädalaga) — see on ise oluline varajase suremuse signaal, mida liitmine varjaks, mitte müra, mida tasandada.
+Otsus: 31.05 ja 15.06 EI liideta üheks "mai" mõõtmiseks. Põhjused: (1) erinev valim (n=1/ring vs kõik isendid — enamiku taimede kohta poleks 31.05 andmeid, tagantjärele täitmine oleks 15.06 andmete valemai-nimeliseks tegemine); (2) erinev ja isegi seesmiselt ebajärjekindel mõõtmismeetod (juhuslik vs defineeritud loomulik kõrgus) — keskmistamine seguneb süstemaatilise nihkega, mitte juhusliku müraga; (3) mitmed taimed surid 31.05→15.06 vahel (elus → surnud 2 nädalaga) — see on ise oluline varajase suremuse signaal, mida liitmine varjaks, mitte müra, mida tasandada.
 
 Praktiline lahendus:
 
-31.05 leht jääb erandiks (n=1/rõngas, eelnes balanced-panel otsusele) — taimed, keda 31.05 ei mõõdetud, on selle lehe peal lihtsalt puudu (mitte tagantjärele täidetud). Alates 15.06 kehtib balanced panel (kõik plant_id kõigil lehtedel).
+31.05 leht jääb erandiks (n=1/ring, eelnes balanced-panel otsusele) — taimed, keda 31.05 ei mõõdetud, on selle lehe peal lihtsalt puudu (mitte tagantjärele täidetud). Alates 15.06 kehtib balanced panel (kõik plant_id kõigil lehtedel).
 Kasvukõverate analüüsis kasutada tegelikku kuupäeva/päevi külvist pideva prediktorina, mitte "kuu" kategooriaid — see lahendab ebaühtlaste visiidivahede probleemi loomulikult.
 31.05 andmed märkida metoodikas mittevõrreldavaks pilootmõõtmiseks — jätta kasvukõvera põhianalüüsist välja või kasutada ainult kirjeldavalt ("esimene vaatlus enne protokolli kinnitamist"). Dokumenteerida ausalt metoodika peatükis (protokolli varajane täpsustamine on väliuuringutes tavaline).
 31.05→15.06 suremus (alive→dead 2 nädalaga) jääb omaette intervall-vaatluseks status/suremuse andmestikus, mitte segamini visiitide liitmisega.
@@ -155,7 +155,7 @@ Eesmärk: FungalRoot andmebaasi põhjal arvutatud forest vs grassland keskmine A
 
 Quadrat (kooslus-)andmed liiguvad edaspidi DistNet_Quadrat.xlsx faili (vt "Andmefailide struktuur" ülal — varem MasterData sees). Veerud Species/Mean_Cover/Mean_Abundance, katvuse lävend liigi kaasamiseks 0.8% (juhendaja soovitas 1%, kasutaja valis 0.8%). LAHTINE (11.11.2026): Mare hüpotees on, et severed/control CWM-erinevust mõjutasid juhuslikud, kohale mitteomased liigid (mitte tallamine) — juhendaja nõustus need välja võtma, sellest arutelu lävendi 0.5 üle (Mean_cover ≤ 0.5 välja, ala tasemel). Lõplik lävend otsustamata; vt docs/markmed.md.
 AM-väärtused (15.11.2026): R/am_colonization.R kordab Exceli veergu 'AM intensity FungalRoot' — FungalRoot GBIF-i kaudu (DOI 10.15468/a7ujmj), ainult McGonigle RLC%, koondkeskmine liigi kohta (juhendaja soov, mitte habitat'i kaupa); käsitsi väärtused Exceli lahtrikommentaaridest. Kolmetasandiline habitat-fallback (allpool) on ajalugu.
-CWM (11.11.2026): naabruse kooslusmükoriissus arvutatakse R-is (R/CWM.R) kvadraadilehtede liigiridadest — weighted.mean(AM %, w = katvus) üle lävendi ületanud liikide, lisaks cover_share (lävendi ületanud liikide katvus / kogu liikide katvus). Exceli CWM-lehte ei kasutata (see võtab kõik liigid). Exceli niidulehe KW_means ei ole CWM. AM-väärtuste allikas praegu Exceli veerg "AM intensity FungalRoot"; erineb R/AM_intensity.R pipeline'ist 11 liigil — lõplik allikas otsustamata. FungalRoot liikide CSV-d data/raw/FungalRoot/ (üks fail liigi kohta; veerud: id, ID [liiginimi], Rights holder, Last modified, Habitat, Mycorrhiza type, AM method, AM intensity — järjekord varieerub, pole probleem, read_csv/bind_rows ühendavad nime järgi).
+CWM (11.11.2026): naabruse koosluse mükoriissus arvutatakse R-is (R/CWM.R) taimeruudu lehtede liigiridadest — weighted.mean(AM %, w = katvus) üle lävendi ületanud liikide, lisaks cover_share (lävendi ületanud liikide katvus / kogu liikide katvus). Exceli CWM-lehte ei kasutata (see võtab kõik liigid). Exceli niidulehe KW_means ei ole CWM. AM-väärtuste allikas praegu Exceli veerg "AM intensity FungalRoot"; erineb R/AM_intensity.R pipeline'ist 11 liigil — lõplik allikas otsustamata. FungalRoot liikide CSV-d data/raw/FungalRoot/ (üks fail liigi kohta; veerud: id, ID [liiginimi], Rights holder, Last modified, Habitat, Mycorrhiza type, AM method, AM intensity — järjekord varieerub, pole probleem, read_csv/bind_rows ühendavad nime järgi).
 Kasutatakse ainult McGonigle jt 1990 RLC% meetodit (mitte Selivanov 1981 — sarnane põhimõte, erinev protokoll, hoitakse eraldi).
 Biomi kategoriseerimine: "forest" = temperate coniferous + broadleaf forest biome kokku (katsekoht hemiboreaalne, 58°N — ENVO "subpolar" ei kvalifitseeru, see on pigem 60-70°N). "grassland" = temperate grassland biome.
 Kolmetasandiline fallback-loogika: (1) habitat-specific McGonigle kirje, (2) fallback — sama liigi mis tahes McGonigle kirje olenemata biomist, (3) manual override liikidele, millel pole ühtegi kirjet — kas ökoloogilise teadmise põhjal 0 (selged EcM/NM taksonid: Orthilia secunda, Melampyrum nemorosum, Chimaphila umbellata) või kasutaja enda mikroskoopiamõõtmised (Carex disticha, Helictotrichon pratensis, Artemisia campestris, Pulsatilla pratensis — ~3h/liik, pooleli). Iga rida: data_source + override_reason veerg läbipaistvuse jaoks.
@@ -221,12 +221,12 @@ DistNet/
 │   │   ├── join_master.R   # rings+plants+species liitmine domeenifailidega
 │   │   ├── clean_data.R    # puhastus, valideerimine, CSV väljund (nt clean_masterdata())
 │   │   └── review_sync.R   # upload_review(), download_review(), read_review() — juhendaja ülevaatus
-│   ├── CWM.R               # naabruse CWM (AM %) kvadraadi liigiridadest + habitat × treatment mudel
-│   ├── quadrat_cover.R     # kvadraatide katvus ja liigid severed vs control
+│   ├── CWM.R               # naabruse CWM (AM %) taimeruudu liigiridadest + habitat × treatment mudel
+│   ├── quadrat_cover.R     # taimeruutude katvus ja liigid severed vs control
 │   ├── community_ordination.R # juhendaja NMDS/PERMANOVA/partial dbRDA (Quadrat-faili lehed Community + Meta) → data/processed/community.rda; + Mare NMDS kasvukohtade kaupa (ndms_G, ndms_F) ja PERMANOVA kasvukohtade kaupa, permutatsioonid paaride sees (permanova_G, permanova_F)
 │   ├── dac_leaf_traits.R   # Dactylis SLA/LDMC (Biomass: Dac_weight_all + Dac_LeafResults), habitat × treatment → data/processed/dac_leaf_traits.rda
 │   ├── gbif_name_check.R   # kõik liiginimed GBIF Backbone'i vastu → data/processed/gbif_name_check.csv (Excelit ei muuda)
-│   ├── am_colonization.R   # kvadraadiliikide AM % FungalRoot'ist GBIF API kaudu (McGonigle, koondkeskmine) + käsitsi väärtused → data/processed/am_colonization.csv
+│   ├── am_colonization.R   # taimeruudu liikide AM % FungalRoot'ist GBIF API kaudu (McGonigle, koondkeskmine) + käsitsi väärtused → data/processed/am_colonization.csv
 │   └── analyze.R           # mudelid, statistika — kasutab helpereid, ei tea/hooli päritolust
 ├── data/{raw,processed}/   # mõlemad gitignore'itud
 ├── report/
@@ -286,9 +286,9 @@ report/thesis/
 ├── 01-sissejuhatus.qmd
 ├── 02-metoodika.qmd      # sh alapeatükk 2.4 = {{< include _metoodika_kasvunaitajad.qmd >}}
 ├── _metoodika_kasvunaitajad.qmd    # Traits'i metoodika; alakriips = Quarto ei renderda eraldi
-├── 03-tulemused.qmd      # põhi (märksõnad); alapeatükk "Taimekoosluste liigikoosseis" = {{< include _tulemused_kooslused.qmd >}}
+├── 03-tulemused.qmd      # põhi (märksõnad); alapeatükk "Taimekoosluste liigiline koosseis" = {{< include _tulemused_kooslused.qmd >}}
 ├── _metoodika_eksperimendi_disain.qmd # 02-metoodika "Eksperimendi disain" (Mare ettekande 2025 tekst, ajakohastatud) + liiginimede callout juhendajale
-├── _metoodika_kooslused.qmd # 02-metoodika "Naabruskonna kooslus ja kooslusmükoriissus": kvadraadid, AM-väärtused, CWM (asendas "FungalRoot'i kalibreerimine")
+├── _metoodika_kooslused.qmd # 02-metoodika "Naabruskonna kooslus ja selle mükoriissus": taimeruudud, AM-väärtused, CWM (asendas "FungalRoot'i kalibreerimine")
 ├── _tulemused_kooslused.qmd        # laeb community.rda, joonised + tabelid; parandusteate callout juhendajale (eemaldada lõplikust tekstist)
 ├── _metoodika_funktsionaalsed_naitajad_Dac.qmd           # Dactylise juure- ja lehekännide metoodika (include 02-metoodika)
 ├── _tulemused_funktsionaalsed_naitajad_Dac.qmd # Dactylise lehtede SLA/LDMC tulemused (include 03-tulemused), laeb dac_leaf_traits.rda
