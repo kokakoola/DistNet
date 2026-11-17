@@ -115,4 +115,5 @@ dir.exists(Sys.getenv("SHAREPOINT_LOCAL"))
 Lõputöö on Quarto raamat kaustas `report/thesis/`. `./publish.sh` (repo juurkaustas, pärast commit'i)
 renderdab HTML-i ja docx-i, push'ib GitHubi, avaldab HTML-i GitHub Pages'i ja kopeerib docx-i
 juhendajale SharePointi `Docs/Review/` kausta uue versioonina. Enne seda sulge `quarto preview`.
+Eelvaade kirjutamise ajal: `./preview.sh` (uueneb ka `_*.qmd` include-failide muutmisel).
 Vana Quarto blogi (`report/blog/`) enam ei peeta.

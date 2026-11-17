@@ -15,6 +15,14 @@ book:
       - name: "Botaanika osakond"
   date: today
   date-format: "D. MMMM YYYY"
+  sidebar:
+    tools:
+      - icon: github
+        href: https://github.com/kokakoola/DistNet
+        text: "Projekti kood"
+      - icon: file-earmark-word
+        href: https://tartuulikool.sharepoint.com/sites/PRG1836-Mare/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FPRG1836%2DMare%2FShared%20Documents%2FMare%2FMasterThesis%2FDocs%2FReview
+        text: ".docx OneDrive-s"
   chapters:
     - skeleton.qmd
     - index.qmd
@@ -40,14 +48,38 @@ execute:
   echo: false
   warning: false
   message: false
-  freeze: true  # freeze: auto ignores changes in {{< include >}} files -> stale output
+  freeze: false  # auto/true reuse old results when only an include file changed
 
 format:
   html:
     toc: true
     include-in-header:
-      text: <meta name="robots" content="noindex">
+      text: |
+        <meta name="robots" content="noindex">
+        <style>
+          /* sidebar links (see script below): one per line, underline on hover */
+          .sidebar-header + .sidebar-tools-main { display: flex; flex-direction: column; align-items: flex-start; gap: 0.2rem; }
+          .sidebar-header + .sidebar-tools-main a.quarto-navigation-tool { padding-left: 0 !important; text-decoration: none; }
+          .sidebar-header + .sidebar-tools-main a.quarto-navigation-tool:hover { text-decoration: underline; }
+        </style>
+    # sidebar links (GitHub, SharePoint) with text labels, one per line above the search box
+    include-after-body:
+      text: |
+        <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          const tools = document.querySelector(".sidebar-tools-main");
+          const search = document.querySelector(".sidebar-search");
+          if (!tools || !search) return;
+          tools.classList.add("mt-2");
+          tools.querySelectorAll("a.quarto-navigation-tool").forEach(a => {
+            a.insertAdjacentText("beforeend", " " + a.title);
+          });
+          document.querySelector(".sidebar-header").after(tools);
+        });
+        </script>
   docx:
     toc: true
+    filters:
+      - docx-callouts.lua  # callouts as plain text: Word Online rejects callout tables
     number-sections: true
     # reference-doc: reference.docx  # lisa, kui vormingufail on olemas

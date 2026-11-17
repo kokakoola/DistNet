@@ -4,9 +4,9 @@ Tööjärjekord, mitte lõputöö tekst. Tehtud punktid märgi `[x]` või kustut
 
 ## Järgmisena (16.11.2026)
 
-- [ ] **Word (docx) on ikka "corrupted"** – ka pärast callout'ide parandust (tabel callout'i lõpus) ja `freeze: false`.
-  Uurida: renderdada uuesti, valideerida `word/document.xml` (nt python-docx / LibreOffice avamine), otsida muid
-  kehtetuid elemente (tabelid joonise/tabeli allkirjadega, `{.mark}` tabelis, inline r tabelis).
+- [ ] **Word Online ei avanud docx-i** (desktop-Word avas): põhjus callout'id (Wordi tabelid). 17.11: filter
+  `report/thesis/docx-callouts.lua` teeb need tavatekstiks. Mare kontrollib Word Online'is.
+- [x] OneDrive Review kausta link HTML-i külgribale (`_quarto.yml` → `book: sidebar: tools`) – Mare annab URL-i.
 - [ ] Rikutud `Docs/Review/DistNet_thesis_v2_2026-11-15.docx` SharePointis – kas kustutada?
 - [ ] Tegur "Töötlus" joonistel/tabelites (tasemed võrgustunud/katkestatud) ja disaini alapealkiri "Töötlus":
   kas nimetada ümber (nt "Seenevõrgustik")? Mare otsustab.
