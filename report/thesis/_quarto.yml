@@ -22,7 +22,10 @@ book:
         text: "Projekti kood"
       - icon: file-earmark-word
         href: https://tartuulikool.sharepoint.com/sites/PRG1836-Mare/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FPRG1836%2DMare%2FShared%20Documents%2FMare%2FMasterThesis%2FDocs%2FReview
-        text: ".docx OneDrive-s"
+        text: ".docx (OneDrive)"
+      - icon: file-earmark-excel
+        href: https://tartuulikool.sharepoint.com/sites/PRG1836-Mare/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FPRG1836%2DMare%2FShared%20Documents%2FMare%2FMasterThesis%2FRawData%2FFieldwork
+        text: "Andmetabelid (OneDrive)"
   chapters:
     - skeleton.qmd
     - index.qmd
